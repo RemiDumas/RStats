@@ -11,4 +11,4 @@ page-layout: full
 title-block-banner: true
 ---
 
-
+Bienvenue sur le blog RStats qui traite des sujets data avec R et Python
