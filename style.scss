@@ -1,0 +1,21 @@
+/*-- scss:defaults --*/
+body {
+    // By default, EG Garamond uses "old-styles" numerics which have a baseline offset
+    // for some numerals. This turns that ugly feature off.
+    font-variant-numeric: lining-nums;
+}
+
+dl.code-annotation-container-grid dt {
+    // needed because I have changed the mono font
+    line-height: 20px !important;
+}
+
+$mermaid-font-family: "EB Garamond, Georgia, serif";
+$mermaid-label-bg-color: #000000;
+$mermaid-label-fg-color: #000000;
+
+/*-- scss:rules --*/
+@import url('https://fonts.googleapis.com/css2?family=Pridi:wght@200;300;400;500;600;700&display=swap');
+h1, h2, h3, h4, h5, h6 {
+  font-family: "Pridi", serif;
+}

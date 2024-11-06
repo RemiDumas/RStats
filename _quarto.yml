@@ -3,17 +3,67 @@ project:
 
 website:
   title: "RStats"
+  description: "Weblog sur R et Python pour la statistique"   # A brief slogan (optional)
+  image: img/logo.jpg
+  favicon: img/favicon.png
   navbar:
+    pinned: true
+    logo: /img/my_image.png
+    
+    # your sub-pages
+    left:
+      - text: "Projets"
+        href: projects/index.qmd
+      - text: "Articles"
+        href: index.qmd
+      - text: "CV"
+        href: cv/index.qmd
+    
+    # your social media handles
     right:
-      - about.qmd
       - icon: github
-        href: https://github.com/
+        href: https://github.com/RemiDumas/RStats
       - icon: twitter
-        href: https://twitter.com
+        href: https://twitter.com/RStats
+      - icon: linkedin
+        href: https://www.linkedin.com/in/remi-dumas-06b81488/
+      - icon: youtube
+        href: https://www.youtube.com/channel/UCiBfVCpuflUSKumU6ekHOfg
+      - icon: envelope
+        aria-label: email
+        href: "mailto:remi.dumas@gmail.com"  
+  
+  
 format:
-  html:
-    theme: cosmo
-    css: styles.css
-
-editor: visual
+    html:
+        theme:
+          light: 
+            - flatly
+            - style.scss
+          dark: 
+            - darkly
+            - style.scss
+        mainfont: Voltaire, sans-serif
+        monofont: Fira Code, consolas, courier, monospace
+        highlight-style: github
+        
+        html-math-method:
+            method: mathjax
+            url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml.js"
+        include-in-header:
+            text: |
+                <style>
+                @import url('https://fonts.googleapis.com/css2?family=Voltaire&display=swap');
+                @import url('https://fonts.googleapis.com/css2?family=Fira+Code:wght@300..700&display=swap')
+                </style>
+                <script>
+                MathJax = {
+                    tex: {
+                        tags: 'ams'  // should be 'ams', 'none', or 'all'
+                    },
+                    output: {
+                        font: 'mathjax-fira'
+                    }
+                };
+                </script>
 

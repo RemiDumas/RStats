@@ -1,0 +1,104 @@
+---
+title: "Les biais de genres systémiques dans les IA génératives."
+description: "Une récente étude de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités."
+date: 21-04-2024
+lang: fr
+categories: 
+  - stats
+  - IA generatives
+  - sociologie
+  - genre
+draft: false
+number-sections: false
+image: emnist-manual-loading-thumbnail.png
+bibliography: references.bib
+format:
+  html:
+    fig-cap-location: bottom
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+    comments: false
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| include: false
+personnages <- read.csv2("personnages.csv")
+```
+
+## Un biais systémique relevé par une étude.
+
+Une récente étude [voir @etudeUCL] menée par des chercheurs de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités.\
+L'étude, commandée et publiée par l'UNESCO, a examiné les stéréotypes présents dans les LLM (Large Language Models), outils de traitement du langage naturel sur lesquels se basent les plateformes génératives d'IA les plus populaires, notamment Open AI's GPT-3.5 et GPT-2 et META's Llama 2.\
+Les résultats dévoilent que les noms féminins sont associés à des rôles de genre traditionnels, tels que "famille", "enfants" et "mari", tandis que les noms masculins sont associés à des mots tels que "carrière", "dirigeants", "gestion" et "entreprise".
+Les textes générés par l'IA ont également montré des stéréotypes négatifs basés sur la culture ou la sexualité.\
+Par exemple, les histoires générées par Llama 2 placent les femmes dans des rôles domestiques quatre fois plus souvent que les hommes.
+Ces derniers se voient attribués des emplois plus divers et de haut statut.\
+Une des raisons avancée tient à la prédominance de ces biais dans les ressources utilisées pour construire ces modèles.
+La professeure Ivana Drobnjak, auteure du rapport de l'UCL Computer Science et membre de l'équipe de la Chaire UNESCO en IA à l'UCL, avance cette explication: "L'IA apprend d'Internet et des données historiques et prend des décisions en fonction de ces connaissances, qui sont souvent biaisées. Le fait que les femmes n'aient pas été aussi présentes que les hommes dans les sciences et l'ingénierie dans le passé, par exemple, ne signifie pas qu'elles sont de moins bonnes scientifiques et ingénieures. Nous devons guider ces algorithmes pour qu'ils apprennent l'égalité, l'équité et les droits de l'homme, afin qu'ils prennent de meilleures décisions."\
+Les biais de genre sont si profondément ancrés dans les LLM qu'une refonte éthique dans le développement de l'IA est absolument nécessaire.
+L'équipe de la Chaire UNESCO en IA à l'UCL travaillera avec l'UNESCO pour sensibiliser à ce problème et contribuer au développement de solutions en organisant des ateliers et des évènements conjoints impliquant des parties prenantes pertinentes.\
+Le rapport a été présenté lors de la réunion de dialogue sur la transformation numérique de l'UNESCO le 6 mars 2024 et lors de la 68e session de la Commission de la condition de la femme des Nations Unies.
+En conclusion, les chercheurs recommandent que l'IA doit être guidée pour apprendre l'égalité, l'équité et les droits de l'homme afin de prendre de meilleures décisions.
+
+## Génération de textes
+
+J'ai voulu effectuer une rapide vérification en utilisant l'IA générative française Mistral (<https://chat.mistral.ai/>).
+Je lui ai demandé de générer une liste de personnages fictifs en établissant leur biographie.
+Les informations recueillies sont dans le fichier `personnages.csv`, obtenu après retraitement.
+
+Par exemple:
+```{r}
+#| echo: false
+#| warning: false
+
+personnages <- read.csv2("personnages.csv")
+library('dplyr')
+personnages %>% 
+  slice(1) %>% 
+  knitr::kable()
+```
+
+## Analyse
+### La profession est-elle indépendante du sexe du personnage ?
+On va croiser la profession (variable `Occupation`) avec `Sexe` (codée H pour hommes, et F pour femmes). On obtient le tableau @tbl-OccupSexe
+
+```{r}
+#| label: tbl_OccupSexe
+#| tbl-cap: "OccupSexe"
+#| cap-location: top
+#| warning: false
+
+tbl_OccupSexe <- table(personnages$Occupation, personnages$Sexe)
+
+library('knitr') 
+kable(tbl_OccupSexe)
+```
+
+On va utiliser le package questionr (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.
+
+```{r}
+#| label: tbl_OccupSexe2
+#| tbl-cap: "OccupSexe2"
+#| cap-location: top
+#| warning: false
+
+#install.packages("questionr")
+library('questionr')
+knitr::kable(round(cprop(tbl_OccupSexe), 1))
+```
+
+Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.
+
+## Liens
+### Source
+
+<https://techxplore.com/news/2024-04-large-language-generate-biased-content.html>
+
+### References
+
+::: {#refs}
+
+:::

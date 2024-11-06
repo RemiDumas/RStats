@@ -1,0 +1,24 @@
+---
+title: "Hello World !"
+description: "Au cours des dernières années, j'ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l'utilisation des Github pages, tout a été une question de quelques heures pour tout mettre en place."
+date: 20-12-2023
+date-format: "DD, MMMM YYYY"
+categories: 
+  - news
+image: hello-world-thumbnail.png
+reference-location: margin
+draft: false
+title-block-banner: hello-world-bg.jpg
+
+format:
+  html:
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+---
+
+Au cours des dernières années, j'ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l'utilisation des Github pages, tout a été une question de quelques heures pour tout mettre en place.
+
+À propos, la bannière supérieure et la photo ci-dessous sont générées par IA (https://ideogram.ai/).
+Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants. À bientôt pour le premier article réel.
+
+![image](code.png)
