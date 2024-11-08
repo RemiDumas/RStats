@@ -66,7 +66,7 @@ personnages %>%
 On va croiser la profession (variable `Occupation`) avec `Sexe` (codée H pour hommes, et F pour femmes). On obtient le tableau @tbl-OccupSexe
 
 ```{r}
-#| label: tbl_OccupSexe
+#| label: tbl-OccupSexe
 #| tbl-cap: "OccupSexe"
 #| cap-location: top
 #| warning: false
@@ -77,7 +77,7 @@ library('knitr')
 kable(tbl_OccupSexe)
 ```
 
-On va utiliser le package questionr (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.
+On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.
 
 ```{r}
 #| label: tbl_OccupSexe2
@@ -90,7 +90,62 @@ library('questionr')
 knitr::kable(round(cprop(tbl_OccupSexe), 1))
 ```
 
-Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.
+Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).
+
+Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.
+:::{.callout-tip}
+## Formule du V de Cramer
+
+Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :
+V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}
+
+où :
+* $\chi^2$ est la statistique du test chi-carré,
+* n est la taille de l'échantillon,
+* k est le nombre de colonnes (modalités de la première variable),
+* r est le nombre de lignes (modalités de la seconde variable),
+* $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
+
+:::
+
+```{r}
+#| label: vcramer
+
+cramer.v(tbl_OccupSexe)
+```
+
+### Interprétation de la Valeur du V de Cramer
+
+La valeur du V de Cramer varie de 0 à 1 :
+
+* 0 indique une absence totale d'association entre les deux variables.
+* 1 indique une association parfaite entre les deux variables.
+
+En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :
+* V < 0,2 : association faible,
+* 0,2 ≤ V < 0,4 : association modérée,
+* 0,4 ≤ V < 0,6 : association forte,
+* V ≥ 0,6 : association très forte.
+
+Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables. Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre. Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.
+
+### Des personnages féminins plutôt jeunes
+Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:
+```{r}
+#| label: tab-trAge
+tab_trAge <- table(personnages$trAge)
+round(tab_trAge/nrow(personnages)*100, 1) %>% knitr::kable(col.names = c("Âge", "%") )
+
+```
+
+```{r}
+#| label: tab_trAge_Sexe
+
+tab_trAge_Sexe <- table(personnages$Sexe, personnages$trAge)
+cprop(tab_trAge_Sexe)
+cramer.v(tab_trAge_Sexe)
+```
+Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes. En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans. C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.
 
 ## Liens
 ### Source
