@@ -75,10 +75,10 @@ On obtient le tableau @tbl-OccupSexe
 #| cap-location: top
 #| warning: false
 
-tbl_OccupSexe <- table(personnages$Occupation, personnages$Sexe)
+tab_OccupSexe <- table(personnages$Occupation, personnages$Sexe)
 
 library('knitr') 
-kable(tbl_OccupSexe)
+kable(tab_OccupSexe)
 ```
 
 On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.
@@ -91,7 +91,7 @@ On va utiliser le package *questionr* (voir @questionR) pour calculer les struct
 
 #install.packages("questionr")
 library('questionr')
-knitr::kable(round(cprop(tbl_OccupSexe), 1))
+knitr::kable(round(cprop(tab_OccupSexe), 1))
 ```
 
 Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité.
@@ -105,8 +105,17 @@ Il est particulièrement utile pour des tableaux plus grands que 2×2, car il pe
 ## Formule du V de Cramer
 
 Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :\
-V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}\
-où : \* $\chi^2$ est la statistique du test chi-carré, \* n est la taille de l'échantillon, \* k est le nombre de colonnes (modalités de la première variable), \* r est le nombre de lignes (modalités de la seconde variable), \* $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
+$V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
+
+-    $\chi^2$ est la statistique du test chi-carré,
+
+-   n est la taille de l'échantillon,
+
+-   k est le nombre de colonnes (modalités de la première variable),
+
+-   r est le nombre de lignes (modalités de la seconde variable),
+
+-    $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
 :::
 
 ```{r}
@@ -122,7 +131,15 @@ La valeur du V de Cramer varie de 0 à 1 :
 -   0 indique une absence totale d'association entre les deux variables.
 -   1 indique une association parfaite entre les deux variables.
 
-En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes : \* V \< 0,2 : association faible, \* 0,2 ≤ V \< 0,4 : association modérée, \* 0,4 ≤ V \< 0,6 : association forte, \* V ≥ 0,6 : association très forte.
+En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :
+
+-   V \< 0,2 : association faible,
+
+-   0,2 ≤ V \< 0,4 : association modérée,
+
+-   0,4 ≤ V \< 0,6 : association forte,
+
+-   V ≥ 0,6 : association très forte.
 
 Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.
 Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre.
