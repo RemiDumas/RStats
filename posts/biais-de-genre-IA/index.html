@@ -146,6 +146,35 @@ MathJax = {
 };
 </script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
@@ -268,6 +297,8 @@ MathJax = {
   <li><a href="#analyse" id="toc-analyse" class="nav-link" data-scroll-target="#analyse">Analyse</a>
   <ul class="collapse">
   <li><a href="#la-profession-est-elle-indépendante-du-sexe-du-personnage" id="toc-la-profession-est-elle-indépendante-du-sexe-du-personnage" class="nav-link" data-scroll-target="#la-profession-est-elle-indépendante-du-sexe-du-personnage">La profession est-elle indépendante du sexe du personnage ?</a></li>
+  <li><a href="#interprétation-de-la-valeur-du-v-de-cramer" id="toc-interprétation-de-la-valeur-du-v-de-cramer" class="nav-link" data-scroll-target="#interprétation-de-la-valeur-du-v-de-cramer">Interprétation de la Valeur du V de Cramer</a></li>
+  <li><a href="#des-personnages-féminins-plutôt-jeunes" id="toc-des-personnages-féminins-plutôt-jeunes" class="nav-link" data-scroll-target="#des-personnages-féminins-plutôt-jeunes">Des personnages féminins plutôt jeunes</a></li>
   </ul></li>
   <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a>
   <ul class="collapse">
@@ -306,23 +337,24 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <div class="cell-output-display">
 <table class="caption-top table table-sm table-striped small">
 <colgroup>
-<col style="width: 1%">
+<col style="width: 0%">
+<col style="width: 2%">
+<col style="width: 0%">
 <col style="width: 2%">
 <col style="width: 1%">
-<col style="width: 2%">
-<col style="width: 2%">
 <col style="width: 13%">
 <col style="width: 17%">
+<col style="width: 19%">
+<col style="width: 3%">
+<col style="width: 12%">
 <col style="width: 20%">
 <col style="width: 4%">
-<col style="width: 12%">
-<col style="width: 21%">
 </colgroup>
 <thead>
 <tr class="header">
 <th style="text-align: left;">Sexe</th>
 <th style="text-align: left;">Nom</th>
-<th style="text-align: left;">Age</th>
+<th style="text-align: right;">Age</th>
 <th style="text-align: left;">Occupation</th>
 <th style="text-align: left;">Residence</th>
 <th style="text-align: left;">Apparence</th>
@@ -331,14 +363,15 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <th style="text-align: left;">GenreRoman</th>
 <th style="text-align: left;">Themes</th>
 <th style="text-align: left;">Caracteristiques</th>
+<th style="text-align: left;">trAge</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">F</td>
 <td style="text-align: left;">Sarah Johnson</td>
-<td style="text-align: left;">35 ans</td>
-<td style="text-align: left;">Écrivaine</td>
+<td style="text-align: right;">35</td>
+<td style="text-align: left;">Ecrivain</td>
 <td style="text-align: left;">New York</td>
 <td style="text-align: left;">Cheveux blonds ondulés, yeux verts, visage ovale, style décontracté</td>
 <td style="text-align: left;">Intelligente, créative, indépendante, réservée, a du mal à faire confiance aux autres</td>
@@ -346,6 +379,7 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <td style="text-align: left;">Roman psychologique</td>
 <td style="text-align: left;">Solitude, créativité, relations familiales, confiance en soi</td>
 <td style="text-align: left;">Personnage complexe et profond, lutte pour trouver un équilibre entre son travail et sa vie personnelle</td>
+<td style="text-align: left;">2. Entre 30 et 40 ans</td>
 </tr>
 </tbody>
 </table>
@@ -356,15 +390,20 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <h2 class="anchored" data-anchor-id="analyse">Analyse</h2>
 <section id="la-profession-est-elle-indépendante-du-sexe-du-personnage" class="level3">
 <h3 class="anchored" data-anchor-id="la-profession-est-elle-indépendante-du-sexe-du-personnage">La profession est-elle indépendante du sexe du personnage ?</h3>
-<p>On va croiser la profession (variable <code>Occupation</code>) avec <code>Sexe</code> (codée H pour hommes, et F pour femmes). On obtient le tableau <strong>?@tbl-OccupSexe</strong></p>
+<p>On va croiser la profession (variable <code>Occupation</code>) avec <code>Sexe</code> (codée H pour hommes, et F pour femmes). On obtient le tableau <a href="#tbl-OccupSexe" class="quarto-xref">Table&nbsp;1</a></p>
 <div class="cell" data-cap-location="top">
-<div class="sourceCode cell-code" id="cb1" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
 <span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
 <span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tbl_OccupSexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="tbl-OccupSexe" class="cell quarto-float quarto-figure quarto-figure-center anchored" data-cap-location="top">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-OccupSexe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: OccupSexe
+</figcaption>
+<div aria-describedby="tbl-OccupSexe-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="cell-output-display">
-<table class="caption-top table table-sm table-striped small">
-<caption>OccupSexe</caption>
+<table class="do-not-create-environment cell caption-top table table-sm table-striped small">
 <thead>
 <tr class="header">
 <th style="text-align: left;"></th>
@@ -375,81 +414,61 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Acteur</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">10</td>
+<td style="text-align: right;">1</td>
+<td style="text-align: right;">11</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Actrice</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Architecte</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">11</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Artiste</td>
 <td style="text-align: right;">11</td>
 <td style="text-align: right;">2</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Avocat</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">Avocate</td>
-<td style="text-align: right;">19</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: left;">Avocat</td>
+<td style="text-align: right;">20</td>
+<td style="text-align: right;">5</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Chef cuisinier</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">10</td>
 <td style="text-align: right;">2</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Chef cuisinière</td>
-<td style="text-align: right;">9</td>
-<td style="text-align: right;">0</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Chef pâtissière</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Danseuse</td>
 <td style="text-align: right;">12</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Designer de mode</td>
 <td style="text-align: right;">2</td>
 <td style="text-align: right;">1</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Designer graphique</td>
 <td style="text-align: right;">3</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Détective privé</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">3</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Écrivain</td>
-<td style="text-align: right;">0</td>
-<td style="text-align: right;">12</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Écrivaine</td>
+<td style="text-align: left;">Ecrivain</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">13</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Éditrice</td>
+<td style="text-align: left;">Editrice</td>
 <td style="text-align: right;">7</td>
 <td style="text-align: right;">0</td>
 </tr>
@@ -460,53 +479,43 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entrepreneur</td>
-<td style="text-align: right;">1</td>
+<td style="text-align: right;">2</td>
 <td style="text-align: right;">17</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Entrepreneuse</td>
+<td style="text-align: left;">Etudiante</td>
 <td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: right;">1</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Étudiante</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">1</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Informaticien</td>
 <td style="text-align: right;">1</td>
 <td style="text-align: right;">12</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ingénieur</td>
 <td style="text-align: right;">0</td>
 <td style="text-align: right;">9</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Journaliste</td>
 <td style="text-align: right;">4</td>
 <td style="text-align: right;">9</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Mannequin</td>
 <td style="text-align: right;">9</td>
 <td style="text-align: right;">0</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Médecin</td>
 <td style="text-align: right;">6</td>
 <td style="text-align: right;">12</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Musicien</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">4</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Musicienne</td>
-<td style="text-align: right;">1</td>
-<td style="text-align: right;">0</td>
+<td style="text-align: left;">Musicien</td>
+<td style="text-align: right;">2</td>
+<td style="text-align: right;">4</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Photographe</td>
@@ -537,7 +546,10 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 </table>
 </div>
 </div>
-<p>On va utiliser le package questionr (voir <span class="citation" data-cites="questionR">Barnier, Briatte, et Larmarange (<a href="#ref-questionR" role="doc-biblioref">2023</a>)</span>) pour calculer les structures par sexe, ainsi que les marges du tableau.</p>
+</figure>
+</div>
+</div>
+<p>On va utiliser le package <em>questionr</em> (voir <span class="citation" data-cites="questionR">Barnier, Briatte, et Larmarange (<a href="#ref-questionR" role="doc-biblioref">2023</a>)</span>) pour calculer les structures par sexe, ainsi que les marges du tableau.</p>
 <div class="cell" data-cap-location="top">
 <div class="sourceCode cell-code" id="cb2" data-cap-location="top"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("questionr")</span></span>
 <span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
@@ -556,96 +568,72 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 <tbody>
 <tr class="odd">
 <td style="text-align: left;">Acteur</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">7.6</td>
-<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">8.4</td>
+<td style="text-align: right;">4.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Actrice</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Architecte</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">8.4</td>
 <td style="text-align: right;">4.2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Artiste</td>
 <td style="text-align: right;">8.5</td>
 <td style="text-align: right;">1.5</td>
 <td style="text-align: right;">5.0</td>
 </tr>
-<tr class="odd">
-<td style="text-align: left;">Avocat</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">1.9</td>
-</tr>
 <tr class="even">
-<td style="text-align: left;">Avocate</td>
-<td style="text-align: right;">14.7</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">7.7</td>
+<td style="text-align: left;">Avocat</td>
+<td style="text-align: right;">15.5</td>
+<td style="text-align: right;">3.8</td>
+<td style="text-align: right;">9.6</td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">Chef cuisinier</td>
-<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">7.8</td>
 <td style="text-align: right;">1.5</td>
-<td style="text-align: right;">1.2</td>
+<td style="text-align: right;">4.6</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Chef cuisinière</td>
-<td style="text-align: right;">7.0</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">3.5</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Chef pâtissière</td>
 <td style="text-align: right;">1.6</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">0.8</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Danseuse</td>
 <td style="text-align: right;">9.3</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">4.6</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Designer de mode</td>
 <td style="text-align: right;">1.6</td>
 <td style="text-align: right;">0.8</td>
 <td style="text-align: right;">1.2</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Designer graphique</td>
 <td style="text-align: right;">2.3</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">1.2</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Détective privé</td>
 <td style="text-align: right;">0.8</td>
 <td style="text-align: right;">2.3</td>
 <td style="text-align: right;">1.5</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Écrivain</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">9.2</td>
-<td style="text-align: right;">4.6</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Écrivaine</td>
+<td style="text-align: left;">Ecrivain</td>
 <td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">9.9</td>
+<td style="text-align: right;">5.4</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Éditrice</td>
+<td style="text-align: left;">Editrice</td>
 <td style="text-align: right;">5.4</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">2.7</td>
@@ -658,63 +646,51 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 </tr>
 <tr class="even">
 <td style="text-align: left;">Entrepreneur</td>
-<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">1.6</td>
 <td style="text-align: right;">13.0</td>
-<td style="text-align: right;">6.9</td>
+<td style="text-align: right;">7.3</td>
 </tr>
 <tr class="odd">
-<td style="text-align: left;">Entrepreneuse</td>
+<td style="text-align: left;">Etudiante</td>
 <td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: right;">0.8</td>
+<td style="text-align: right;">0.8</td>
 </tr>
 <tr class="even">
-<td style="text-align: left;">Étudiante</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.8</td>
-</tr>
-<tr class="odd">
 <td style="text-align: left;">Informaticien</td>
 <td style="text-align: right;">0.8</td>
 <td style="text-align: right;">9.2</td>
 <td style="text-align: right;">5.0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Ingénieur</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">6.9</td>
 <td style="text-align: right;">3.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Journaliste</td>
 <td style="text-align: right;">3.1</td>
 <td style="text-align: right;">6.9</td>
 <td style="text-align: right;">5.0</td>
 </tr>
-<tr class="even">
+<tr class="odd">
 <td style="text-align: left;">Mannequin</td>
 <td style="text-align: right;">7.0</td>
 <td style="text-align: right;">0.0</td>
 <td style="text-align: right;">3.5</td>
 </tr>
-<tr class="odd">
+<tr class="even">
 <td style="text-align: left;">Médecin</td>
 <td style="text-align: right;">4.7</td>
 <td style="text-align: right;">9.2</td>
 <td style="text-align: right;">6.9</td>
 </tr>
-<tr class="even">
-<td style="text-align: left;">Musicien</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">3.1</td>
-<td style="text-align: right;">1.9</td>
-</tr>
 <tr class="odd">
-<td style="text-align: left;">Musicienne</td>
-<td style="text-align: right;">0.8</td>
-<td style="text-align: right;">0.0</td>
-<td style="text-align: right;">0.4</td>
+<td style="text-align: left;">Musicien</td>
+<td style="text-align: right;">1.6</td>
+<td style="text-align: right;">3.1</td>
+<td style="text-align: right;">2.3</td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">Photographe</td>
@@ -756,7 +732,79 @@ Le rapport a été présenté lors de la réunion de dialogue sur la transformat
 </table>
 </div>
 </div>
-<p>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d’entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.</p>
+<p>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d’entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d’effectifs).</p>
+<p>Le V de Cramer est une mesure d’association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories. :::{.callout-tip} ## Formule du V de Cramer</p>
+<p>Le V de Cramer est calculé à partir de la statistique du <span class="math inline">\(\chi^2\)</span> (chi-carré) selon la formule suivante : V = </p>
+<p>où : * <span class="math inline">\(\chi^2\)</span> est la statistique du test chi-carré, * n est la taille de l’échantillon, * k est le nombre de colonnes (modalités de la première variable), * r est le nombre de lignes (modalités de la seconde variable), * <span class="math inline">\(min(k−1,r−1)\)</span> est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</p>
+<p>:::</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tbl_OccupSexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stderr">
+<pre><code>Warning in stats::chisq.test(tab, correct = FALSE): Chi-squared approximation
+may be incorrect</code></pre>
+</div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.7879426</code></pre>
+</div>
+</div>
+</section>
+<section id="interprétation-de-la-valeur-du-v-de-cramer" class="level3">
+<h3 class="anchored" data-anchor-id="interprétation-de-la-valeur-du-v-de-cramer">Interprétation de la Valeur du V de Cramer</h3>
+<p>La valeur du V de Cramer varie de 0 à 1 :</p>
+<ul>
+<li>0 indique une absence totale d’association entre les deux variables.</li>
+<li>1 indique une association parfaite entre les deux variables.</li>
+</ul>
+<p>En général, les seuils d’interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes : * V &lt; 0,2 : association faible, * 0,2 ≤ V &lt; 0,4 : association modérée, * 0,4 ≤ V &lt; 0,6 : association forte, * V ≥ 0,6 : association très forte.</p>
+<p>Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d’une population indique une association très forte entre ces deux variables. Cela signifie qu’il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l’autre. Cependant, cette mesure ne donne pas d’indication sur le sens de la relation, elle indique seulement qu’une relation existe avec une intensité élevée.</p>
+</section>
+<section id="des-personnages-féminins-plutôt-jeunes" class="level3">
+<h3 class="anchored" data-anchor-id="des-personnages-féminins-plutôt-jeunes">Des personnages féminins plutôt jeunes</h3>
+<p>Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>) )</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<table class="caption-top table table-sm table-striped small">
+<thead>
+<tr class="header">
+<th style="text-align: left;">Âge</th>
+<th style="text-align: right;">%</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">1. Moins de 30 ans</td>
+<td style="text-align: right;">35.8</td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">2. Entre 30 et 40 ans</td>
+<td style="text-align: right;">45.0</td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">3. Entre 40 et 50 ans</td>
+<td style="text-align: right;">19.2</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>       
+        1. Moins de 30 ans 2. Entre 30 et 40 ans 3. Entre 40 et 50 ans All  
+  F      62.4               55.6                  12.0                  49.6
+  H      37.6               44.4                  88.0                  50.4
+  Total 100.0              100.0                 100.0                 100.0</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 0.3721009</code></pre>
+</div>
+</div>
+<p>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes. En effet, bienque la population des personnages compte autant d’hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans. C’est encore plus marqué dans la tranche d’âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d’âge.</p>
 </section>
 </section>
 <section id="liens" class="level2">
@@ -1398,110 +1446,165 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Code source</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb3" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Les biais de genres systémiques dans les IA génératives."</span></span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Une récente étude de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités."</span></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21-04-2024</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA generatives</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - sociologie</span></span>
-<span id="cb3-10"><a href="#cb3-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - genre</span></span>
-<span id="cb3-11"><a href="#cb3-11" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
-<span id="cb3-12"><a href="#cb3-12" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb3-13"><a href="#cb3-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> emnist-manual-loading-thumbnail.png</span></span>
-<span id="cb3-14"><a href="#cb3-14" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
-<span id="cb3-15"><a href="#cb3-15" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb3-16"><a href="#cb3-16" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb3-17"><a href="#cb3-17" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
-<span id="cb3-18"><a href="#cb3-18" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
-<span id="cb3-19"><a href="#cb3-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
-<span id="cb3-20"><a href="#cb3-20" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
-<span id="cb3-21"><a href="#cb3-21" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
-<span id="cb3-22"><a href="#cb3-22" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
-<span id="cb3-23"><a href="#cb3-23" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
-<span id="cb3-24"><a href="#cb3-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb3-25"><a href="#cb3-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-28"><a href="#cb3-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-29"><a href="#cb3-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb3-30"><a href="#cb3-30" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
-<span id="cb3-31"><a href="#cb3-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-32"><a href="#cb3-32" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-33"><a href="#cb3-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un biais systémique relevé par une étude.</span></span>
-<span id="cb3-34"><a href="#cb3-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-35"><a href="#cb3-35" aria-hidden="true" tabindex="-1"></a>Une récente étude <span class="co">[</span><span class="ot">voir @etudeUCL</span><span class="co">]</span> menée par des chercheurs de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités.\</span>
-<span id="cb3-36"><a href="#cb3-36" aria-hidden="true" tabindex="-1"></a>L'étude, commandée et publiée par l'UNESCO, a examiné les stéréotypes présents dans les LLM (Large Language Models), outils de traitement du langage naturel sur lesquels se basent les plateformes génératives d'IA les plus populaires, notamment Open AI's GPT-3.5 et GPT-2 et META's Llama 2.\</span>
-<span id="cb3-37"><a href="#cb3-37" aria-hidden="true" tabindex="-1"></a>Les résultats dévoilent que les noms féminins sont associés à des rôles de genre traditionnels, tels que "famille", "enfants" et "mari", tandis que les noms masculins sont associés à des mots tels que "carrière", "dirigeants", "gestion" et "entreprise".</span>
-<span id="cb3-38"><a href="#cb3-38" aria-hidden="true" tabindex="-1"></a>Les textes générés par l'IA ont également montré des stéréotypes négatifs basés sur la culture ou la sexualité.\</span>
-<span id="cb3-39"><a href="#cb3-39" aria-hidden="true" tabindex="-1"></a>Par exemple, les histoires générées par Llama 2 placent les femmes dans des rôles domestiques quatre fois plus souvent que les hommes.</span>
-<span id="cb3-40"><a href="#cb3-40" aria-hidden="true" tabindex="-1"></a>Ces derniers se voient attribués des emplois plus divers et de haut statut.\</span>
-<span id="cb3-41"><a href="#cb3-41" aria-hidden="true" tabindex="-1"></a>Une des raisons avancée tient à la prédominance de ces biais dans les ressources utilisées pour construire ces modèles.</span>
-<span id="cb3-42"><a href="#cb3-42" aria-hidden="true" tabindex="-1"></a>La professeure Ivana Drobnjak, auteure du rapport de l'UCL Computer Science et membre de l'équipe de la Chaire UNESCO en IA à l'UCL, avance cette explication: "L'IA apprend d'Internet et des données historiques et prend des décisions en fonction de ces connaissances, qui sont souvent biaisées. Le fait que les femmes n'aient pas été aussi présentes que les hommes dans les sciences et l'ingénierie dans le passé, par exemple, ne signifie pas qu'elles sont de moins bonnes scientifiques et ingénieures. Nous devons guider ces algorithmes pour qu'ils apprennent l'égalité, l'équité et les droits de l'homme, afin qu'ils prennent de meilleures décisions."\</span>
-<span id="cb3-43"><a href="#cb3-43" aria-hidden="true" tabindex="-1"></a>Les biais de genre sont si profondément ancrés dans les LLM qu'une refonte éthique dans le développement de l'IA est absolument nécessaire.</span>
-<span id="cb3-44"><a href="#cb3-44" aria-hidden="true" tabindex="-1"></a>L'équipe de la Chaire UNESCO en IA à l'UCL travaillera avec l'UNESCO pour sensibiliser à ce problème et contribuer au développement de solutions en organisant des ateliers et des évènements conjoints impliquant des parties prenantes pertinentes.\</span>
-<span id="cb3-45"><a href="#cb3-45" aria-hidden="true" tabindex="-1"></a>Le rapport a été présenté lors de la réunion de dialogue sur la transformation numérique de l'UNESCO le 6 mars 2024 et lors de la 68e session de la Commission de la condition de la femme des Nations Unies.</span>
-<span id="cb3-46"><a href="#cb3-46" aria-hidden="true" tabindex="-1"></a>En conclusion, les chercheurs recommandent que l'IA doit être guidée pour apprendre l'égalité, l'équité et les droits de l'homme afin de prendre de meilleures décisions.</span>
-<span id="cb3-47"><a href="#cb3-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-48"><a href="#cb3-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Génération de textes</span></span>
-<span id="cb3-49"><a href="#cb3-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-50"><a href="#cb3-50" aria-hidden="true" tabindex="-1"></a>J'ai voulu effectuer une rapide vérification en utilisant l'IA générative française Mistral (<span class="ot">&lt;https://chat.mistral.ai/&gt;</span>).</span>
-<span id="cb3-51"><a href="#cb3-51" aria-hidden="true" tabindex="-1"></a>Je lui ai demandé de générer une liste de personnages fictifs en établissant leur biographie.</span>
-<span id="cb3-52"><a href="#cb3-52" aria-hidden="true" tabindex="-1"></a>Les informations recueillies sont dans le fichier <span class="in">`personnages.csv`</span>, obtenu après retraitement.</span>
-<span id="cb3-53"><a href="#cb3-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-54"><a href="#cb3-54" aria-hidden="true" tabindex="-1"></a>Par exemple:</span>
-<span id="cb3-57"><a href="#cb3-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-58"><a href="#cb3-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb3-59"><a href="#cb3-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-60"><a href="#cb3-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-61"><a href="#cb3-61" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
-<span id="cb3-62"><a href="#cb3-62" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
-<span id="cb3-63"><a href="#cb3-63" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
-<span id="cb3-64"><a href="#cb3-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb3-65"><a href="#cb3-65" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb3-66"><a href="#cb3-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-67"><a href="#cb3-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-68"><a href="#cb3-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
-<span id="cb3-69"><a href="#cb3-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
-<span id="cb3-70"><a href="#cb3-70" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes). On obtient le tableau @tbl-OccupSexe</span>
-<span id="cb3-71"><a href="#cb3-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-74"><a href="#cb3-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-75"><a href="#cb3-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe</span></span>
-<span id="cb3-76"><a href="#cb3-76" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe"</span></span>
-<span id="cb3-77"><a href="#cb3-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
-<span id="cb3-78"><a href="#cb3-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-79"><a href="#cb3-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-80"><a href="#cb3-80" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
-<span id="cb3-81"><a href="#cb3-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-82"><a href="#cb3-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
-<span id="cb3-83"><a href="#cb3-83" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tbl_OccupSexe)</span>
-<span id="cb3-84"><a href="#cb3-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-85"><a href="#cb3-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-86"><a href="#cb3-86" aria-hidden="true" tabindex="-1"></a>On va utiliser le package questionr (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
-<span id="cb3-87"><a href="#cb3-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-90"><a href="#cb3-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb3-91"><a href="#cb3-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
-<span id="cb3-92"><a href="#cb3-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe2"</span></span>
-<span id="cb3-93"><a href="#cb3-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
-<span id="cb3-94"><a href="#cb3-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb3-95"><a href="#cb3-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-96"><a href="#cb3-96" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("questionr")</span></span>
-<span id="cb3-97"><a href="#cb3-97" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
-<span id="cb3-98"><a href="#cb3-98" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tbl_OccupSexe), <span class="dv">1</span>))</span>
-<span id="cb3-99"><a href="#cb3-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb3-100"><a href="#cb3-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-101"><a href="#cb3-101" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.</span>
-<span id="cb3-102"><a href="#cb3-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-103"><a href="#cb3-103" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
-<span id="cb3-104"><a href="#cb3-104" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
-<span id="cb3-105"><a href="#cb3-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-106"><a href="#cb3-106" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
-<span id="cb3-107"><a href="#cb3-107" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-108"><a href="#cb3-108" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb3-109"><a href="#cb3-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-110"><a href="#cb3-110" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb3-111"><a href="#cb3-111" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-112"><a href="#cb3-112" aria-hidden="true" tabindex="-1"></a>:::</span>
+<div class="sourceCode" id="cb11" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Les biais de genres systémiques dans les IA génératives."</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Une récente étude de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités."</span></span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21-04-2024</span></span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats</span></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA generatives</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - sociologie</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - genre</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb11-12"><a href="#cb11-12" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb11-13"><a href="#cb11-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> emnist-manual-loading-thumbnail.png</span></span>
+<span id="cb11-14"><a href="#cb11-14" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb11-15"><a href="#cb11-15" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb11-16"><a href="#cb11-16" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb11-17"><a href="#cb11-17" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
+<span id="cb11-18"><a href="#cb11-18" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
+<span id="cb11-19"><a href="#cb11-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
+<span id="cb11-20"><a href="#cb11-20" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
+<span id="cb11-21"><a href="#cb11-21" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb11-22"><a href="#cb11-22" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
+<span id="cb11-23"><a href="#cb11-23" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
+<span id="cb11-24"><a href="#cb11-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb11-25"><a href="#cb11-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-28"><a href="#cb11-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-29"><a href="#cb11-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb11-30"><a href="#cb11-30" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
+<span id="cb11-31"><a href="#cb11-31" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-32"><a href="#cb11-32" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-33"><a href="#cb11-33" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un biais systémique relevé par une étude.</span></span>
+<span id="cb11-34"><a href="#cb11-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-35"><a href="#cb11-35" aria-hidden="true" tabindex="-1"></a>Une récente étude <span class="co">[</span><span class="ot">voir @etudeUCL</span><span class="co">]</span> menée par des chercheurs de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités.\</span>
+<span id="cb11-36"><a href="#cb11-36" aria-hidden="true" tabindex="-1"></a>L'étude, commandée et publiée par l'UNESCO, a examiné les stéréotypes présents dans les LLM (Large Language Models), outils de traitement du langage naturel sur lesquels se basent les plateformes génératives d'IA les plus populaires, notamment Open AI's GPT-3.5 et GPT-2 et META's Llama 2.\</span>
+<span id="cb11-37"><a href="#cb11-37" aria-hidden="true" tabindex="-1"></a>Les résultats dévoilent que les noms féminins sont associés à des rôles de genre traditionnels, tels que "famille", "enfants" et "mari", tandis que les noms masculins sont associés à des mots tels que "carrière", "dirigeants", "gestion" et "entreprise".</span>
+<span id="cb11-38"><a href="#cb11-38" aria-hidden="true" tabindex="-1"></a>Les textes générés par l'IA ont également montré des stéréotypes négatifs basés sur la culture ou la sexualité.\</span>
+<span id="cb11-39"><a href="#cb11-39" aria-hidden="true" tabindex="-1"></a>Par exemple, les histoires générées par Llama 2 placent les femmes dans des rôles domestiques quatre fois plus souvent que les hommes.</span>
+<span id="cb11-40"><a href="#cb11-40" aria-hidden="true" tabindex="-1"></a>Ces derniers se voient attribués des emplois plus divers et de haut statut.\</span>
+<span id="cb11-41"><a href="#cb11-41" aria-hidden="true" tabindex="-1"></a>Une des raisons avancée tient à la prédominance de ces biais dans les ressources utilisées pour construire ces modèles.</span>
+<span id="cb11-42"><a href="#cb11-42" aria-hidden="true" tabindex="-1"></a>La professeure Ivana Drobnjak, auteure du rapport de l'UCL Computer Science et membre de l'équipe de la Chaire UNESCO en IA à l'UCL, avance cette explication: "L'IA apprend d'Internet et des données historiques et prend des décisions en fonction de ces connaissances, qui sont souvent biaisées. Le fait que les femmes n'aient pas été aussi présentes que les hommes dans les sciences et l'ingénierie dans le passé, par exemple, ne signifie pas qu'elles sont de moins bonnes scientifiques et ingénieures. Nous devons guider ces algorithmes pour qu'ils apprennent l'égalité, l'équité et les droits de l'homme, afin qu'ils prennent de meilleures décisions."\</span>
+<span id="cb11-43"><a href="#cb11-43" aria-hidden="true" tabindex="-1"></a>Les biais de genre sont si profondément ancrés dans les LLM qu'une refonte éthique dans le développement de l'IA est absolument nécessaire.</span>
+<span id="cb11-44"><a href="#cb11-44" aria-hidden="true" tabindex="-1"></a>L'équipe de la Chaire UNESCO en IA à l'UCL travaillera avec l'UNESCO pour sensibiliser à ce problème et contribuer au développement de solutions en organisant des ateliers et des évènements conjoints impliquant des parties prenantes pertinentes.\</span>
+<span id="cb11-45"><a href="#cb11-45" aria-hidden="true" tabindex="-1"></a>Le rapport a été présenté lors de la réunion de dialogue sur la transformation numérique de l'UNESCO le 6 mars 2024 et lors de la 68e session de la Commission de la condition de la femme des Nations Unies.</span>
+<span id="cb11-46"><a href="#cb11-46" aria-hidden="true" tabindex="-1"></a>En conclusion, les chercheurs recommandent que l'IA doit être guidée pour apprendre l'égalité, l'équité et les droits de l'homme afin de prendre de meilleures décisions.</span>
+<span id="cb11-47"><a href="#cb11-47" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-48"><a href="#cb11-48" aria-hidden="true" tabindex="-1"></a><span class="fu">## Génération de textes</span></span>
+<span id="cb11-49"><a href="#cb11-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-50"><a href="#cb11-50" aria-hidden="true" tabindex="-1"></a>J'ai voulu effectuer une rapide vérification en utilisant l'IA générative française Mistral (<span class="ot">&lt;https://chat.mistral.ai/&gt;</span>).</span>
+<span id="cb11-51"><a href="#cb11-51" aria-hidden="true" tabindex="-1"></a>Je lui ai demandé de générer une liste de personnages fictifs en établissant leur biographie.</span>
+<span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>Les informations recueillies sont dans le fichier <span class="in">`personnages.csv`</span>, obtenu après retraitement.</span>
+<span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>Par exemple:</span>
+<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes). On obtient le tableau @tbl-OccupSexe</span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-OccupSexe</span></span>
+<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe"</span></span>
+<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tbl_OccupSexe)</span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
+<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe2"</span></span>
+<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("questionr")</span></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tbl_OccupSexe), <span class="dv">1</span>))</span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).</span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formule du V de Cramer</span></span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :</span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}</span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>où :</span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$\chi^2$ est la statistique du test chi-carré,</span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>n est la taille de l'échantillon,</span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>k est le nombre de colonnes (modalités de la première variable),</span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>r est le nombre de lignes (modalités de la seconde variable),</span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: vcramer</span></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tbl_OccupSexe)</span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interprétation de la Valeur du V de Cramer</span></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a>La valeur du V de Cramer varie de 0 à 1 :</span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0 indique une absence totale d'association entre les deux variables.</span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>1 indique une association parfaite entre les deux variables.</span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a>En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :</span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>V &lt; 0,2 : association faible,</span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0,2 ≤ V &lt; 0,4 : association modérée,</span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0,4 ≤ V &lt; 0,6 : association forte,</span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>V ≥ 0,6 : association très forte.</span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a>Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables. Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre. Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.</span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des personnages féminins plutôt jeunes</span></span>
+<span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a>Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:</span>
+<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-trAge</span></span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>) )</span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab_trAge_Sexe</span></span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
+<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span>
+<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span>
+<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes. En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans. C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.</span>
+<span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
+<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
+<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
+<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
