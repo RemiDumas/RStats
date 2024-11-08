@@ -302,6 +302,7 @@ window.Quarto = {
   </ul></li>
   <li><a href="#liens" id="toc-liens" class="nav-link" data-scroll-target="#liens">Liens</a>
   <ul class="collapse">
+  <li><a href="#données" id="toc-données" class="nav-link" data-scroll-target="#données">Données</a></li>
   <li><a href="#source" id="toc-source" class="nav-link" data-scroll-target="#source">Source</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul></li>
@@ -733,10 +734,22 @@ Table&nbsp;1: OccupSexe
 </div>
 </div>
 <p>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d’entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d’effectifs).</p>
-<p>Le V de Cramer est une mesure d’association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories. :::{.callout-tip} ## Formule du V de Cramer</p>
-<p>Le V de Cramer est calculé à partir de la statistique du <span class="math inline">\(\chi^2\)</span> (chi-carré) selon la formule suivante : V = </p>
-<p>où : * <span class="math inline">\(\chi^2\)</span> est la statistique du test chi-carré, * n est la taille de l’échantillon, * k est le nombre de colonnes (modalités de la première variable), * r est le nombre de lignes (modalités de la seconde variable), * <span class="math inline">\(min(k−1,r−1)\)</span> est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</p>
-<p>:::</p>
+<p>Le V de Cramer est une mesure d’association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</p>
+<div class="callout callout-style-default callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formule du V de Cramer
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Le V de Cramer est calculé à partir de la statistique du <span class="math inline">\(\chi^2\)</span> (chi-carré) selon la formule suivante :<br>
+V = <br>
+où : * <span class="math inline">\(\chi^2\)</span> est la statistique du test chi-carré, * n est la taille de l’échantillon, * k est le nombre de colonnes (modalités de la première variable), * r est le nombre de lignes (modalités de la seconde variable), * <span class="math inline">\(min(k−1,r−1)\)</span> est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</p>
+</div>
+</div>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tbl_OccupSexe)</span></code><button title="Copier vers le presse-papier" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stderr">
@@ -809,6 +822,10 @@ may be incorrect</code></pre>
 </section>
 <section id="liens" class="level2">
 <h2 class="anchored" data-anchor-id="liens">Liens</h2>
+<section id="données" class="level3">
+<h3 class="anchored" data-anchor-id="données">Données</h3>
+<p>Réalisées par <a href="https://chat.mistral.ai/chat"><img src="https://chat.mistral.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fle-chat-logo-large-light.b98da676.png&amp;w=384&amp;q=75" class="img-fluid" width="170"></a> <a href="https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv" class="uri">https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv</a></p>
+</section>
 <section id="source" class="level3">
 <h3 class="anchored" data-anchor-id="source">Source</h3>
 <p><a href="https://techxplore.com/news/2024-04-large-language-generate-biased-content.html" class="uri">https://techxplore.com/news/2024-04-large-language-generate-biased-content.html</a></p>
@@ -1498,113 +1515,121 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb11-52"><a href="#cb11-52" aria-hidden="true" tabindex="-1"></a>Les informations recueillies sont dans le fichier <span class="in">`personnages.csv`</span>, obtenu après retraitement.</span>
 <span id="cb11-53"><a href="#cb11-53" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-54"><a href="#cb11-54" aria-hidden="true" tabindex="-1"></a>Par exemple:</span>
-<span id="cb11-57"><a href="#cb11-57" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
-<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
-<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
-<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
-<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
-<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes). On obtient le tableau @tbl-OccupSexe</span>
-<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-OccupSexe</span></span>
-<span id="cb11-76"><a href="#cb11-76" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe"</span></span>
-<span id="cb11-77"><a href="#cb11-77" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
-<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
-<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
-<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tbl_OccupSexe)</span>
-<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-55"><a href="#cb11-55" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-58"><a href="#cb11-58" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-59"><a href="#cb11-59" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb11-60"><a href="#cb11-60" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-61"><a href="#cb11-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-62"><a href="#cb11-62" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
+<span id="cb11-63"><a href="#cb11-63" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
+<span id="cb11-64"><a href="#cb11-64" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
+<span id="cb11-65"><a href="#cb11-65" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb11-66"><a href="#cb11-66" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb11-67"><a href="#cb11-67" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-68"><a href="#cb11-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-69"><a href="#cb11-69" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
+<span id="cb11-70"><a href="#cb11-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-71"><a href="#cb11-71" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
+<span id="cb11-72"><a href="#cb11-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-73"><a href="#cb11-73" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes).</span>
+<span id="cb11-74"><a href="#cb11-74" aria-hidden="true" tabindex="-1"></a>On obtient le tableau @tbl-OccupSexe</span>
+<span id="cb11-75"><a href="#cb11-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-78"><a href="#cb11-78" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-79"><a href="#cb11-79" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-OccupSexe</span></span>
+<span id="cb11-80"><a href="#cb11-80" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe"</span></span>
+<span id="cb11-81"><a href="#cb11-81" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
+<span id="cb11-82"><a href="#cb11-82" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-83"><a href="#cb11-83" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-84"><a href="#cb11-84" aria-hidden="true" tabindex="-1"></a>tbl_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
 <span id="cb11-85"><a href="#cb11-85" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a>On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
-<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
-<span id="cb11-92"><a href="#cb11-92" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe2"</span></span>
-<span id="cb11-93"><a href="#cb11-93" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
-<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("questionr")</span></span>
-<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
-<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tbl_OccupSexe), <span class="dv">1</span>))</span>
-<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).</span>
-<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</span>
-<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a>:::{.callout-tip}</span>
-<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formule du V de Cramer</span></span>
-<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :</span>
-<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a>V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}</span>
-<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>où :</span>
-<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$\chi^2$ est la statistique du test chi-carré,</span>
-<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>n est la taille de l'échantillon,</span>
-<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>k est le nombre de colonnes (modalités de la première variable),</span>
-<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>r est le nombre de lignes (modalités de la seconde variable),</span>
-<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>$min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</span>
-<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-121"><a href="#cb11-121" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: vcramer</span></span>
-<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tbl_OccupSexe)</span>
-<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interprétation de la Valeur du V de Cramer</span></span>
-<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a>La valeur du V de Cramer varie de 0 à 1 :</span>
-<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0 indique une absence totale d'association entre les deux variables.</span>
-<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>1 indique une association parfaite entre les deux variables.</span>
-<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a>En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :</span>
-<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>V &lt; 0,2 : association faible,</span>
-<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0,2 ≤ V &lt; 0,4 : association modérée,</span>
-<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>0,4 ≤ V &lt; 0,6 : association forte,</span>
-<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a><span class="ss">* </span>V ≥ 0,6 : association très forte.</span>
-<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a>Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables. Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre. Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.</span>
-<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des personnages féminins plutôt jeunes</span></span>
+<span id="cb11-86"><a href="#cb11-86" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
+<span id="cb11-87"><a href="#cb11-87" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tbl_OccupSexe)</span>
+<span id="cb11-88"><a href="#cb11-88" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-89"><a href="#cb11-89" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-90"><a href="#cb11-90" aria-hidden="true" tabindex="-1"></a>On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
+<span id="cb11-91"><a href="#cb11-91" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-94"><a href="#cb11-94" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-95"><a href="#cb11-95" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
+<span id="cb11-96"><a href="#cb11-96" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "OccupSexe2"</span></span>
+<span id="cb11-97"><a href="#cb11-97" aria-hidden="true" tabindex="-1"></a><span class="co">#| cap-location: top</span></span>
+<span id="cb11-98"><a href="#cb11-98" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb11-99"><a href="#cb11-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-100"><a href="#cb11-100" aria-hidden="true" tabindex="-1"></a><span class="co">#install.packages("questionr")</span></span>
+<span id="cb11-101"><a href="#cb11-101" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
+<span id="cb11-102"><a href="#cb11-102" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tbl_OccupSexe), <span class="dv">1</span>))</span>
+<span id="cb11-103"><a href="#cb11-103" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-104"><a href="#cb11-104" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-105"><a href="#cb11-105" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité.</span>
+<span id="cb11-106"><a href="#cb11-106" aria-hidden="true" tabindex="-1"></a>Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.</span>
+<span id="cb11-107"><a href="#cb11-107" aria-hidden="true" tabindex="-1"></a>Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).</span>
+<span id="cb11-108"><a href="#cb11-108" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-109"><a href="#cb11-109" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence.</span>
+<span id="cb11-110"><a href="#cb11-110" aria-hidden="true" tabindex="-1"></a>Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</span>
+<span id="cb11-111"><a href="#cb11-111" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-112"><a href="#cb11-112" aria-hidden="true" tabindex="-1"></a>::: callout-tip</span>
+<span id="cb11-113"><a href="#cb11-113" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formule du V de Cramer</span></span>
+<span id="cb11-114"><a href="#cb11-114" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-115"><a href="#cb11-115" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :\</span>
+<span id="cb11-116"><a href="#cb11-116" aria-hidden="true" tabindex="-1"></a>V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}\</span>
+<span id="cb11-117"><a href="#cb11-117" aria-hidden="true" tabindex="-1"></a>où : <span class="sc">\*</span> $\chi^2$ est la statistique du test chi-carré, <span class="sc">\*</span> n est la taille de l'échantillon, <span class="sc">\*</span> k est le nombre de colonnes (modalités de la première variable), <span class="sc">\*</span> r est le nombre de lignes (modalités de la seconde variable), <span class="sc">\*</span> $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</span>
+<span id="cb11-118"><a href="#cb11-118" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-119"><a href="#cb11-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-122"><a href="#cb11-122" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-123"><a href="#cb11-123" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: vcramer</span></span>
+<span id="cb11-124"><a href="#cb11-124" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-125"><a href="#cb11-125" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tbl_OccupSexe)</span>
+<span id="cb11-126"><a href="#cb11-126" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-127"><a href="#cb11-127" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-128"><a href="#cb11-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interprétation de la Valeur du V de Cramer</span></span>
+<span id="cb11-129"><a href="#cb11-129" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-130"><a href="#cb11-130" aria-hidden="true" tabindex="-1"></a>La valeur du V de Cramer varie de 0 à 1 :</span>
+<span id="cb11-131"><a href="#cb11-131" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-132"><a href="#cb11-132" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0 indique une absence totale d'association entre les deux variables.</span>
+<span id="cb11-133"><a href="#cb11-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1 indique une association parfaite entre les deux variables.</span>
+<span id="cb11-134"><a href="#cb11-134" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-135"><a href="#cb11-135" aria-hidden="true" tabindex="-1"></a>En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes : <span class="sc">\*</span> V <span class="sc">\&lt;</span> 0,2 : association faible, <span class="sc">\*</span> 0,2 ≤ V <span class="sc">\&lt;</span> 0,4 : association modérée, <span class="sc">\*</span> 0,4 ≤ V <span class="sc">\&lt;</span> 0,6 : association forte, <span class="sc">\*</span> V ≥ 0,6 : association très forte.</span>
+<span id="cb11-136"><a href="#cb11-136" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-137"><a href="#cb11-137" aria-hidden="true" tabindex="-1"></a>Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.</span>
+<span id="cb11-138"><a href="#cb11-138" aria-hidden="true" tabindex="-1"></a>Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre.</span>
+<span id="cb11-139"><a href="#cb11-139" aria-hidden="true" tabindex="-1"></a>Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.</span>
+<span id="cb11-140"><a href="#cb11-140" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-141"><a href="#cb11-141" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des personnages féminins plutôt jeunes</span></span>
+<span id="cb11-142"><a href="#cb11-142" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb11-143"><a href="#cb11-143" aria-hidden="true" tabindex="-1"></a>Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:</span>
-<span id="cb11-146"><a href="#cb11-146" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-trAge</span></span>
-<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
-<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>) )</span>
-<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-155"><a href="#cb11-155" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab_trAge_Sexe</span></span>
-<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
-<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span>
-<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span>
-<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes. En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans. C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.</span>
+<span id="cb11-144"><a href="#cb11-144" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-147"><a href="#cb11-147" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-148"><a href="#cb11-148" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-trAge</span></span>
+<span id="cb11-149"><a href="#cb11-149" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
+<span id="cb11-150"><a href="#cb11-150" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>) )</span>
+<span id="cb11-151"><a href="#cb11-151" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-152"><a href="#cb11-152" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb11-153"><a href="#cb11-153" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-156"><a href="#cb11-156" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb11-157"><a href="#cb11-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab_trAge_Sexe</span></span>
+<span id="cb11-158"><a href="#cb11-158" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-159"><a href="#cb11-159" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
+<span id="cb11-160"><a href="#cb11-160" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span>
+<span id="cb11-161"><a href="#cb11-161" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span>
+<span id="cb11-162"><a href="#cb11-162" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
 <span id="cb11-163"><a href="#cb11-163" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
-<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
-<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
-<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb11-164"><a href="#cb11-164" aria-hidden="true" tabindex="-1"></a>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes.</span>
+<span id="cb11-165"><a href="#cb11-165" aria-hidden="true" tabindex="-1"></a>En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans.</span>
+<span id="cb11-166"><a href="#cb11-166" aria-hidden="true" tabindex="-1"></a>C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.</span>
+<span id="cb11-167"><a href="#cb11-167" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-168"><a href="#cb11-168" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
+<span id="cb11-169"><a href="#cb11-169" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-170"><a href="#cb11-170" aria-hidden="true" tabindex="-1"></a><span class="fu">### Données</span></span>
+<span id="cb11-171"><a href="#cb11-171" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-172"><a href="#cb11-172" aria-hidden="true" tabindex="-1"></a>Réalisées par <span class="co">[</span><span class="al">![](https://chat.mistral.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fle-chat-logo-large-light.b98da676.png&amp;w=384&amp;q=75)</span><span class="ot">{width="170"}</span><span class="co">](https://chat.mistral.ai/chat)</span> <span class="ot">&lt;https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv&gt;</span></span>
+<span id="cb11-173"><a href="#cb11-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-174"><a href="#cb11-174" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
+<span id="cb11-175"><a href="#cb11-175" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-176"><a href="#cb11-176" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
+<span id="cb11-177"><a href="#cb11-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-178"><a href="#cb11-178" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb11-179"><a href="#cb11-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-180"><a href="#cb11-180" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb11-181"><a href="#cb11-181" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
