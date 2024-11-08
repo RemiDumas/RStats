@@ -121,7 +121,7 @@ $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
 ```{r}
 #| label: vcramer
 
-cramer.v(tbl_OccupSexe)
+cramer.v(tab_OccupSexe)
 ```
 
 ### Interprétation de la Valeur du V de Cramer
