@@ -85,7 +85,7 @@ On va utiliser le package *questionr* (voir @questionR) pour calculer les struct
 
 ```{r}
 #| label: tbl_OccupSexe2
-#| tbl-cap: "OccupSexe2"
+#| tbl-cap: "Lien entre le sexe et l'occupuation du personnage principal"
 #| cap-location: top
 #| warning: false
 
@@ -141,7 +141,7 @@ En général, les seuils d'interprétation ne sont pas stricts, mais on utilise 
 
 -   V ≥ 0,6 : association très forte.
 
-Une valeur de 0,79 dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.
+Une valeur de `r cramer.v(tab_OccupSexe)` dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.
 Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre.
 Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.
 
@@ -167,6 +167,69 @@ cramer.v(tab_trAge_Sexe)
 Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes.
 En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans.
 C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.
+
+### Des thèmes très genrés
+Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente. Le tableau @tbl-Theme le démontre:
+```{r}
+#| label: tbl-Theme
+#| fig-cap: "Réprésentations de genre dans les thèmes abordés"
+
+tab_GenreRoman <- table(personnages$Sexe,personnages$GenreRoman)
+knitr::kable(round(lprop(tab_GenreRoman),1))
+```
+
+Le V de Cramer vaut `r questionr::cramer.v(tab_GenreRoman)` ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l’œuvre.
+
+### Les traits de personnalité selon le sexe du personnage
+
+On représente les termes employés pour décrire la personnalité de personnage par des nuages de mots.
+
+```{r}
+#| eval: false
+
+library('tm') 
+library('wordcloud')
+set.seed(123456) 
+
+texteH <- personnages %>% 
+  filter(Sexe == "H") %>% 
+  pull(Personnalites)
+text_corpusH <- VCorpus(VectorSource(texteH))
+text_corpusH <- tm_map(text_corpusH, content_transformer(tolower))
+text_corpusH <- tm_map(text_corpusH, removePunctuation)
+text_corpusH <- tm_map(text_corpusH, function(x)removeWords(x,stopwords(kind = "fr")))
+
+
+
+texteF <- personnages %>% 
+  filter(Sexe == "F") %>% 
+  pull(Personnalites)
+text_corpusF <- VCorpus(VectorSource(texteF))
+text_corpusF <- tm_map(text_corpusF, content_transformer(tolower))
+text_corpusF <- tm_map(text_corpusF, removePunctuation)
+text_corpusF <- tm_map(text_corpusF, function(x)removeWords(x,stopwords(kind = "fr")))
+
+list_words <- c("mal", "intelligent", "intelligente", "autres")
+text_corpusH <- tm_map(text_corpusH, function(x) removeWords(x, list_words))
+wordcloud(text_corpusH, max.words = 50,min.freq = 5 , scale = c(5, 0.2), colors = brewer.pal(8, "Paired"),  rot.per=0.2)
+
+text_corpusF <- tm_map(text_corpusF, function(x) removeWords(x, list_words))
+wordcloud(text_corpusF, max.words = 50, colors = brewer.pal(8, "Set1"),  rot.per=0.2)
+
+
+library('ggplot2')
+library('ggwordcloud')
+
+data.frame(sexe = rep("Homme", length(unlist(texteH))), texte = unlist(texteH)) %>% 
+  bind_rows(data.frame(sexe = rep("Femme", length(unlist(texteF))), texte = unlist(texteF))) %>% 
+  mutate(across(texte, tolower)) %>% 
+  ggplot(aes(label = texte)) +
+  geom_text_wordcloud() +
+  theme_minimal()
+```
+
+
+## Conclusion
 
 ## Liens
 
