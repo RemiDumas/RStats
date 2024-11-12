@@ -101,28 +101,19 @@ Calculons le V de Cramer (un avertissement indique que de nombreuses cases prés
 Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence.
 Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.
 
-::: callout-tip
+::: {callout-tip}
 ## Formule du V de Cramer
 
-Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :\
+Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :
 $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
 
--    $\chi^2$ est la statistique du test chi-carré,
+- $\chi^2$ est la statistique du test chi-carré,
+- n est la taille de l'échantillon,
+- k est le nombre de colonnes (modalités de la première variable),
+- r est le nombre de lignes (modalités de la seconde variable),
+- $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
 
--   n est la taille de l'échantillon,
-
--   k est le nombre de colonnes (modalités de la première variable),
-
--   r est le nombre de lignes (modalités de la seconde variable),
-
--    $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
 :::
-
-```{r}
-#| label: vcramer
-
-cramer.v(tab_OccupSexe)
-```
 
 ### Interprétation de la Valeur du V de Cramer
 
@@ -133,12 +124,9 @@ La valeur du V de Cramer varie de 0 à 1 :
 
 En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :
 
--   V \< 0,2 : association faible,
-
--   0,2 ≤ V \< 0,4 : association modérée,
-
--   0,4 ≤ V \< 0,6 : association forte,
-
+-   V < 0,2 : association faible,
+-   0,2 ≤ V < 0,4 : association modérée,
+-   0,4 ≤ V < 0,6 : association forte,
 -   V ≥ 0,6 : association très forte.
 
 Une valeur de `r cramer.v(tab_OccupSexe)` dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.
@@ -151,6 +139,7 @@ Les personnages de cette population sont majoritairement âgés entre 30 et 40 a
 
 ```{r}
 #| label: tab-trAge
+#| echo: false
 tab_trAge <- table(personnages$trAge)
 round(tab_trAge/nrow(personnages)*100, 1) %>% knitr::kable(col.names = c("Âge", "%") )
 
@@ -169,63 +158,76 @@ En effet, bienque la population des personnages compte autant d'hommes que de fe
 C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.
 
 ### Des thèmes très genrés
-Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente. Le tableau @tbl-Theme le démontre:
+
 ```{r}
-#| label: tbl-Theme
+#| label: tbl-theme
 #| fig-cap: "Réprésentations de genre dans les thèmes abordés"
 
 tab_GenreRoman <- table(personnages$Sexe,personnages$GenreRoman)
 knitr::kable(round(lprop(tab_GenreRoman),1))
 ```
 
-Le V de Cramer vaut `r questionr::cramer.v(tab_GenreRoman)` ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l’œuvre.
+Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente. Le tableau @tbl-theme le démontre. Le V de Cramer vaut `r questionr::cramer.v(tab_GenreRoman)` ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l’œuvre.
 
 ### Les traits de personnalité selon le sexe du personnage
 
 On représente les termes employés pour décrire la personnalité de personnage par des nuages de mots.
 
 ```{r}
-#| eval: false
+#| echo: false
+#| warning: false
+#| layout-ncol: 2
+#| fig-cap: 
+#|   - "Termes caractérisant la personnalité des personnages masculins"
+#|   - "Termes caractérisant la personnalité des personnages féminins"
 
-library('tm') 
-library('wordcloud')
-set.seed(123456) 
+personnages$Personnalites <- strsplit(personnages$Personnalite, ", ")
 
-texteH <- personnages %>% 
-  filter(Sexe == "H") %>% 
-  pull(Personnalites)
-text_corpusH <- VCorpus(VectorSource(texteH))
-text_corpusH <- tm_map(text_corpusH, content_transformer(tolower))
-text_corpusH <- tm_map(text_corpusH, removePunctuation)
-text_corpusH <- tm_map(text_corpusH, function(x)removeWords(x,stopwords(kind = "fr")))
+persoH <- personnages %>% 
+  select(Sexe, Personnalites) %>% 
+  filter(Sexe == "H") 
+persoF <- personnages %>% 
+  select(Sexe, Personnalites) %>% 
+  filter(Sexe == "F") 
+
+'%notin%' <- Negate('%in%')
+
+mots <- bind_rows(
+  data.frame(Sexe = rep("H", length(unlist(strsplit(unlist(persoH$Personnalites) , " ")))), mots = unlist(strsplit(unlist(persoH$Personnalites) , " "))),
+  data.frame(Sexe = rep("F", length(unlist(strsplit(unlist(persoF$Personnalites) , " ")))), mots = unlist(strsplit(unlist(persoF$Personnalites) , " ")))
+)
+
+list_words <- c("à", "a", "du", "mal", "et", "le", "la", "les", "autres", "avec" ,"son" ,"dans", "une", "des", "un", "aux",
+                "vie", "privée", "faire")
 
 
-
-texteF <- personnages %>% 
-  filter(Sexe == "F") %>% 
-  pull(Personnalites)
-text_corpusF <- VCorpus(VectorSource(texteF))
-text_corpusF <- tm_map(text_corpusF, content_transformer(tolower))
-text_corpusF <- tm_map(text_corpusF, removePunctuation)
-text_corpusF <- tm_map(text_corpusF, function(x)removeWords(x,stopwords(kind = "fr")))
-
-list_words <- c("mal", "intelligent", "intelligente", "autres")
-text_corpusH <- tm_map(text_corpusH, function(x) removeWords(x, list_words))
-wordcloud(text_corpusH, max.words = 50,min.freq = 5 , scale = c(5, 0.2), colors = brewer.pal(8, "Paired"),  rot.per=0.2)
-
-text_corpusF <- tm_map(text_corpusF, function(x) removeWords(x, list_words))
-wordcloud(text_corpusF, max.words = 50, colors = brewer.pal(8, "Set1"),  rot.per=0.2)
-
+mots <- mots %>% filter(mots %notin% list_words)
+foo <- mots %>% 
+  group_by(Sexe, mots) %>% 
+  summarise(nb = n()) %>% 
+  arrange(desc(nb)) %>% 
+  mutate(angle = 45 * sample(-2:2, n(), replace = TRUE, prob = c(1, 1, 4, 1, 1)))
 
 library('ggplot2')
 library('ggwordcloud')
 
-data.frame(sexe = rep("Homme", length(unlist(texteH))), texte = unlist(texteH)) %>% 
-  bind_rows(data.frame(sexe = rep("Femme", length(unlist(texteF))), texte = unlist(texteF))) %>% 
-  mutate(across(texte, tolower)) %>% 
-  ggplot(aes(label = texte)) +
-  geom_text_wordcloud() +
-  theme_minimal()
+foo %>% filter(Sexe == "H") %>% 
+  ggplot(aes(label = mots, size = nb, color = nb, angle = angle)) +
+  geom_text_wordcloud_area(
+    mask = png::readPNG("homme.png")
+  ) +
+  scale_size_area(max_size = 20) +
+  scale_color_distiller(palette = "PuBu") +
+  theme_minimal() 
+
+foo %>% filter(Sexe == "F") %>% 
+  ggplot(aes(label = mots, size = nb, color = nb, angle = angle)) +
+  geom_text_wordcloud_area(
+    mask = png::readPNG("femme.png")
+  ) +
+  scale_size_area(max_size = 18) +
+  scale_color_distiller(palette = "PuRd") +
+  theme_minimal() 
 ```
 
 
