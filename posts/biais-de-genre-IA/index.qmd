@@ -8,6 +8,7 @@ categories:
   - IA generatives
   - sociologie
   - genre
+  - R
 draft: false
 number-sections: false
 image: emnist-manual-loading-thumbnail.png
@@ -27,6 +28,7 @@ editor:
 #| include: false
 personnages <- read.csv2("personnages.csv")
 library('dplyr')
+library('knitr')
 library('questionr')
 library('ggplot2')
 library('ggwordcloud')
@@ -60,7 +62,7 @@ Par exemple:
 #| warning: false
 
 personnages <- read.csv2("personnages.csv")
-library('dplyr')
+
 personnages %>% 
   slice(1) %>% 
   knitr::kable()
@@ -71,12 +73,12 @@ personnages %>%
 ### La profession est-elle indépendante du sexe du personnage ?
 
 On va croiser la profession (variable `Occupation`) avec `Sexe` (codée H pour hommes, et F pour femmes).
-On obtient le tableau @tbl-OccupSexe
+On obtient le tableau @tbl-OccupSexe :
 
 ```{r}
 #| label: tbl-OccupSexe
-#| tbl-cap: "OccupSexe"
-#| cap-location: top
+#| tbl-cap: Profession selon le sexe
+#| tbl-cap-location: top
 #| warning: false
 
 tab_OccupSexe <- table(personnages$Occupation, personnages$Sexe)
@@ -90,12 +92,10 @@ On va utiliser le package *questionr* (voir @questionR) pour calculer les struct
 ```{r}
 #| label: tbl_OccupSexe2
 #| tbl-cap: "Lien entre le sexe et l'occupuation du personnage principal"
-#| cap-location: top
+#| tbl-cap-location: top
 #| warning: false
 
-#install.packages("questionr")
-library('questionr')
-knitr::kable(round(cprop(tab_OccupSexe), 1))
+kable(round(cprop(tab_OccupSexe), 1))
 ```
 
 Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité.
@@ -106,17 +106,15 @@ Le V de Cramer est une mesure d'association utilisée pour évaluer la force de 
 Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.
 
 ::: {callout-tip}
-## Formule du V de Cramer
+### Formule du V de Cramer
 
-Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante :
-$V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
+Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante : $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
 
-- $\chi^2$ est la statistique du test chi-carré,
-- n est la taille de l'échantillon,
-- k est le nombre de colonnes (modalités de la première variable),
-- r est le nombre de lignes (modalités de la seconde variable),
-- $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
-
+-   $\chi^2$ est la statistique du test chi-carré,
+-   n est la taille de l'échantillon,
+-   k est le nombre de colonnes (modalités de la première variable),
+-   r est le nombre de lignes (modalités de la seconde variable),
+-   $min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.
 :::
 
 ### Interprétation de la Valeur du V de Cramer
@@ -128,9 +126,9 @@ La valeur du V de Cramer varie de 0 à 1 :
 
 En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :
 
--   V < 0,2 : association faible,
--   0,2 ≤ V < 0,4 : association modérée,
--   0,4 ≤ V < 0,6 : association forte,
+-   V \< 0,2 : association faible,
+-   0,2 ≤ V \< 0,4 : association modérée,
+-   0,4 ≤ V \< 0,6 : association forte,
 -   V ≥ 0,6 : association très forte.
 
 Une valeur de `r cramer.v(tab_OccupSexe)` dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.
@@ -143,15 +141,18 @@ Les personnages de cette population sont majoritairement âgés entre 30 et 40 a
 
 ```{r}
 #| label: tab-trAge
+#| tbl-cap: Répartition par tranche d'âge
+#| tbl-cap-location: top
 #| echo: false
 tab_trAge <- table(personnages$trAge)
-round(tab_trAge/nrow(personnages)*100, 1) %>% knitr::kable(col.names = c("Âge", "%") )
+round(tab_trAge/nrow(personnages)*100, 1) %>% kable(col.names = c("Âge", "%"))
 
 ```
 
 ```{r}
 #| label: tab_trAge_Sexe
-
+#| tbl-cap: Répartition par tranche d'âge selon le sexe
+#| tbl-cap-location: top
 tab_trAge_Sexe <- table(personnages$Sexe, personnages$trAge)
 cprop(tab_trAge_Sexe)
 cramer.v(tab_trAge_Sexe)
@@ -166,12 +167,15 @@ C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les fem
 ```{r}
 #| label: tbl-theme
 #| fig-cap: "Réprésentations de genre dans les thèmes abordés"
+#| tbl-cap-location: top
 
 tab_GenreRoman <- table(personnages$Sexe,personnages$GenreRoman)
 knitr::kable(round(lprop(tab_GenreRoman),1))
 ```
 
-Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente. Le tableau @tbl-theme le démontre. Le V de Cramer vaut `r questionr::cramer.v(tab_GenreRoman)` ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l’œuvre.
+Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente.
+Le tableau @tbl-theme le démontre.
+Le V de Cramer vaut `r questionr::cramer.v(tab_GenreRoman)` ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l'œuvre.
 
 ### Les traits de personnalité selon le sexe du personnage
 
@@ -234,11 +238,18 @@ foo %>% filter(Sexe == "F") %>%
   theme_minimal() 
 ```
 
-
 ## Conclusion
-Les outils génératifs mis à disposition gratuitement (comme dans notre exemple) ou par abonnement utilisent les grands modèles de langage. Ceux-ci sont constitués par un apprentissage automatique capable de comprendre et générer des textes. Ils opèrent en analysant des volumes massifs de données. Les premiers modèles utilisaient des données issues du web, il est donc peu étonnant qu'ils reproduisent les biais reconnus dans nos représentations. Ainsi, il faut voir les réponses fournies par les assistants conversationnels comme un reflet de notre pensée contemporaine, avec ses travers et ses inconsistances.
 
-De plus, les données accessibles depuis internet concernant les femmes sont largement minoritaires. Seuls 20% des biographies disponibles sur Wikipedia sont des fiches de personnages féminins. Enfin, les contributeurs, webmestres, créateurs de contenus sont également très majoritairement masculins. Par exemple, les contributeurs de Wikipedia déclarent à 87% être de sexe masculin [voir @frwiki:218632729].
+Les outils génératifs mis à disposition gratuitement (comme dans notre exemple) ou par abonnement utilisent les grands modèles de langage.
+Ceux-ci sont constitués par un apprentissage automatique capable de comprendre et générer des textes.
+Ils opèrent en analysant des volumes massifs de données.
+Les premiers modèles utilisaient des données issues du web, il est donc peu étonnant qu'ils reproduisent les biais reconnus dans nos représentations.
+Ainsi, il faut voir les réponses fournies par les assistants conversationnels comme un reflet de notre pensée contemporaine, avec ses travers et ses inconsistances.
+
+De plus, les données accessibles depuis internet concernant les femmes sont largement minoritaires.
+Seuls 20% des biographies disponibles sur Wikipedia sont des fiches de personnages féminins.
+Enfin, les contributeurs, webmestres, créateurs de contenus sont également très majoritairement masculins.
+Par exemple, les contributeurs de Wikipedia déclarent à 87% être de sexe masculin [voir @frwiki:218632729].
 
 ## Liens
 
