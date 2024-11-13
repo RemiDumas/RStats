@@ -39,14 +39,14 @@
     "href": "posts/biais-de-genre-IA/index.html#conclusion",
     "title": "Les biais de genres systémiques dans les IA génératives.",
     "section": "Conclusion",
-    "text": "Conclusion"
+    "text": "Conclusion\nLes outils génératifs mis à disposition gratuitement (comme dans notre exemple) ou par abonnement utilisent les grands modèles de langage. Ceux-ci sont constitués par un apprentissage automatique capable de comprendre et générer des textes. Ils opèrent en analysant des volumes massifs de données. Les premiers modèles utilisaient des données issues du web, il est donc peu étonnant qu’ils reproduisent les biais reconnus dans nos représentations. Ainsi, il faut voir les réponses fournies par les assistants conversationnels comme un reflet de notre pensée contemporaine, avec ses travers et ses inconsistances.\nDe plus, les données accessibles depuis internet concernant les femmes sont largement minoritaires. Seuls 20% des biographies disponibles sur Wikipedia sont des fiches de personnages féminins. Enfin, les contributeurs, webmestres, créateurs de contenus sont également très majoritairement masculins. Par exemple, les contributeurs de Wikipedia déclarent à 87% être de sexe masculin (voir Wikipédia 2024)."
   },
   {
     "objectID": "posts/biais-de-genre-IA/index.html#liens",
     "href": "posts/biais-de-genre-IA/index.html#liens",
     "title": "Les biais de genres systémiques dans les IA génératives.",
     "section": "Liens",
-    "text": "Liens\n\nDonnées\nRéalisées par  https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv\n\n\nSource\nhttps://techxplore.com/news/2024-04-large-language-generate-biased-content.html\n\n\nReferences\n\n\nBarnier, Julien, François Briatte, et Joseph Larmarange. 2023. questionr: Functions to Make Surveys Processing Easier. https://juba.github.io/questionr/.\n\n\nUNESCO, et Centre international de recherche sur l’intelligence artificielle. 2024. « Challenging systematic prejudices: an investigation into bias against women and girls in large language models ». https://unesdoc.unesco.org/ark:/48223/pf0000388971."
+    "text": "Liens\n\nDonnées\nRéalisées par  https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv\n\n\nSource\nhttps://techxplore.com/news/2024-04-large-language-generate-biased-content.html\n\n\nReferences\n\n\nBarnier, Julien, François Briatte, et Joseph Larmarange. 2023. questionr: Functions to Make Surveys Processing Easier. https://juba.github.io/questionr/.\n\n\nUNESCO, et Centre international de recherche sur l’intelligence artificielle. 2024. « Challenging systematic prejudices: an investigation into bias against women and girls in large language models ». https://unesdoc.unesco.org/ark:/48223/pf0000388971.\n\n\nWikipédia. 2024. « Biais de genre sur Wikipédia — Wikipédia, l’encyclopédie libre ». \\url{http://fr.wikipedia.org/w/index.php?title=Biais_de_genre_sur_Wikip%C3%A9dia&oldid=218632729}."
   },
   {
     "objectID": "index.html",
