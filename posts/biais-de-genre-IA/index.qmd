@@ -1,7 +1,8 @@
 ---
 title: "Les biais de genres systémiques dans les IA génératives."
 description: "Une récente étude de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités."
-date: 21-04-2024
+date: 2024-09-04
+date-format: "DD, MMMM YYYY"
 lang: fr
 categories: 
   - stats
@@ -105,8 +106,8 @@ Calculons le V de Cramer (un avertissement indique que de nombreuses cases prés
 Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence.
 Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.
 
-::: {callout-tip}
-### Formule du V de Cramer
+::: {.callout-tip appearance="simple"}
+## Formule du V de Cramer
 
 Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante : $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :
 

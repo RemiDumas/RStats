@@ -1,7 +1,7 @@
 ---
 title: "Hello World !"
 description: "Au cours des dernières années, j'ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l'utilisation des Github pages, il n'a fallu que quelques heures pour tout mettre en place."
-date: 20-12-2023
+date: 2024-08-20
 date-format: "DD, MMMM YYYY"
 categories: 
   - news
