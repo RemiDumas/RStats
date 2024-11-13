@@ -26,6 +26,10 @@ editor:
 ```{r}
 #| include: false
 personnages <- read.csv2("personnages.csv")
+library('dplyr')
+library('questionr')
+library('ggplot2')
+library('ggwordcloud')
 ```
 
 ## Un biais systémique relevé par une étude.
