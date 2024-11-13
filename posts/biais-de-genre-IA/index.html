@@ -278,7 +278,7 @@ window.Quarto = {
       <div>
       <div class="quarto-title-meta-heading">Date de publication</div>
       <div class="quarto-title-meta-contents">
-        <p class="date">4 septembre 2025</p>
+        <p class="date">04, septembre 2024</p>
       </div>
     </div>
     
@@ -298,7 +298,6 @@ window.Quarto = {
   <li><a href="#analyse" id="toc-analyse" class="nav-link" data-scroll-target="#analyse">Analyse</a>
   <ul class="collapse">
   <li><a href="#la-profession-est-elle-indépendante-du-sexe-du-personnage" id="toc-la-profession-est-elle-indépendante-du-sexe-du-personnage" class="nav-link" data-scroll-target="#la-profession-est-elle-indépendante-du-sexe-du-personnage">La profession est-elle indépendante du sexe du personnage ?</a></li>
-  <li><a href="#formule-du-v-de-cramer" id="toc-formule-du-v-de-cramer" class="nav-link" data-scroll-target="#formule-du-v-de-cramer">Formule du V de Cramer</a></li>
   <li><a href="#interprétation-de-la-valeur-du-v-de-cramer" id="toc-interprétation-de-la-valeur-du-v-de-cramer" class="nav-link" data-scroll-target="#interprétation-de-la-valeur-du-v-de-cramer">Interprétation de la Valeur du V de Cramer</a></li>
   <li><a href="#des-personnages-féminins-plutôt-jeunes" id="toc-des-personnages-féminins-plutôt-jeunes" class="nav-link" data-scroll-target="#des-personnages-féminins-plutôt-jeunes">Des personnages féminins plutôt jeunes</a></li>
   <li><a href="#des-thèmes-très-genrés" id="toc-des-thèmes-très-genrés" class="nav-link" data-scroll-target="#des-thèmes-très-genrés">Des thèmes très genrés</a></li>
@@ -738,9 +737,16 @@ Table&nbsp;1: Profession selon le sexe
 </div>
 <p>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité. Par exemple, les il y a 7,3% d’entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession. Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d’effectifs).</p>
 <p>Le V de Cramer est une mesure d’association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence. Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</p>
-</section>
-<section id="formule-du-v-de-cramer" class="level3 {callout-tip}">
-<h3 class="anchored" data-anchor-id="formule-du-v-de-cramer">Formule du V de Cramer</h3>
+<div class="callout callout-style-simple callout-tip callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Formule du V de Cramer
+</div>
+</div>
+<div class="callout-body-container callout-body">
 <p>Le V de Cramer est calculé à partir de la statistique du <span class="math inline">\(\chi^2\)</span> (chi-carré) selon la formule suivante : <span class="math inline">\(V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}\)</span> où :</p>
 <ul>
 <li><span class="math inline">\(\chi^2\)</span> est la statistique du test chi-carré,</li>
@@ -749,6 +755,8 @@ Table&nbsp;1: Profession selon le sexe
 <li>r est le nombre de lignes (modalités de la seconde variable),</li>
 <li><span class="math inline">\(min(k−1,r−1)\)</span> est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</li>
 </ul>
+</div>
+</div>
 </section>
 <section id="interprétation-de-la-valeur-du-v-de-cramer" class="level3">
 <h3 class="anchored" data-anchor-id="interprétation-de-la-valeur-du-v-de-cramer">Interprétation de la Valeur du V de Cramer</h3>
@@ -1652,270 +1660,271 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <div class="sourceCode" id="cb8" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
 <span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Les biais de genres systémiques dans les IA génératives."</span></span>
 <span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Une récente étude de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités."</span></span>
-<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 21-04-2024</span></span>
-<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
-<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats</span></span>
-<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA generatives</span></span>
-<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - sociologie</span></span>
-<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - genre</span></span>
-<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - R</span></span>
-<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
-<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> emnist-manual-loading-thumbnail.png</span></span>
-<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
-<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
-<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
-<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
-<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
-<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
-<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
-<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
-<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-29"><a href="#cb8-29" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
-<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
-<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>)</span>
-<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
-<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span>
-<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggwordcloud'</span>)</span>
-<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un biais systémique relevé par une étude.</span></span>
-<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a>Une récente étude <span class="co">[</span><span class="ot">voir @etudeUCL</span><span class="co">]</span> menée par des chercheurs de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités.\</span>
-<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>L'étude, commandée et publiée par l'UNESCO, a examiné les stéréotypes présents dans les LLM (Large Language Models), outils de traitement du langage naturel sur lesquels se basent les plateformes génératives d'IA les plus populaires, notamment Open AI's GPT-3.5 et GPT-2 et META's Llama 2.\</span>
-<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>Les résultats dévoilent que les noms féminins sont associés à des rôles de genre traditionnels, tels que "famille", "enfants" et "mari", tandis que les noms masculins sont associés à des mots tels que "carrière", "dirigeants", "gestion" et "entreprise".</span>
-<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>Les textes générés par l'IA ont également montré des stéréotypes négatifs basés sur la culture ou la sexualité.\</span>
-<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>Par exemple, les histoires générées par Llama 2 placent les femmes dans des rôles domestiques quatre fois plus souvent que les hommes.</span>
-<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>Ces derniers se voient attribués des emplois plus divers et de haut statut.\</span>
-<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>Une des raisons avancée tient à la prédominance de ces biais dans les ressources utilisées pour construire ces modèles.</span>
-<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>La professeure Ivana Drobnjak, auteure du rapport de l'UCL Computer Science et membre de l'équipe de la Chaire UNESCO en IA à l'UCL, avance cette explication: "L'IA apprend d'Internet et des données historiques et prend des décisions en fonction de ces connaissances, qui sont souvent biaisées. Le fait que les femmes n'aient pas été aussi présentes que les hommes dans les sciences et l'ingénierie dans le passé, par exemple, ne signifie pas qu'elles sont de moins bonnes scientifiques et ingénieures. Nous devons guider ces algorithmes pour qu'ils apprennent l'égalité, l'équité et les droits de l'homme, afin qu'ils prennent de meilleures décisions."\</span>
-<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>Les biais de genre sont si profondément ancrés dans les LLM qu'une refonte éthique dans le développement de l'IA est absolument nécessaire.</span>
-<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>L'équipe de la Chaire UNESCO en IA à l'UCL travaillera avec l'UNESCO pour sensibiliser à ce problème et contribuer au développement de solutions en organisant des ateliers et des évènements conjoints impliquant des parties prenantes pertinentes.\</span>
-<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>Le rapport a été présenté lors de la réunion de dialogue sur la transformation numérique de l'UNESCO le 6 mars 2024 et lors de la 68e session de la Commission de la condition de la femme des Nations Unies.</span>
-<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>En conclusion, les chercheurs recommandent que l'IA doit être guidée pour apprendre l'égalité, l'équité et les droits de l'homme afin de prendre de meilleures décisions.</span>
-<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Génération de textes</span></span>
-<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a>J'ai voulu effectuer une rapide vérification en utilisant l'IA générative française Mistral (<span class="ot">&lt;https://chat.mistral.ai/&gt;</span>).</span>
-<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>Je lui ai demandé de générer une liste de personnages fictifs en établissant leur biographie.</span>
-<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>Les informations recueillies sont dans le fichier <span class="in">`personnages.csv`</span>, obtenu après retraitement.</span>
-<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a>Par exemple:</span>
-<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-64"><a href="#cb8-64" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
-<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
-<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
-<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
-<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
-<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes).</span>
-<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>On obtient le tableau @tbl-OccupSexe :</span>
-<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-84"><a href="#cb8-84" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-OccupSexe</span></span>
-<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Profession selon le sexe</span></span>
-<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
-<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a>tab_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
-<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
-<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tab_OccupSexe)</span>
-<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a>On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
-<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-100"><a href="#cb8-100" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
-<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Lien entre le sexe et l'occupuation du personnage principal"</span></span>
-<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
-<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tab_OccupSexe), <span class="dv">1</span>))</span>
-<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité.</span>
-<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.</span>
-<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).</span>
-<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence.</span>
-<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</span>
-<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a>::: {callout-tip}</span>
-<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a><span class="fu">### Formule du V de Cramer</span></span>
-<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante : $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :</span>
-<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\chi^2$ est la statistique du test chi-carré,</span>
-<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>n est la taille de l'échantillon,</span>
-<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>k est le nombre de colonnes (modalités de la première variable),</span>
-<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>r est le nombre de lignes (modalités de la seconde variable),</span>
-<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</span>
-<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a>:::</span>
-<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interprétation de la Valeur du V de Cramer</span></span>
-<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a>La valeur du V de Cramer varie de 0 à 1 :</span>
-<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0 indique une absence totale d'association entre les deux variables.</span>
-<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1 indique une association parfaite entre les deux variables.</span>
-<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a>En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :</span>
-<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>V <span class="sc">\&lt;</span> 0,2 : association faible,</span>
-<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0,2 ≤ V <span class="sc">\&lt;</span> 0,4 : association modérée,</span>
-<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0,4 ≤ V <span class="sc">\&lt;</span> 0,6 : association forte,</span>
-<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>V ≥ 0,6 : association très forte.</span>
-<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a>Une valeur de <span class="in">`r cramer.v(tab_OccupSexe)`</span> dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.</span>
-<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a>Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre.</span>
-<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.</span>
-<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des personnages féminins plutôt jeunes</span></span>
-<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a>Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:</span>
-<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-152"><a href="#cb8-152" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-trAge</span></span>
-<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Répartition par tranche d'âge</span></span>
-<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
-<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
-<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>))</span>
-<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-164"><a href="#cb8-164" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab_trAge_Sexe</span></span>
-<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Répartition par tranche d'âge selon le sexe</span></span>
-<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
-<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
-<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span>
-<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span>
-<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes.</span>
-<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a>En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans.</span>
-<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a>C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.</span>
-<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des thèmes très genrés</span></span>
-<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-181"><a href="#cb8-181" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-theme</span></span>
-<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Réprésentations de genre dans les thèmes abordés"</span></span>
-<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
-<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a>tab_GenreRoman <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe,personnages<span class="sc">$</span>GenreRoman)</span>
-<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">lprop</span>(tab_GenreRoman),<span class="dv">1</span>))</span>
-<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a>Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente.</span>
-<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>Le tableau @tbl-theme le démontre.</span>
-<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>Le V de Cramer vaut <span class="in">`r questionr::cramer.v(tab_GenreRoman)`</span> ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l'œuvre.</span>
-<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a><span class="fu">### Les traits de personnalité selon le sexe du personnage</span></span>
-<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a>On représente les termes employés pour décrire la personnalité de personnage par des nuages de mots.</span>
-<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-200"><a href="#cb8-200" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
-<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
-<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
-<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: </span></span>
-<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Termes caractérisant la personnalité des personnages masculins"</span></span>
-<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Termes caractérisant la personnalité des personnages féminins"</span></span>
-<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a>personnages<span class="sc">$</span>Personnalites <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(personnages<span class="sc">$</span>Personnalite, <span class="st">", "</span>)</span>
-<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a>persoH <span class="ot">&lt;-</span> personnages <span class="sc">%&gt;%</span> </span>
-<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sexe, Personnalites) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"H"</span>) </span>
-<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a>persoF <span class="ot">&lt;-</span> personnages <span class="sc">%&gt;%</span> </span>
-<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sexe, Personnalites) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"F"</span>) </span>
-<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a><span class="st">'%notin%'</span> <span class="ot">&lt;-</span> <span class="fu">Negate</span>(<span class="st">'%in%'</span>)</span>
-<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a>mots <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
-<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Sexe =</span> <span class="fu">rep</span>(<span class="st">"H"</span>, <span class="fu">length</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoH<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))), <span class="at">mots =</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoH<span class="sc">$</span>Personnalites) , <span class="st">" "</span>))),</span>
-<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Sexe =</span> <span class="fu">rep</span>(<span class="st">"F"</span>, <span class="fu">length</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoF<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))), <span class="at">mots =</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoF<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))</span>
-<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a>list_words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"à"</span>, <span class="st">"a"</span>, <span class="st">"du"</span>, <span class="st">"mal"</span>, <span class="st">"et"</span>, <span class="st">"le"</span>, <span class="st">"la"</span>, <span class="st">"les"</span>, <span class="st">"autres"</span>, <span class="st">"avec"</span> ,<span class="st">"son"</span> ,<span class="st">"dans"</span>, <span class="st">"une"</span>, <span class="st">"des"</span>, <span class="st">"un"</span>, <span class="st">"aux"</span>,</span>
-<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a>                <span class="st">"vie"</span>, <span class="st">"privée"</span>, <span class="st">"faire"</span>)</span>
-<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-4"><a href="#cb8-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-09-04</span></span>
+<span id="cb8-5"><a href="#cb8-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "DD, MMMM YYYY"</span></span>
+<span id="cb8-6"><a href="#cb8-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
+<span id="cb8-7"><a href="#cb8-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
+<span id="cb8-8"><a href="#cb8-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats</span></span>
+<span id="cb8-9"><a href="#cb8-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA generatives</span></span>
+<span id="cb8-10"><a href="#cb8-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - sociologie</span></span>
+<span id="cb8-11"><a href="#cb8-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - genre</span></span>
+<span id="cb8-12"><a href="#cb8-12" aria-hidden="true" tabindex="-1"></a><span class="co">  - R</span></span>
+<span id="cb8-13"><a href="#cb8-13" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb8-14"><a href="#cb8-14" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb8-15"><a href="#cb8-15" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> emnist-manual-loading-thumbnail.png</span></span>
+<span id="cb8-16"><a href="#cb8-16" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb8-17"><a href="#cb8-17" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb8-18"><a href="#cb8-18" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb8-19"><a href="#cb8-19" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
+<span id="cb8-20"><a href="#cb8-20" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
+<span id="cb8-21"><a href="#cb8-21" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
+<span id="cb8-22"><a href="#cb8-22" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
+<span id="cb8-23"><a href="#cb8-23" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb8-24"><a href="#cb8-24" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
+<span id="cb8-25"><a href="#cb8-25" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
+<span id="cb8-26"><a href="#cb8-26" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb8-27"><a href="#cb8-27" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-30"><a href="#cb8-30" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-31"><a href="#cb8-31" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb8-32"><a href="#cb8-32" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
+<span id="cb8-33"><a href="#cb8-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
+<span id="cb8-34"><a href="#cb8-34" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>)</span>
+<span id="cb8-35"><a href="#cb8-35" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
+<span id="cb8-36"><a href="#cb8-36" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span>
+<span id="cb8-37"><a href="#cb8-37" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggwordcloud'</span>)</span>
+<span id="cb8-38"><a href="#cb8-38" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-39"><a href="#cb8-39" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-40"><a href="#cb8-40" aria-hidden="true" tabindex="-1"></a><span class="fu">## Un biais systémique relevé par une étude.</span></span>
+<span id="cb8-41"><a href="#cb8-41" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-42"><a href="#cb8-42" aria-hidden="true" tabindex="-1"></a>Une récente étude <span class="co">[</span><span class="ot">voir @etudeUCL</span><span class="co">]</span> menée par des chercheurs de l'University College London (UCL) révèle que les outils d'intelligence artificielle (IA) les plus populaires font preuve de discrimination à l'égard des femmes et des personnes issues de différentes cultures et sexualités.\</span>
+<span id="cb8-43"><a href="#cb8-43" aria-hidden="true" tabindex="-1"></a>L'étude, commandée et publiée par l'UNESCO, a examiné les stéréotypes présents dans les LLM (Large Language Models), outils de traitement du langage naturel sur lesquels se basent les plateformes génératives d'IA les plus populaires, notamment Open AI's GPT-3.5 et GPT-2 et META's Llama 2.\</span>
+<span id="cb8-44"><a href="#cb8-44" aria-hidden="true" tabindex="-1"></a>Les résultats dévoilent que les noms féminins sont associés à des rôles de genre traditionnels, tels que "famille", "enfants" et "mari", tandis que les noms masculins sont associés à des mots tels que "carrière", "dirigeants", "gestion" et "entreprise".</span>
+<span id="cb8-45"><a href="#cb8-45" aria-hidden="true" tabindex="-1"></a>Les textes générés par l'IA ont également montré des stéréotypes négatifs basés sur la culture ou la sexualité.\</span>
+<span id="cb8-46"><a href="#cb8-46" aria-hidden="true" tabindex="-1"></a>Par exemple, les histoires générées par Llama 2 placent les femmes dans des rôles domestiques quatre fois plus souvent que les hommes.</span>
+<span id="cb8-47"><a href="#cb8-47" aria-hidden="true" tabindex="-1"></a>Ces derniers se voient attribués des emplois plus divers et de haut statut.\</span>
+<span id="cb8-48"><a href="#cb8-48" aria-hidden="true" tabindex="-1"></a>Une des raisons avancée tient à la prédominance de ces biais dans les ressources utilisées pour construire ces modèles.</span>
+<span id="cb8-49"><a href="#cb8-49" aria-hidden="true" tabindex="-1"></a>La professeure Ivana Drobnjak, auteure du rapport de l'UCL Computer Science et membre de l'équipe de la Chaire UNESCO en IA à l'UCL, avance cette explication: "L'IA apprend d'Internet et des données historiques et prend des décisions en fonction de ces connaissances, qui sont souvent biaisées. Le fait que les femmes n'aient pas été aussi présentes que les hommes dans les sciences et l'ingénierie dans le passé, par exemple, ne signifie pas qu'elles sont de moins bonnes scientifiques et ingénieures. Nous devons guider ces algorithmes pour qu'ils apprennent l'égalité, l'équité et les droits de l'homme, afin qu'ils prennent de meilleures décisions."\</span>
+<span id="cb8-50"><a href="#cb8-50" aria-hidden="true" tabindex="-1"></a>Les biais de genre sont si profondément ancrés dans les LLM qu'une refonte éthique dans le développement de l'IA est absolument nécessaire.</span>
+<span id="cb8-51"><a href="#cb8-51" aria-hidden="true" tabindex="-1"></a>L'équipe de la Chaire UNESCO en IA à l'UCL travaillera avec l'UNESCO pour sensibiliser à ce problème et contribuer au développement de solutions en organisant des ateliers et des évènements conjoints impliquant des parties prenantes pertinentes.\</span>
+<span id="cb8-52"><a href="#cb8-52" aria-hidden="true" tabindex="-1"></a>Le rapport a été présenté lors de la réunion de dialogue sur la transformation numérique de l'UNESCO le 6 mars 2024 et lors de la 68e session de la Commission de la condition de la femme des Nations Unies.</span>
+<span id="cb8-53"><a href="#cb8-53" aria-hidden="true" tabindex="-1"></a>En conclusion, les chercheurs recommandent que l'IA doit être guidée pour apprendre l'égalité, l'équité et les droits de l'homme afin de prendre de meilleures décisions.</span>
+<span id="cb8-54"><a href="#cb8-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-55"><a href="#cb8-55" aria-hidden="true" tabindex="-1"></a><span class="fu">## Génération de textes</span></span>
+<span id="cb8-56"><a href="#cb8-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-57"><a href="#cb8-57" aria-hidden="true" tabindex="-1"></a>J'ai voulu effectuer une rapide vérification en utilisant l'IA générative française Mistral (<span class="ot">&lt;https://chat.mistral.ai/&gt;</span>).</span>
+<span id="cb8-58"><a href="#cb8-58" aria-hidden="true" tabindex="-1"></a>Je lui ai demandé de générer une liste de personnages fictifs en établissant leur biographie.</span>
+<span id="cb8-59"><a href="#cb8-59" aria-hidden="true" tabindex="-1"></a>Les informations recueillies sont dans le fichier <span class="in">`personnages.csv`</span>, obtenu après retraitement.</span>
+<span id="cb8-60"><a href="#cb8-60" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-61"><a href="#cb8-61" aria-hidden="true" tabindex="-1"></a>Par exemple:</span>
+<span id="cb8-62"><a href="#cb8-62" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-65"><a href="#cb8-65" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-66"><a href="#cb8-66" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-67"><a href="#cb8-67" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb8-68"><a href="#cb8-68" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-69"><a href="#cb8-69" aria-hidden="true" tabindex="-1"></a>personnages <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"personnages.csv"</span>)</span>
+<span id="cb8-70"><a href="#cb8-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-71"><a href="#cb8-71" aria-hidden="true" tabindex="-1"></a>personnages <span class="sc">%&gt;%</span> </span>
+<span id="cb8-72"><a href="#cb8-72" aria-hidden="true" tabindex="-1"></a>  <span class="fu">slice</span>(<span class="dv">1</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-73"><a href="#cb8-73" aria-hidden="true" tabindex="-1"></a>  knitr<span class="sc">::</span><span class="fu">kable</span>()</span>
+<span id="cb8-74"><a href="#cb8-74" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-75"><a href="#cb8-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-76"><a href="#cb8-76" aria-hidden="true" tabindex="-1"></a><span class="fu">## Analyse</span></span>
+<span id="cb8-77"><a href="#cb8-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-78"><a href="#cb8-78" aria-hidden="true" tabindex="-1"></a><span class="fu">### La profession est-elle indépendante du sexe du personnage ?</span></span>
+<span id="cb8-79"><a href="#cb8-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-80"><a href="#cb8-80" aria-hidden="true" tabindex="-1"></a>On va croiser la profession (variable <span class="in">`Occupation`</span>) avec <span class="in">`Sexe`</span> (codée H pour hommes, et F pour femmes).</span>
+<span id="cb8-81"><a href="#cb8-81" aria-hidden="true" tabindex="-1"></a>On obtient le tableau @tbl-OccupSexe :</span>
+<span id="cb8-82"><a href="#cb8-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-85"><a href="#cb8-85" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-86"><a href="#cb8-86" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-OccupSexe</span></span>
+<span id="cb8-87"><a href="#cb8-87" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Profession selon le sexe</span></span>
+<span id="cb8-88"><a href="#cb8-88" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb8-89"><a href="#cb8-89" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb8-90"><a href="#cb8-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-91"><a href="#cb8-91" aria-hidden="true" tabindex="-1"></a>tab_OccupSexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Occupation, personnages<span class="sc">$</span>Sexe)</span>
+<span id="cb8-92"><a href="#cb8-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-93"><a href="#cb8-93" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>) </span>
+<span id="cb8-94"><a href="#cb8-94" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(tab_OccupSexe)</span>
+<span id="cb8-95"><a href="#cb8-95" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-96"><a href="#cb8-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-97"><a href="#cb8-97" aria-hidden="true" tabindex="-1"></a>On va utiliser le package *questionr* (voir @questionR) pour calculer les structures par sexe, ainsi que les marges du tableau.</span>
+<span id="cb8-98"><a href="#cb8-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-101"><a href="#cb8-101" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-102"><a href="#cb8-102" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl_OccupSexe2</span></span>
+<span id="cb8-103"><a href="#cb8-103" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: "Lien entre le sexe et l'occupuation du personnage principal"</span></span>
+<span id="cb8-104"><a href="#cb8-104" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb8-105"><a href="#cb8-105" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb8-106"><a href="#cb8-106" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-107"><a href="#cb8-107" aria-hidden="true" tabindex="-1"></a><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">cprop</span>(tab_OccupSexe), <span class="dv">1</span>))</span>
+<span id="cb8-108"><a href="#cb8-108" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-109"><a href="#cb8-109" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-110"><a href="#cb8-110" aria-hidden="true" tabindex="-1"></a>Le tableau dévoile de nombreuses sur-représentations de genre et peu de parité.</span>
+<span id="cb8-111"><a href="#cb8-111" aria-hidden="true" tabindex="-1"></a>Par exemple, les il y a 7,3% d'entrepreneurs parmi les personnages mais seulement 1,6% des personnages féminins exercent cette profession.</span>
+<span id="cb8-112"><a href="#cb8-112" aria-hidden="true" tabindex="-1"></a>Calculons le V de Cramer (un avertissement indique que de nombreuses cases présentent peu d'effectifs).</span>
+<span id="cb8-113"><a href="#cb8-113" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-114"><a href="#cb8-114" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est une mesure d'association utilisée pour évaluer la force de la relation entre deux variables qualitatives (catégorielles) dans un tableau de contingence.</span>
+<span id="cb8-115"><a href="#cb8-115" aria-hidden="true" tabindex="-1"></a>Il est particulièrement utile pour des tableaux plus grands que 2×2, car il permet de comparer des relations entre variables ayant des nombres différents de catégories.</span>
+<span id="cb8-116"><a href="#cb8-116" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-117"><a href="#cb8-117" aria-hidden="true" tabindex="-1"></a>::: {.callout-tip appearance="simple"}</span>
+<span id="cb8-118"><a href="#cb8-118" aria-hidden="true" tabindex="-1"></a><span class="fu">## Formule du V de Cramer</span></span>
+<span id="cb8-119"><a href="#cb8-119" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-120"><a href="#cb8-120" aria-hidden="true" tabindex="-1"></a>Le V de Cramer est calculé à partir de la statistique du $\chi^2$ (chi-carré) selon la formule suivante : $V = \sqrt{\frac{\chi^2}{n \times min(k-1,r-1)}}$ où :</span>
+<span id="cb8-121"><a href="#cb8-121" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-122"><a href="#cb8-122" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$\chi^2$ est la statistique du test chi-carré,</span>
+<span id="cb8-123"><a href="#cb8-123" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>n est la taille de l'échantillon,</span>
+<span id="cb8-124"><a href="#cb8-124" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>k est le nombre de colonnes (modalités de la première variable),</span>
+<span id="cb8-125"><a href="#cb8-125" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>r est le nombre de lignes (modalités de la seconde variable),</span>
+<span id="cb8-126"><a href="#cb8-126" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>$min(k−1,r−1)$ est le minimum entre le nombre de colonnes moins un et le nombre de lignes moins un.</span>
+<span id="cb8-127"><a href="#cb8-127" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-128"><a href="#cb8-128" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-129"><a href="#cb8-129" aria-hidden="true" tabindex="-1"></a><span class="fu">### Interprétation de la Valeur du V de Cramer</span></span>
+<span id="cb8-130"><a href="#cb8-130" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-131"><a href="#cb8-131" aria-hidden="true" tabindex="-1"></a>La valeur du V de Cramer varie de 0 à 1 :</span>
+<span id="cb8-132"><a href="#cb8-132" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-133"><a href="#cb8-133" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0 indique une absence totale d'association entre les deux variables.</span>
+<span id="cb8-134"><a href="#cb8-134" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>1 indique une association parfaite entre les deux variables.</span>
+<span id="cb8-135"><a href="#cb8-135" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-136"><a href="#cb8-136" aria-hidden="true" tabindex="-1"></a>En général, les seuils d'interprétation ne sont pas stricts, mais on utilise souvent les conventions suivantes :</span>
+<span id="cb8-137"><a href="#cb8-137" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-138"><a href="#cb8-138" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>V <span class="sc">\&lt;</span> 0,2 : association faible,</span>
+<span id="cb8-139"><a href="#cb8-139" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0,2 ≤ V <span class="sc">\&lt;</span> 0,4 : association modérée,</span>
+<span id="cb8-140"><a href="#cb8-140" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>0,4 ≤ V <span class="sc">\&lt;</span> 0,6 : association forte,</span>
+<span id="cb8-141"><a href="#cb8-141" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>V ≥ 0,6 : association très forte.</span>
+<span id="cb8-142"><a href="#cb8-142" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-143"><a href="#cb8-143" aria-hidden="true" tabindex="-1"></a>Une valeur de <span class="in">`r cramer.v(tab_OccupSexe)`</span> dans le cadre du croisement entre la profession et le sexe d'une population indique une association très forte entre ces deux variables.</span>
+<span id="cb8-144"><a href="#cb8-144" aria-hidden="true" tabindex="-1"></a>Cela signifie qu'il existe une relation importante entre le sexe et la profession dans cette population : certaines professions sont probablement majoritairement exercées par un sexe plutôt que par l'autre.</span>
+<span id="cb8-145"><a href="#cb8-145" aria-hidden="true" tabindex="-1"></a>Cependant, cette mesure ne donne pas d'indication sur le sens de la relation, elle indique seulement qu'une relation existe avec une intensité élevée.</span>
+<span id="cb8-146"><a href="#cb8-146" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-147"><a href="#cb8-147" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des personnages féminins plutôt jeunes</span></span>
+<span id="cb8-148"><a href="#cb8-148" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-149"><a href="#cb8-149" aria-hidden="true" tabindex="-1"></a>Les personnages de cette population sont majoritairement âgés entre 30 et 40 ans:</span>
+<span id="cb8-150"><a href="#cb8-150" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-153"><a href="#cb8-153" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-154"><a href="#cb8-154" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab-trAge</span></span>
+<span id="cb8-155"><a href="#cb8-155" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Répartition par tranche d'âge</span></span>
+<span id="cb8-156"><a href="#cb8-156" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb8-157"><a href="#cb8-157" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-158"><a href="#cb8-158" aria-hidden="true" tabindex="-1"></a>tab_trAge <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>trAge)</span>
+<span id="cb8-159"><a href="#cb8-159" aria-hidden="true" tabindex="-1"></a><span class="fu">round</span>(tab_trAge<span class="sc">/</span><span class="fu">nrow</span>(personnages)<span class="sc">*</span><span class="dv">100</span>, <span class="dv">1</span>) <span class="sc">%&gt;%</span> <span class="fu">kable</span>(<span class="at">col.names =</span> <span class="fu">c</span>(<span class="st">"Âge"</span>, <span class="st">"%"</span>))</span>
+<span id="cb8-160"><a href="#cb8-160" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-161"><a href="#cb8-161" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-162"><a href="#cb8-162" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-165"><a href="#cb8-165" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-166"><a href="#cb8-166" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tab_trAge_Sexe</span></span>
+<span id="cb8-167"><a href="#cb8-167" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap: Répartition par tranche d'âge selon le sexe</span></span>
+<span id="cb8-168"><a href="#cb8-168" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb8-169"><a href="#cb8-169" aria-hidden="true" tabindex="-1"></a>tab_trAge_Sexe <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe, personnages<span class="sc">$</span>trAge)</span>
+<span id="cb8-170"><a href="#cb8-170" aria-hidden="true" tabindex="-1"></a><span class="fu">cprop</span>(tab_trAge_Sexe)</span>
+<span id="cb8-171"><a href="#cb8-171" aria-hidden="true" tabindex="-1"></a><span class="fu">cramer.v</span>(tab_trAge_Sexe)</span>
+<span id="cb8-172"><a href="#cb8-172" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-173"><a href="#cb8-173" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-174"><a href="#cb8-174" aria-hidden="true" tabindex="-1"></a>Malgré un V de Cramer peu élevé, on relève des surreprésentations des jeunes parmi les femmes.</span>
+<span id="cb8-175"><a href="#cb8-175" aria-hidden="true" tabindex="-1"></a>En effet, bienque la population des personnages compte autant d'hommes que de femmes, celles-ci représentent environ deux-tiers des moins de 30 ans.</span>
+<span id="cb8-176"><a href="#cb8-176" aria-hidden="true" tabindex="-1"></a>C'est encore plus marqué dans la tranche d'âge des plus de 40 ans, où les femmes ne représentent que 12% de cette classe d'âge.</span>
+<span id="cb8-177"><a href="#cb8-177" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-178"><a href="#cb8-178" aria-hidden="true" tabindex="-1"></a><span class="fu">### Des thèmes très genrés</span></span>
+<span id="cb8-179"><a href="#cb8-179" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-182"><a href="#cb8-182" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-183"><a href="#cb8-183" aria-hidden="true" tabindex="-1"></a><span class="co">#| label: tbl-theme</span></span>
+<span id="cb8-184"><a href="#cb8-184" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: "Réprésentations de genre dans les thèmes abordés"</span></span>
+<span id="cb8-185"><a href="#cb8-185" aria-hidden="true" tabindex="-1"></a><span class="co">#| tbl-cap-location: top</span></span>
+<span id="cb8-186"><a href="#cb8-186" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-187"><a href="#cb8-187" aria-hidden="true" tabindex="-1"></a>tab_GenreRoman <span class="ot">&lt;-</span> <span class="fu">table</span>(personnages<span class="sc">$</span>Sexe,personnages<span class="sc">$</span>GenreRoman)</span>
+<span id="cb8-188"><a href="#cb8-188" aria-hidden="true" tabindex="-1"></a>knitr<span class="sc">::</span><span class="fu">kable</span>(<span class="fu">round</span>(<span class="fu">lprop</span>(tab_GenreRoman),<span class="dv">1</span>))</span>
+<span id="cb8-189"><a href="#cb8-189" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-190"><a href="#cb8-190" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-191"><a href="#cb8-191" aria-hidden="true" tabindex="-1"></a>Lorsque l'on analyse les thèmes des œuvres selon le sexe, la prédominance de genre est présente.</span>
+<span id="cb8-192"><a href="#cb8-192" aria-hidden="true" tabindex="-1"></a>Le tableau @tbl-theme le démontre.</span>
+<span id="cb8-193"><a href="#cb8-193" aria-hidden="true" tabindex="-1"></a>Le V de Cramer vaut <span class="in">`r questionr::cramer.v(tab_GenreRoman)`</span> ce qui est le signe d'un lien avéré et plutôt fort entre le sexe du personnage principal et le thème de l'œuvre.</span>
+<span id="cb8-194"><a href="#cb8-194" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-195"><a href="#cb8-195" aria-hidden="true" tabindex="-1"></a><span class="fu">### Les traits de personnalité selon le sexe du personnage</span></span>
+<span id="cb8-196"><a href="#cb8-196" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-197"><a href="#cb8-197" aria-hidden="true" tabindex="-1"></a>On représente les termes employés pour décrire la personnalité de personnage par des nuages de mots.</span>
+<span id="cb8-198"><a href="#cb8-198" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-201"><a href="#cb8-201" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb8-202"><a href="#cb8-202" aria-hidden="true" tabindex="-1"></a><span class="co">#| echo: false</span></span>
+<span id="cb8-203"><a href="#cb8-203" aria-hidden="true" tabindex="-1"></a><span class="co">#| warning: false</span></span>
+<span id="cb8-204"><a href="#cb8-204" aria-hidden="true" tabindex="-1"></a><span class="co">#| layout-ncol: 2</span></span>
+<span id="cb8-205"><a href="#cb8-205" aria-hidden="true" tabindex="-1"></a><span class="co">#| fig-cap: </span></span>
+<span id="cb8-206"><a href="#cb8-206" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Termes caractérisant la personnalité des personnages masculins"</span></span>
+<span id="cb8-207"><a href="#cb8-207" aria-hidden="true" tabindex="-1"></a><span class="co">#|   - "Termes caractérisant la personnalité des personnages féminins"</span></span>
+<span id="cb8-208"><a href="#cb8-208" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-209"><a href="#cb8-209" aria-hidden="true" tabindex="-1"></a>personnages<span class="sc">$</span>Personnalites <span class="ot">&lt;-</span> <span class="fu">strsplit</span>(personnages<span class="sc">$</span>Personnalite, <span class="st">", "</span>)</span>
+<span id="cb8-210"><a href="#cb8-210" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-211"><a href="#cb8-211" aria-hidden="true" tabindex="-1"></a>persoH <span class="ot">&lt;-</span> personnages <span class="sc">%&gt;%</span> </span>
+<span id="cb8-212"><a href="#cb8-212" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sexe, Personnalites) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-213"><a href="#cb8-213" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"H"</span>) </span>
+<span id="cb8-214"><a href="#cb8-214" aria-hidden="true" tabindex="-1"></a>persoF <span class="ot">&lt;-</span> personnages <span class="sc">%&gt;%</span> </span>
+<span id="cb8-215"><a href="#cb8-215" aria-hidden="true" tabindex="-1"></a>  <span class="fu">select</span>(Sexe, Personnalites) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-216"><a href="#cb8-216" aria-hidden="true" tabindex="-1"></a>  <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"F"</span>) </span>
+<span id="cb8-217"><a href="#cb8-217" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-218"><a href="#cb8-218" aria-hidden="true" tabindex="-1"></a><span class="st">'%notin%'</span> <span class="ot">&lt;-</span> <span class="fu">Negate</span>(<span class="st">'%in%'</span>)</span>
+<span id="cb8-219"><a href="#cb8-219" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-220"><a href="#cb8-220" aria-hidden="true" tabindex="-1"></a>mots <span class="ot">&lt;-</span> <span class="fu">bind_rows</span>(</span>
+<span id="cb8-221"><a href="#cb8-221" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Sexe =</span> <span class="fu">rep</span>(<span class="st">"H"</span>, <span class="fu">length</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoH<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))), <span class="at">mots =</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoH<span class="sc">$</span>Personnalites) , <span class="st">" "</span>))),</span>
+<span id="cb8-222"><a href="#cb8-222" aria-hidden="true" tabindex="-1"></a>  <span class="fu">data.frame</span>(<span class="at">Sexe =</span> <span class="fu">rep</span>(<span class="st">"F"</span>, <span class="fu">length</span>(<span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoF<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))), <span class="at">mots =</span> <span class="fu">unlist</span>(<span class="fu">strsplit</span>(<span class="fu">unlist</span>(persoF<span class="sc">$</span>Personnalites) , <span class="st">" "</span>)))</span>
+<span id="cb8-223"><a href="#cb8-223" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb8-224"><a href="#cb8-224" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-225"><a href="#cb8-225" aria-hidden="true" tabindex="-1"></a>list_words <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"à"</span>, <span class="st">"a"</span>, <span class="st">"du"</span>, <span class="st">"mal"</span>, <span class="st">"et"</span>, <span class="st">"le"</span>, <span class="st">"la"</span>, <span class="st">"les"</span>, <span class="st">"autres"</span>, <span class="st">"avec"</span> ,<span class="st">"son"</span> ,<span class="st">"dans"</span>, <span class="st">"une"</span>, <span class="st">"des"</span>, <span class="st">"un"</span>, <span class="st">"aux"</span>,</span>
+<span id="cb8-226"><a href="#cb8-226" aria-hidden="true" tabindex="-1"></a>                <span class="st">"vie"</span>, <span class="st">"privée"</span>, <span class="st">"faire"</span>)</span>
 <span id="cb8-227"><a href="#cb8-227" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a>mots <span class="ot">&lt;-</span> mots <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mots <span class="sc">%notin%</span> list_words)</span>
-<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> mots <span class="sc">%&gt;%</span> </span>
-<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sexe, mots) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nb =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(nb)) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">angle =</span> <span class="dv">45</span> <span class="sc">*</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="fu">n</span>(), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>)))</span>
-<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span>
-<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggwordcloud'</span>)</span>
-<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a>foo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"H"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">label =</span> mots, <span class="at">size =</span> nb, <span class="at">color =</span> nb, <span class="at">angle =</span> angle)) <span class="sc">+</span></span>
-<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_wordcloud_area</span>(</span>
-<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a>    <span class="at">mask =</span> png<span class="sc">::</span><span class="fu">readPNG</span>(<span class="st">"homme.png"</span>)</span>
-<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
-<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuBu"</span>) <span class="sc">+</span></span>
-<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span>
-<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a>foo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"F"</span>) <span class="sc">%&gt;%</span> </span>
-<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">label =</span> mots, <span class="at">size =</span> nb, <span class="at">color =</span> nb, <span class="at">angle =</span> angle)) <span class="sc">+</span></span>
-<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_wordcloud_area</span>(</span>
-<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a>    <span class="at">mask =</span> png<span class="sc">::</span><span class="fu">readPNG</span>(<span class="st">"femme.png"</span>)</span>
-<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
-<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
-<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>) <span class="sc">+</span></span>
-<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span>
-<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a>Les outils génératifs mis à disposition gratuitement (comme dans notre exemple) ou par abonnement utilisent les grands modèles de langage.</span>
-<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a>Ceux-ci sont constitués par un apprentissage automatique capable de comprendre et générer des textes.</span>
-<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a>Ils opèrent en analysant des volumes massifs de données.</span>
-<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>Les premiers modèles utilisaient des données issues du web, il est donc peu étonnant qu'ils reproduisent les biais reconnus dans nos représentations.</span>
-<span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a>Ainsi, il faut voir les réponses fournies par les assistants conversationnels comme un reflet de notre pensée contemporaine, avec ses travers et ses inconsistances.</span>
-<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a>De plus, les données accessibles depuis internet concernant les femmes sont largement minoritaires.</span>
-<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a>Seuls 20% des biographies disponibles sur Wikipedia sont des fiches de personnages féminins.</span>
-<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a>Enfin, les contributeurs, webmestres, créateurs de contenus sont également très majoritairement masculins.</span>
-<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a>Par exemple, les contributeurs de Wikipedia déclarent à 87% être de sexe masculin <span class="co">[</span><span class="ot">voir @frwiki:218632729</span><span class="co">]</span>.</span>
-<span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
-<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a><span class="fu">### Données</span></span>
-<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a>Réalisées par <span class="co">[</span><span class="al">![](https://chat.mistral.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fle-chat-logo-large-light.b98da676.png&amp;w=384&amp;q=75)</span><span class="ot">{width="170"}</span><span class="co">](https://chat.mistral.ai/chat)</span> <span class="ot">&lt;https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv&gt;</span></span>
-<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
-<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
-<span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
-<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb8-228"><a href="#cb8-228" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-229"><a href="#cb8-229" aria-hidden="true" tabindex="-1"></a>mots <span class="ot">&lt;-</span> mots <span class="sc">%&gt;%</span> <span class="fu">filter</span>(mots <span class="sc">%notin%</span> list_words)</span>
+<span id="cb8-230"><a href="#cb8-230" aria-hidden="true" tabindex="-1"></a>foo <span class="ot">&lt;-</span> mots <span class="sc">%&gt;%</span> </span>
+<span id="cb8-231"><a href="#cb8-231" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(Sexe, mots) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-232"><a href="#cb8-232" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span>(<span class="at">nb =</span> <span class="fu">n</span>()) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-233"><a href="#cb8-233" aria-hidden="true" tabindex="-1"></a>  <span class="fu">arrange</span>(<span class="fu">desc</span>(nb)) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-234"><a href="#cb8-234" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">angle =</span> <span class="dv">45</span> <span class="sc">*</span> <span class="fu">sample</span>(<span class="sc">-</span><span class="dv">2</span><span class="sc">:</span><span class="dv">2</span>, <span class="fu">n</span>(), <span class="at">replace =</span> <span class="cn">TRUE</span>, <span class="at">prob =</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">1</span>, <span class="dv">4</span>, <span class="dv">1</span>, <span class="dv">1</span>)))</span>
+<span id="cb8-235"><a href="#cb8-235" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-236"><a href="#cb8-236" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggplot2'</span>)</span>
+<span id="cb8-237"><a href="#cb8-237" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'ggwordcloud'</span>)</span>
+<span id="cb8-238"><a href="#cb8-238" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-239"><a href="#cb8-239" aria-hidden="true" tabindex="-1"></a>foo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"H"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-240"><a href="#cb8-240" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">label =</span> mots, <span class="at">size =</span> nb, <span class="at">color =</span> nb, <span class="at">angle =</span> angle)) <span class="sc">+</span></span>
+<span id="cb8-241"><a href="#cb8-241" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_wordcloud_area</span>(</span>
+<span id="cb8-242"><a href="#cb8-242" aria-hidden="true" tabindex="-1"></a>    <span class="at">mask =</span> png<span class="sc">::</span><span class="fu">readPNG</span>(<span class="st">"homme.png"</span>)</span>
+<span id="cb8-243"><a href="#cb8-243" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-244"><a href="#cb8-244" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">20</span>) <span class="sc">+</span></span>
+<span id="cb8-245"><a href="#cb8-245" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuBu"</span>) <span class="sc">+</span></span>
+<span id="cb8-246"><a href="#cb8-246" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span>
+<span id="cb8-247"><a href="#cb8-247" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-248"><a href="#cb8-248" aria-hidden="true" tabindex="-1"></a>foo <span class="sc">%&gt;%</span> <span class="fu">filter</span>(Sexe <span class="sc">==</span> <span class="st">"F"</span>) <span class="sc">%&gt;%</span> </span>
+<span id="cb8-249"><a href="#cb8-249" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">label =</span> mots, <span class="at">size =</span> nb, <span class="at">color =</span> nb, <span class="at">angle =</span> angle)) <span class="sc">+</span></span>
+<span id="cb8-250"><a href="#cb8-250" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_text_wordcloud_area</span>(</span>
+<span id="cb8-251"><a href="#cb8-251" aria-hidden="true" tabindex="-1"></a>    <span class="at">mask =</span> png<span class="sc">::</span><span class="fu">readPNG</span>(<span class="st">"femme.png"</span>)</span>
+<span id="cb8-252"><a href="#cb8-252" aria-hidden="true" tabindex="-1"></a>  ) <span class="sc">+</span></span>
+<span id="cb8-253"><a href="#cb8-253" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_size_area</span>(<span class="at">max_size =</span> <span class="dv">18</span>) <span class="sc">+</span></span>
+<span id="cb8-254"><a href="#cb8-254" aria-hidden="true" tabindex="-1"></a>  <span class="fu">scale_color_distiller</span>(<span class="at">palette =</span> <span class="st">"PuRd"</span>) <span class="sc">+</span></span>
+<span id="cb8-255"><a href="#cb8-255" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_minimal</span>() </span>
+<span id="cb8-256"><a href="#cb8-256" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb8-257"><a href="#cb8-257" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-258"><a href="#cb8-258" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb8-259"><a href="#cb8-259" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-260"><a href="#cb8-260" aria-hidden="true" tabindex="-1"></a>Les outils génératifs mis à disposition gratuitement (comme dans notre exemple) ou par abonnement utilisent les grands modèles de langage.</span>
+<span id="cb8-261"><a href="#cb8-261" aria-hidden="true" tabindex="-1"></a>Ceux-ci sont constitués par un apprentissage automatique capable de comprendre et générer des textes.</span>
+<span id="cb8-262"><a href="#cb8-262" aria-hidden="true" tabindex="-1"></a>Ils opèrent en analysant des volumes massifs de données.</span>
+<span id="cb8-263"><a href="#cb8-263" aria-hidden="true" tabindex="-1"></a>Les premiers modèles utilisaient des données issues du web, il est donc peu étonnant qu'ils reproduisent les biais reconnus dans nos représentations.</span>
+<span id="cb8-264"><a href="#cb8-264" aria-hidden="true" tabindex="-1"></a>Ainsi, il faut voir les réponses fournies par les assistants conversationnels comme un reflet de notre pensée contemporaine, avec ses travers et ses inconsistances.</span>
+<span id="cb8-265"><a href="#cb8-265" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-266"><a href="#cb8-266" aria-hidden="true" tabindex="-1"></a>De plus, les données accessibles depuis internet concernant les femmes sont largement minoritaires.</span>
+<span id="cb8-267"><a href="#cb8-267" aria-hidden="true" tabindex="-1"></a>Seuls 20% des biographies disponibles sur Wikipedia sont des fiches de personnages féminins.</span>
+<span id="cb8-268"><a href="#cb8-268" aria-hidden="true" tabindex="-1"></a>Enfin, les contributeurs, webmestres, créateurs de contenus sont également très majoritairement masculins.</span>
+<span id="cb8-269"><a href="#cb8-269" aria-hidden="true" tabindex="-1"></a>Par exemple, les contributeurs de Wikipedia déclarent à 87% être de sexe masculin <span class="co">[</span><span class="ot">voir @frwiki:218632729</span><span class="co">]</span>.</span>
+<span id="cb8-270"><a href="#cb8-270" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-271"><a href="#cb8-271" aria-hidden="true" tabindex="-1"></a><span class="fu">## Liens</span></span>
+<span id="cb8-272"><a href="#cb8-272" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-273"><a href="#cb8-273" aria-hidden="true" tabindex="-1"></a><span class="fu">### Données</span></span>
+<span id="cb8-274"><a href="#cb8-274" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-275"><a href="#cb8-275" aria-hidden="true" tabindex="-1"></a>Réalisées par <span class="co">[</span><span class="al">![](https://chat.mistral.ai/_next/image?url=%2F_next%2Fstatic%2Fmedia%2Fle-chat-logo-large-light.b98da676.png&amp;w=384&amp;q=75)</span><span class="ot">{width="170"}</span><span class="co">](https://chat.mistral.ai/chat)</span> <span class="ot">&lt;https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv&gt;</span></span>
+<span id="cb8-276"><a href="#cb8-276" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-277"><a href="#cb8-277" aria-hidden="true" tabindex="-1"></a><span class="fu">### Source</span></span>
+<span id="cb8-278"><a href="#cb8-278" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-279"><a href="#cb8-279" aria-hidden="true" tabindex="-1"></a><span class="ot">&lt;https://techxplore.com/news/2024-04-large-language-generate-biased-content.html&gt;</span></span>
+<span id="cb8-280"><a href="#cb8-280" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-281"><a href="#cb8-281" aria-hidden="true" tabindex="-1"></a><span class="fu">### References</span></span>
+<span id="cb8-282"><a href="#cb8-282" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb8-283"><a href="#cb8-283" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb8-284"><a href="#cb8-284" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
