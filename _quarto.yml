@@ -18,6 +18,8 @@ website:
         href: index.qmd
       - text: "CV"
         href: cv/index.qmd
+      - text: "À propos"
+        href: about.qmd
     
     # your social media handles
     right:

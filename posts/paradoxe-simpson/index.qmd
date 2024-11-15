@@ -1,0 +1,76 @@
+---
+title: "Le paradoxe de Simpson : comprendre une illusion statistique intrigante."
+description: "Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique."
+date: 2024-10-04
+date-format: "DD, MMMM YYYY"
+lang: fr
+categories: 
+  - stats 
+  - R
+  - mathématiques
+draft: false
+number-sections: false
+image: simpson.jpg
+bibliography: references.bib
+format:
+  html:
+    fig-cap-location: bottom
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+    comments: false
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+```{r}
+#| include: false
+
+library('dplyr')
+library('knitr')
+library('questionr')
+
+```
+
+## Historique
+
+Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique.
+
+## Illustration
+
+Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie.
+
+    Hôpital A : 90% de succès pour 100 patients, 50% pour 10 patients.
+    Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.
+
+Si l'on examine chaque groupe séparément, A semble plus performant. Mais en combinant les données, l'hôpital B affiche un meilleur taux global de succès ! Cette inversion inattendue est typique du paradoxe de Simpson.
+
+## Définition
+
+Le paradoxe de Simpson désigne une situation où la relation entre deux variables semble s'inverser lorsque les données sont regroupées. Cela se produit souvent en raison d'un facteur confondant, une troisième variable influençant les résultats. Ce paradoxe révèle les limites des analyses statistiques simplistes et l'importance de contextualiser les données.
+
+## Conséquences
+
+Le paradoxe de Simpson a des implications profondes :
+
+- Prises de décision erronées : en regroupant les données, on risque de tirer des conclusions fausses.
+- Biais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d'études cliniques, sociales ou économiques.
+- Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n'importe quoi.
+
+## Quatre exemples étudiés
+
+- Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.
+- Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.
+- Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.
+- Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.
+
+En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.
+
+## Source
+
+
+
+## References
+
+::: {#refs}
+:::
