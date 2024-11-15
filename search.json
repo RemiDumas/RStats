@@ -42,25 +42,60 @@
     "text": "Liens\n\nDonnées\nRéalisées par  https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv\n\n\nSource\nhttps://techxplore.com/news/2024-04-large-language-generate-biased-content.html\n\n\nReferences\n\n\nBarnier, Julien, François Briatte, et Joseph Larmarange. 2023. questionr: Functions to Make Surveys Processing Easier. https://juba.github.io/questionr/.\n\n\nUNESCO, et Centre international de recherche sur l’intelligence artificielle. 2024. « Challenging systematic prejudices: an investigation into bias against women and girls in large language models ». https://unesdoc.unesco.org/ark:/48223/pf0000388971.\n\n\nWikipédia. 2024. « Biais de genre sur Wikipédia — Wikipédia, l’encyclopédie libre ». \\url{http://fr.wikipedia.org/w/index.php?title=Biais_de_genre_sur_Wikip%C3%A9dia&oldid=218632729}."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "objectID": "posts/paradoxe-simpson/index.html",
+    "href": "posts/paradoxe-simpson/index.html",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
     "section": "",
-    "text": "Les biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\nSep 4, 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\nAug 20, 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
+    "text": "Le paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
+    "objectID": "posts/paradoxe-simpson/index.html#historique",
+    "href": "posts/paradoxe-simpson/index.html#historique",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
     "section": "",
-    "text": "About this blog"
+    "text": "Le paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique."
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
+    "objectID": "posts/paradoxe-simpson/index.html#illustration",
+    "href": "posts/paradoxe-simpson/index.html#illustration",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "Illustration",
+    "text": "Illustration\nImaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie.\nHôpital A : 90% de succès pour 100 patients, 50% pour 10 patients.\nHôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.\nSi l’on examine chaque groupe séparément, A semble plus performant. Mais en combinant les données, l’hôpital B affiche un meilleur taux global de succès ! Cette inversion inattendue est typique du paradoxe de Simpson."
+  },
+  {
+    "objectID": "posts/paradoxe-simpson/index.html#définition",
+    "href": "posts/paradoxe-simpson/index.html#définition",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "Définition",
+    "text": "Définition\nLe paradoxe de Simpson désigne une situation où la relation entre deux variables semble s’inverser lorsque les données sont regroupées. Cela se produit souvent en raison d’un facteur confondant, une troisième variable influençant les résultats. Ce paradoxe révèle les limites des analyses statistiques simplistes et l’importance de contextualiser les données."
+  },
+  {
+    "objectID": "posts/paradoxe-simpson/index.html#conséquences",
+    "href": "posts/paradoxe-simpson/index.html#conséquences",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "Conséquences",
+    "text": "Conséquences\nLe paradoxe de Simpson a des implications profondes :\n\nPrises de décision erronées : en regroupant les données, on risque de tirer des conclusions fausses.\nBiais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d’études cliniques, sociales ou économiques.\nManipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n’importe quoi."
+  },
+  {
+    "objectID": "posts/paradoxe-simpson/index.html#quatre-exemples-étudiés",
+    "href": "posts/paradoxe-simpson/index.html#quatre-exemples-étudiés",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "Quatre exemples étudiés",
+    "text": "Quatre exemples étudiés\n\nStatistiques médicales : Dans une étude sur l’efficacité d’un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.\nSport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.\nÉducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d’élèves, mais l’inverse globalement en raison de tailles différentes de classes.\nJustice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu’on considère l’ensemble des données.\n\nEn conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d’elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie."
+  },
+  {
+    "objectID": "posts/paradoxe-simpson/index.html#source",
+    "href": "posts/paradoxe-simpson/index.html#source",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "Source",
+    "text": "Source"
+  },
+  {
+    "objectID": "posts/paradoxe-simpson/index.html#references",
+    "href": "posts/paradoxe-simpson/index.html#references",
+    "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
+    "section": "References",
+    "text": "References"
   },
   {
     "objectID": "projects/index.html",
@@ -82,6 +117,27 @@
     "title": "Projects",
     "section": "The History of the War of the Ring",
     "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "section": "",
+    "text": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/hello-world/index.html",
