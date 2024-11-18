@@ -61,7 +61,6 @@ rsconnect/
 
 # Fichiers générés par Build Preview
 _site/
-*.html
 _freeze/
 .quarto/
 
