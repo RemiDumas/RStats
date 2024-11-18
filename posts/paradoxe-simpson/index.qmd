@@ -34,20 +34,47 @@ library('questionr')
 
 ## Historique
 
-Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique.
+Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951.
+Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes.
+Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique.
 
 ## Illustration
 
-Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie.
+Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir @tbl-hopitalA et @tbl-hopitalB).
 
-    Hôpital A : 90% de succès pour 100 patients, 50% pour 10 patients.
-    Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.
+-   Hôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n'a pas suivi le protocole.
+-   Hôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n'a pas suivi le protocole.
 
-Si l'on examine chaque groupe séparément, A semble plus performant. Mais en combinant les données, l'hôpital B affiche un meilleur taux global de succès ! Cette inversion inattendue est typique du paradoxe de Simpson.
+| Hôpital A  | Guéris | Non guéris | Taux de guérison |
+|------------|--------|------------|------------------|
+| Protocole  |  30    |      45    |        40,0 %    |
+| Groupe test|  27    |      33    |        45,0 %    |
+
+: Taux de guérison de l'hôpital A {#tbl-hopitalA}
+
+| Hôpital B  | Guéris | Non guéris | Taux de guérison |
+|------------|--------|------------|------------------|
+| Protocole  |  66    |      44    |        60,0 %    |
+| Groupe test|  12    |      6     |        66,7 %    |
+
+: Taux de guérison de l'hôpital B {#tbl-hopitalB}
+
+Si l'on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l'hôpital qui traite les patients. Mais en combinant les données (voir @tbl-global), le protocole a un meilleur taux global de succès !
+
+| Ensemble   | Guéris | Non guéris | Taux de guérison |
+|------------|--------|------------|------------------|
+| Protocole  |  96    |     89     |        60,0 %    |
+| Groupe test|  39    |     39     |        66,7 %    |
+
+: Taux de guérison global {#tbl-global}
+
+Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu'un "double effet Simpson" apparaisse, lorsque l'on croise les résultats avec une deuxième caractéristique (voir @Delahaye)
 
 ## Définition
 
-Le paradoxe de Simpson désigne une situation où la relation entre deux variables semble s'inverser lorsque les données sont regroupées. Cela se produit souvent en raison d'un facteur confondant, une troisième variable influençant les résultats. Ce paradoxe révèle les limites des analyses statistiques simplistes et l'importance de contextualiser les données.
+Le paradoxe de Simpson désigne une situation où la relation entre deux variables semble s'inverser lorsque les données sont regroupées.
+Cela se produit souvent en raison d'un facteur confondant, une troisième variable influençant les résultats.
+Ce paradoxe révèle les limites des analyses statistiques simplistes et l'importance de contextualiser les données.
 
 ## Conséquences
 
@@ -59,16 +86,14 @@ Le paradoxe de Simpson a des implications profondes :
 
 ## Quatre exemples étudiés
 
-- Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.
-- Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.
-- Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.
-- Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.
+-   Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.
+-   Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.
+-   Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.
+-   Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.
 
 En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.
 
 ## Source
-
-
 
 ## References
 
