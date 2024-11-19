@@ -60,6 +60,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -148,7 +149,7 @@ MathJax = {
 
 </head>
 
-<body class="floating nav-fixed">
+<body class="floating nav-fixed slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top quarto-banner">
@@ -280,7 +281,12 @@ MathJax = {
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
     </div>
 <!-- main -->
-<main class="content quarto-banner-title-block" id="quarto-document-content">
+<main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
+<div class="no-row-height column-margin column-container">
+  <div class="">
+    <img src="simpson.jpg" style="width:100%">
+  </div>
+</div>
 
 
 
@@ -292,10 +298,112 @@ MathJax = {
 </section>
 <section id="illustration" class="level2">
 <h2 class="anchored" data-anchor-id="illustration">Illustration</h2>
-<p>Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie.</p>
-<pre><code>Hôpital A : 90% de succès pour 100 patients, 50% pour 10 patients.
-Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.</code></pre>
-<p>Si l’on examine chaque groupe séparément, A semble plus performant. Mais en combinant les données, l’hôpital B affiche un meilleur taux global de succès ! Cette inversion inattendue est typique du paradoxe de Simpson.</p>
+<p>Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir <a href="#tbl-hopitalA" class="quarto-xref">Table&nbsp;1</a> et <a href="#tbl-hopitalB" class="quarto-xref">Table&nbsp;2</a>).</p>
+<ul>
+<li>Hôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n’a pas suivi le protocole.</li>
+<li>Hôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n’a pas suivi le protocole.</li>
+</ul>
+<div id="tbl-hopitalA" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hopitalA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;1: Taux de guérison de l’hôpital A
+</figcaption>
+<div aria-describedby="tbl-hopitalA-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hôpital A</th>
+<th>Guéris</th>
+<th>Non guéris</th>
+<th>Taux de guérison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Protocole</td>
+<td>30</td>
+<td>45</td>
+<td>40,0 %</td>
+</tr>
+<tr class="even">
+<td>Groupe test</td>
+<td>27</td>
+<td>33</td>
+<td>45,0 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<div id="tbl-hopitalB" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-hopitalB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;2: Taux de guérison de l’hôpital B
+</figcaption>
+<div aria-describedby="tbl-hopitalB-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Hôpital B</th>
+<th>Guéris</th>
+<th>Non guéris</th>
+<th>Taux de guérison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Protocole</td>
+<td>66</td>
+<td>44</td>
+<td>60,0 %</td>
+</tr>
+<tr class="even">
+<td>Groupe test</td>
+<td>12</td>
+<td>6</td>
+<td>66,7 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Si l’on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l’hôpital qui traite les patients. Mais en combinant les données (voir <a href="#tbl-global" class="quarto-xref">Table&nbsp;3</a>), le protocole a un meilleur taux global de succès !</p>
+<div id="tbl-global" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-float-tbl figure">
+<figcaption class="quarto-float-caption-top quarto-float-caption quarto-float-tbl" id="tbl-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Table&nbsp;3: Taux de guérison global
+</figcaption>
+<div aria-describedby="tbl-global-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<table class="caption-top table">
+<thead>
+<tr class="header">
+<th>Ensemble</th>
+<th>Guéris</th>
+<th>Non guéris</th>
+<th>Taux de guérison</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Protocole</td>
+<td>96</td>
+<td>89</td>
+<td>60,0 %</td>
+</tr>
+<tr class="even">
+<td>Groupe test</td>
+<td>39</td>
+<td>39</td>
+<td>66,7 %</td>
+</tr>
+</tbody>
+</table>
+</div>
+</figure>
+</div>
+<p>Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu’un “double effet Simpson” apparaisse, lorsque l’on croise les résultats avec une deuxième caractéristique (voir <span class="citation" data-cites="Delahaye">Delahaye (<a href="#ref-Delahaye" role="doc-biblioref">s.&nbsp;d.</a>)</span>)</p>
 </section>
 <section id="définition" class="level2">
 <h2 class="anchored" data-anchor-id="définition">Définition</h2>
@@ -325,8 +433,10 @@ Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.</code></pr
 </section>
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
-<div id="refs" role="list">
-
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-Delahaye" class="csl-entry" role="listitem">
+Delahaye, Jean-Paul. s.&nbsp;d. <em>Au pays des paradoxes</em>. Belin.
+</div>
 </div>
 
 
@@ -335,6 +445,14 @@ Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.</code></pr
 </section>
 
 </main> <!-- /main -->
+<hr>
+
+<span style="margin-top:20px; margin-bottom: 20px"></span>
+
+<img style="width:100%;" src="../../img/my_image.jpg">
+
+<p style="margin: auto"> Vous aimez ce blog <b>RStats</b>? Soutenez-le !</p>
+<p style="margin: auto"><a href="mailto:remi.dumas@gmail.com">Envoyez moi un mail</a></p>
 <script id="quarto-html-after-body" type="application/javascript">
 window.document.addEventListener("DOMContentLoaded", function (event) {
   const toggleBodyColorMode = (bsSheetEl) => {
@@ -950,82 +1068,107 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   }
 });
 </script><div class="modal fade" id="quarto-embedded-source-code-modal" tabindex="-1" aria-labelledby="quarto-embedded-source-code-modal-label" aria-hidden="true"><div class="modal-dialog modal-dialog-scrollable"><div class="modal-content"><div class="modal-header"><h5 class="modal-title" id="quarto-embedded-source-code-modal-label">Code source</h5><button class="btn-close" data-bs-dismiss="modal"></button></div><div class="modal-body"><div class="">
-<div class="sourceCode" id="cb2" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Le paradoxe de Simpson : comprendre une illusion statistique intrigante."</span></span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique."</span></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-10-04</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "DD, MMMM YYYY"</span></span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats </span></span>
-<span id="cb2-9"><a href="#cb2-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - R</span></span>
-<span id="cb2-10"><a href="#cb2-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - mathématiques</span></span>
-<span id="cb2-11"><a href="#cb2-11" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
-<span id="cb2-12"><a href="#cb2-12" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb2-13"><a href="#cb2-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> simpson.jpg</span></span>
-<span id="cb2-14"><a href="#cb2-14" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
-<span id="cb2-15"><a href="#cb2-15" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
-<span id="cb2-16"><a href="#cb2-16" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
-<span id="cb2-17"><a href="#cb2-17" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
-<span id="cb2-18"><a href="#cb2-18" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
-<span id="cb2-19"><a href="#cb2-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
-<span id="cb2-20"><a href="#cb2-20" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
-<span id="cb2-21"><a href="#cb2-21" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
-<span id="cb2-22"><a href="#cb2-22" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
-<span id="cb2-23"><a href="#cb2-23" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
-<span id="cb2-24"><a href="#cb2-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
-<span id="cb2-25"><a href="#cb2-25" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-28"><a href="#cb2-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
-<span id="cb2-29"><a href="#cb2-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
-<span id="cb2-30"><a href="#cb2-30" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-31"><a href="#cb2-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
-<span id="cb2-32"><a href="#cb2-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>)</span>
-<span id="cb2-33"><a href="#cb2-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
-<span id="cb2-34"><a href="#cb2-34" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-35"><a href="#cb2-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
-<span id="cb2-36"><a href="#cb2-36" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-37"><a href="#cb2-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Historique</span></span>
-<span id="cb2-38"><a href="#cb2-38" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-39"><a href="#cb2-39" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique.</span>
-<span id="cb2-40"><a href="#cb2-40" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-41"><a href="#cb2-41" aria-hidden="true" tabindex="-1"></a><span class="fu">## Illustration</span></span>
-<span id="cb2-42"><a href="#cb2-42" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-43"><a href="#cb2-43" aria-hidden="true" tabindex="-1"></a>Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie.</span>
-<span id="cb2-44"><a href="#cb2-44" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-45"><a href="#cb2-45" aria-hidden="true" tabindex="-1"></a><span class="in">    Hôpital A : 90% de succès pour 100 patients, 50% pour 10 patients.</span></span>
-<span id="cb2-46"><a href="#cb2-46" aria-hidden="true" tabindex="-1"></a><span class="in">    Hôpital B : 80% de succès pour 200 patients, 70% pour 100 patients.</span></span>
-<span id="cb2-47"><a href="#cb2-47" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-48"><a href="#cb2-48" aria-hidden="true" tabindex="-1"></a>Si l'on examine chaque groupe séparément, A semble plus performant. Mais en combinant les données, l'hôpital B affiche un meilleur taux global de succès ! Cette inversion inattendue est typique du paradoxe de Simpson.</span>
-<span id="cb2-49"><a href="#cb2-49" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-50"><a href="#cb2-50" aria-hidden="true" tabindex="-1"></a><span class="fu">## Définition</span></span>
-<span id="cb2-51"><a href="#cb2-51" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-52"><a href="#cb2-52" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson désigne une situation où la relation entre deux variables semble s'inverser lorsque les données sont regroupées. Cela se produit souvent en raison d'un facteur confondant, une troisième variable influençant les résultats. Ce paradoxe révèle les limites des analyses statistiques simplistes et l'importance de contextualiser les données.</span>
-<span id="cb2-53"><a href="#cb2-53" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-54"><a href="#cb2-54" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conséquences</span></span>
-<span id="cb2-55"><a href="#cb2-55" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-56"><a href="#cb2-56" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson a des implications profondes :</span>
-<span id="cb2-57"><a href="#cb2-57" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-58"><a href="#cb2-58" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prises de décision erronées : en regroupant les données, on risque de tirer des conclusions fausses.</span>
-<span id="cb2-59"><a href="#cb2-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Biais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d'études cliniques, sociales ou économiques.</span>
-<span id="cb2-60"><a href="#cb2-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n'importe quoi.</span>
-<span id="cb2-61"><a href="#cb2-61" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-62"><a href="#cb2-62" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quatre exemples étudiés</span></span>
-<span id="cb2-63"><a href="#cb2-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-64"><a href="#cb2-64" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.</span>
-<span id="cb2-65"><a href="#cb2-65" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.</span>
-<span id="cb2-66"><a href="#cb2-66" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.</span>
-<span id="cb2-67"><a href="#cb2-67" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.</span>
-<span id="cb2-68"><a href="#cb2-68" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-69"><a href="#cb2-69" aria-hidden="true" tabindex="-1"></a>En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.</span>
-<span id="cb2-70"><a href="#cb2-70" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-71"><a href="#cb2-71" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source</span></span>
-<span id="cb2-72"><a href="#cb2-72" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-73"><a href="#cb2-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-74"><a href="#cb2-74" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-75"><a href="#cb2-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb2-76"><a href="#cb2-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-77"><a href="#cb2-77" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb2-78"><a href="#cb2-78" aria-hidden="true" tabindex="-1"></a>:::</span>
+<div class="sourceCode" id="cb1" data-shortcodes="false"><pre class="sourceCode markdown code-with-copy"><code class="sourceCode markdown"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="an">title:</span><span class="co"> "Le paradoxe de Simpson : comprendre une illusion statistique intrigante."</span></span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="an">description:</span><span class="co"> "Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes. Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique."</span></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="an">date:</span><span class="co"> 2024-10-04</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "DD, MMMM YYYY"</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - stats </span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - R</span></span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - mathématiques</span></span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> simpson.jpg</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
+<span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
+<span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
+<span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">    fig-cap-location: bottom</span></span>
+<span id="cb1-18"><a href="#cb1-18" aria-hidden="true" tabindex="-1"></a><span class="co">    include-before-body: ../../html/margin_image.html</span></span>
+<span id="cb1-19"><a href="#cb1-19" aria-hidden="true" tabindex="-1"></a><span class="co">    include-after-body: ../../html/blog_footer.html</span></span>
+<span id="cb1-20"><a href="#cb1-20" aria-hidden="true" tabindex="-1"></a><span class="co">    comments: false</span></span>
+<span id="cb1-21"><a href="#cb1-21" aria-hidden="true" tabindex="-1"></a><span class="an">editor:</span><span class="co"> </span></span>
+<span id="cb1-22"><a href="#cb1-22" aria-hidden="true" tabindex="-1"></a><span class="co">  markdown: </span></span>
+<span id="cb1-23"><a href="#cb1-23" aria-hidden="true" tabindex="-1"></a><span class="co">    wrap: sentence</span></span>
+<span id="cb1-24"><a href="#cb1-24" aria-hidden="true" tabindex="-1"></a><span class="co">---</span></span>
+<span id="cb1-25"><a href="#cb1-25" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a><span class="in">```{r}</span></span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a><span class="co">#| include: false</span></span>
+<span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'dplyr'</span>)</span>
+<span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'knitr'</span>)</span>
+<span id="cb1-33"><a href="#cb1-33" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(<span class="st">'questionr'</span>)</span>
+<span id="cb1-34"><a href="#cb1-34" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-35"><a href="#cb1-35" aria-hidden="true" tabindex="-1"></a><span class="in">```</span></span>
+<span id="cb1-36"><a href="#cb1-36" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-37"><a href="#cb1-37" aria-hidden="true" tabindex="-1"></a><span class="fu">## Historique</span></span>
+<span id="cb1-38"><a href="#cb1-38" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-39"><a href="#cb1-39" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson, également connu sous le nom d'effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951.</span>
+<span id="cb1-40"><a href="#cb1-40" aria-hidden="true" tabindex="-1"></a>Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s'inverser lorsqu'on combine ces groupes.</span>
+<span id="cb1-41"><a href="#cb1-41" aria-hidden="true" tabindex="-1"></a>Bien qu'il s'agisse d'un concept mathématique, il soulève des questions importantes sur l'interprétation des données en sciences, en économie et en santé publique.</span>
+<span id="cb1-42"><a href="#cb1-42" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-43"><a href="#cb1-43" aria-hidden="true" tabindex="-1"></a><span class="fu">## Illustration</span></span>
+<span id="cb1-44"><a href="#cb1-44" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-45"><a href="#cb1-45" aria-hidden="true" tabindex="-1"></a>Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir @tbl-hopitalA et @tbl-hopitalB).</span>
+<span id="cb1-46"><a href="#cb1-46" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-47"><a href="#cb1-47" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Hôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n'a pas suivi le protocole.</span>
+<span id="cb1-48"><a href="#cb1-48" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Hôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n'a pas suivi le protocole.</span>
+<span id="cb1-49"><a href="#cb1-49" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-50"><a href="#cb1-50" aria-hidden="true" tabindex="-1"></a>| Hôpital A  | Guéris | Non guéris | Taux de guérison |</span>
+<span id="cb1-51"><a href="#cb1-51" aria-hidden="true" tabindex="-1"></a>|------------|--------|------------|------------------|</span>
+<span id="cb1-52"><a href="#cb1-52" aria-hidden="true" tabindex="-1"></a>| Protocole  |  30    |      45    |        40,0 %    |</span>
+<span id="cb1-53"><a href="#cb1-53" aria-hidden="true" tabindex="-1"></a>| Groupe test|  27    |      33    |        45,0 %    |</span>
+<span id="cb1-54"><a href="#cb1-54" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-55"><a href="#cb1-55" aria-hidden="true" tabindex="-1"></a>: Taux de guérison de l'hôpital A {#tbl-hopitalA}</span>
+<span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a>| Hôpital B  | Guéris | Non guéris | Taux de guérison |</span>
+<span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>|------------|--------|------------|------------------|</span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a>| Protocole  |  66    |      44    |        60,0 %    |</span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a>| Groupe test|  12    |      6     |        66,7 %    |</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a>: Taux de guérison de l'hôpital B {#tbl-hopitalB}</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>Si l'on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l'hôpital qui traite les patients. Mais en combinant les données (voir @tbl-global), le protocole a un meilleur taux global de succès !</span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>| Ensemble   | Guéris | Non guéris | Taux de guérison |</span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>|------------|--------|------------|------------------|</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>| Protocole  |  96    |     89     |        60,0 %    |</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>| Groupe test|  39    |     39     |        66,7 %    |</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>: Taux de guérison global {#tbl-global}</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a>Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu'un "double effet Simpson" apparaisse, lorsque l'on croise les résultats avec une deuxième caractéristique (voir @Delahaye)</span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a><span class="fu">## Définition</span></span>
+<span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson désigne une situation où la relation entre deux variables semble s'inverser lorsque les données sont regroupées.</span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a>Cela se produit souvent en raison d'un facteur confondant, une troisième variable influençant les résultats.</span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>Ce paradoxe révèle les limites des analyses statistiques simplistes et l'importance de contextualiser les données.</span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conséquences</span></span>
+<span id="cb1-82"><a href="#cb1-82" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-83"><a href="#cb1-83" aria-hidden="true" tabindex="-1"></a>Le paradoxe de Simpson a des implications profondes :</span>
+<span id="cb1-84"><a href="#cb1-84" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-85"><a href="#cb1-85" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Prises de décision erronées : en regroupant les données, on risque de tirer des conclusions fausses.</span>
+<span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Biais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d'études cliniques, sociales ou économiques.</span>
+<span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n'importe quoi.</span>
+<span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quatre exemples étudiés</span></span>
+<span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.</span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.</span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.</span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source</span></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
