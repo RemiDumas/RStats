@@ -46,7 +46,7 @@
     "href": "posts/paradoxe-simpson/index.html#illustration",
     "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
     "section": "Illustration",
-    "text": "Illustration\nImaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir Table 1 et Table 2).\n\nHôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n’a pas suivi le protocole.\nHôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n’a pas suivi le protocole.\n\n\n\n\nTable 1: Taux de guérison de l’hôpital A\n\n\n\n\n\nHôpital A\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n30\n45\n40,0 %\n\n\nGroupe test\n27\n33\n45,0 %\n\n\n\n\n\n\n\n\n\nTable 2: Taux de guérison de l’hôpital B\n\n\n\n\n\nHôpital B\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n66\n44\n60,0 %\n\n\nGroupe test\n12\n6\n66,7 %\n\n\n\n\n\n\nSi l’on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l’hôpital qui traite les patients. Mais en combinant les données (voir Table 3), le protocole a un meilleur taux global de succès !\n\n\n\nTable 3: Taux de guérison global\n\n\n\n\n\nEnsemble\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n96\n89\n60,0 %\n\n\nGroupe test\n39\n39\n66,7 %\n\n\n\n\n\n\nCette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu’un “double effet Simpson” apparaisse, lorsque l’on croise les résultats avec une deuxième caractéristique (voir Delahaye (s. d.))"
+    "text": "Illustration\nImaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir Table 1 et Table 2).\n\nHôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n’a pas suivi le protocole.\nHôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n’a pas suivi le protocole.\n\n\n\n\nTable 1: Taux de guérison de l’hôpital A\n\n\n\n\n\nHôpital A\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n30\n45\n40,0 %\n\n\nGroupe test\n27\n33\n45,0 %\n\n\n\n\n\n\n\n\n\nTable 2: Taux de guérison de l’hôpital B\n\n\n\n\n\nHôpital B\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n66\n44\n60,0 %\n\n\nGroupe test\n12\n6\n66,7 %\n\n\n\n\n\n\nSi l’on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l’hôpital qui traite les patients. Mais en combinant les données (voir Table 3), le protocole a un meilleur taux global de succès !\n\n\n\nTable 3: Taux de guérison global\n\n\n\n\n\nEnsemble\nGuéris\nNon guéris\nTaux de guérison\n\n\n\n\nProtocole\n96\n89\n51,9 %\n\n\nGroupe test\n39\n39\n50,0 %\n\n\n\n\n\n\nCette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu’un “double effet Simpson” apparaisse, lorsque l’on croise les résultats avec une deuxième caractéristique (voir Delahaye (s. d.))"
   },
   {
     "objectID": "posts/paradoxe-simpson/index.html#définition",
@@ -63,11 +63,11 @@
     "text": "Conséquences\nLe paradoxe de Simpson a des implications profondes :\n\nPrises de décision erronées : en regroupant les données, on risque de tirer des conclusions fausses.\nBiais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d’études cliniques, sociales ou économiques.\nManipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n’importe quoi."
   },
   {
-    "objectID": "posts/paradoxe-simpson/index.html#quatre-exemples-étudiés",
-    "href": "posts/paradoxe-simpson/index.html#quatre-exemples-étudiés",
+    "objectID": "posts/paradoxe-simpson/index.html#autres-exemples-étudiés",
+    "href": "posts/paradoxe-simpson/index.html#autres-exemples-étudiés",
     "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
-    "section": "Quatre exemples étudiés",
-    "text": "Quatre exemples étudiés\n\nStatistiques médicales : Dans une étude sur l’efficacité d’un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.\nSport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.\nÉducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d’élèves, mais l’inverse globalement en raison de tailles différentes de classes.\nJustice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu’on considère l’ensemble des données.\n\nEn conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d’elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie."
+    "section": "Autres exemples étudiés",
+    "text": "Autres exemples étudiés\n\nStatistiques de mortalité parmi les vaccinés du COVID (ref Caravenna et Berger (2021))\n\nEn conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d’elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie."
   },
   {
     "objectID": "posts/paradoxe-simpson/index.html#source",
@@ -81,7 +81,7 @@
     "href": "posts/paradoxe-simpson/index.html#references",
     "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
     "section": "References",
-    "text": "References\n\n\nDelahaye, Jean-Paul. s. d. Au pays des paradoxes. Belin."
+    "text": "References\n\n\nCaravenna, Francesco, et Quentin Berger. 2021. « Le paradoxe de Simpson illustré par des données de vaccination contre le Covid-19 ». The Conversation. http://theconversation.com/le-paradoxe-de-simpson-illustre-par-des-donnees-de-vaccination-contre-le-covid-19-170159.\n\n\nDelahaye, Jean-Paul. s. d. Au pays des paradoxes. Belin."
   },
   {
     "objectID": "projects/index.html",

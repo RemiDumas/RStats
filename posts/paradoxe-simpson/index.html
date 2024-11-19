@@ -270,7 +270,7 @@ MathJax = {
   <li><a href="#illustration" id="toc-illustration" class="nav-link" data-scroll-target="#illustration">Illustration</a></li>
   <li><a href="#définition" id="toc-définition" class="nav-link" data-scroll-target="#définition">Définition</a></li>
   <li><a href="#conséquences" id="toc-conséquences" class="nav-link" data-scroll-target="#conséquences">Conséquences</a></li>
-  <li><a href="#quatre-exemples-étudiés" id="toc-quatre-exemples-étudiés" class="nav-link" data-scroll-target="#quatre-exemples-étudiés">Quatre exemples étudiés</a></li>
+  <li><a href="#autres-exemples-étudiés" id="toc-autres-exemples-étudiés" class="nav-link" data-scroll-target="#autres-exemples-étudiés">Autres exemples étudiés</a></li>
   <li><a href="#source" id="toc-source" class="nav-link" data-scroll-target="#source">Source</a></li>
   <li><a href="#references" id="toc-references" class="nav-link" data-scroll-target="#references">References</a></li>
   </ul>
@@ -390,13 +390,13 @@ Table&nbsp;3: Taux de guérison global
 <td>Protocole</td>
 <td>96</td>
 <td>89</td>
-<td>60,0 %</td>
+<td>51,9 %</td>
 </tr>
 <tr class="even">
 <td>Groupe test</td>
 <td>39</td>
 <td>39</td>
-<td>66,7 %</td>
+<td>50,0 %</td>
 </tr>
 </tbody>
 </table>
@@ -418,13 +418,10 @@ Table&nbsp;3: Taux de guérison global
 <li>Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n’importe quoi.</li>
 </ul>
 </section>
-<section id="quatre-exemples-étudiés" class="level2">
-<h2 class="anchored" data-anchor-id="quatre-exemples-étudiés">Quatre exemples étudiés</h2>
+<section id="autres-exemples-étudiés" class="level2">
+<h2 class="anchored" data-anchor-id="autres-exemples-étudiés">Autres exemples étudiés</h2>
 <ul>
-<li>Statistiques médicales : Dans une étude sur l’efficacité d’un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.</li>
-<li>Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.</li>
-<li>Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d’élèves, mais l’inverse globalement en raison de tailles différentes de classes.</li>
-<li>Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu’on considère l’ensemble des données.</li>
+<li>Statistiques de mortalité parmi les vaccinés du COVID (ref <span class="citation" data-cites="caravenna_paradoxe_2021">Caravenna et Berger (<a href="#ref-caravenna_paradoxe_2021" role="doc-biblioref">2021</a>)</span>)</li>
 </ul>
 <p>En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d’elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.</p>
 </section>
@@ -434,6 +431,9 @@ Table&nbsp;3: Taux de guérison global
 <section id="references" class="level2">
 <h2 class="anchored" data-anchor-id="references">References</h2>
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-caravenna_paradoxe_2021" class="csl-entry" role="listitem">
+Caravenna, Francesco, et Quentin Berger. 2021. <span>«&nbsp;Le paradoxe de <span>Simpson</span> illustré par des données de vaccination contre le <span>Covid</span>-19&nbsp;»</span>. <em>The Conversation</em>. <a href="http://theconversation.com/le-paradoxe-de-simpson-illustre-par-des-donnees-de-vaccination-contre-le-covid-19-170159">http://theconversation.com/le-paradoxe-de-simpson-illustre-par-des-donnees-de-vaccination-contre-le-covid-19-170159</a>.
+</div>
 <div id="ref-Delahaye" class="csl-entry" role="listitem">
 Delahaye, Jean-Paul. s.&nbsp;d. <em>Au pays des paradoxes</em>. Belin.
 </div>
@@ -1133,8 +1133,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>| Ensemble   | Guéris | Non guéris | Taux de guérison |</span>
 <span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>|------------|--------|------------|------------------|</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>| Protocole  |  96    |     89     |        60,0 %    |</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>| Groupe test|  39    |     39     |        66,7 %    |</span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>| Protocole  |  96    |     89     |        51,9 %    |</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a>| Groupe test|  39    |     39     |        50,0 %    |</span>
 <span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a>: Taux de guérison global {#tbl-global}</span>
 <span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
@@ -1154,21 +1154,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-86"><a href="#cb1-86" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Biais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d'études cliniques, sociales ou économiques.</span>
 <span id="cb1-87"><a href="#cb1-87" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n'importe quoi.</span>
 <span id="cb1-88"><a href="#cb1-88" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Quatre exemples étudiés</span></span>
+<span id="cb1-89"><a href="#cb1-89" aria-hidden="true" tabindex="-1"></a><span class="fu">## Autres exemples étudiés</span></span>
 <span id="cb1-90"><a href="#cb1-90" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.</span>
-<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.</span>
-<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.</span>
-<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a><span class="ss">-   </span>Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.</span>
-<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a>En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.</span>
-<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source</span></span>
-<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb1-101"><a href="#cb1-101" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-102"><a href="#cb1-102" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-103"><a href="#cb1-103" aria-hidden="true" tabindex="-1"></a>:::</span>
+<span id="cb1-91"><a href="#cb1-91" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Statistiques de mortalité parmi les vaccinés du COVID (ref @caravenna_paradoxe_2021)</span>
+<span id="cb1-92"><a href="#cb1-92" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-93"><a href="#cb1-93" aria-hidden="true" tabindex="-1"></a>En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.</span>
+<span id="cb1-94"><a href="#cb1-94" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-95"><a href="#cb1-95" aria-hidden="true" tabindex="-1"></a><span class="fu">## Source</span></span>
+<span id="cb1-96"><a href="#cb1-96" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-97"><a href="#cb1-97" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb1-98"><a href="#cb1-98" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-99"><a href="#cb1-99" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-100"><a href="#cb1-100" aria-hidden="true" tabindex="-1"></a>:::</span>
 </code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
