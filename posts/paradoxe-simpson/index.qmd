@@ -63,8 +63,8 @@ Si l'on examine chaque groupe séparément, le protocole a de moins bon résulta
 
 | Ensemble   | Guéris | Non guéris | Taux de guérison |
 |------------|--------|------------|------------------|
-| Protocole  |  96    |     89     |        60,0 %    |
-| Groupe test|  39    |     39     |        66,7 %    |
+| Protocole  |  96    |     89     |        51,9 %    |
+| Groupe test|  39    |     39     |        50,0 %    |
 
 : Taux de guérison global {#tbl-global}
 
@@ -84,12 +84,9 @@ Le paradoxe de Simpson a des implications profondes :
 - Biais dans les études scientifiques : une mauvaise interprétation peut fausser les résultats d'études cliniques, sociales ou économiques.
 - Manipulation des données : en regroupant ou en séparant les données stratégiquement, il est possible de « prouver » presque n'importe quoi.
 
-## Quatre exemples étudiés
+## Autres exemples étudiés
 
--   Statistiques médicales : Dans une étude sur l'efficacité d'un traitement, un sous-groupe peut montrer de meilleurs résultats, mais les données globales révèlent une efficacité moindre.
--   Sport : Un joueur de baseball peut avoir un meilleur taux de réussite saisonnier que ses concurrents dans deux saisons distinctes, mais un taux global inférieur sur ces deux saisons.
--   Éducation : Deux écoles peuvent montrer des taux de réussite différents en mathématiques dans des groupes d'élèves, mais l'inverse globalement en raison de tailles différentes de classes.
--   Justice sociale : Dans une analyse de disparités salariales, un groupe semble avantagé dans plusieurs catégories, mais désavantagé lorsqu'on considère l'ensemble des données.
+- Statistiques de mortalité parmi les vaccinés du COVID (ref @caravenna_paradoxe_2021)
 
 En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.
 
