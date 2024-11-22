@@ -40,35 +40,114 @@ Bien qu'il s'agisse d'un concept mathématique, il soulève des questions import
 
 ## Illustration
 
-Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir @tbl-hopitalA et @tbl-hopitalB).
+Imaginons deux hôpitaux (A et B) avec des taux de succès différents pour traiter une maladie (voir @tbl-hopital).
 
 -   Hôpital A : un taux de guérison de 40 % avec le protocole de soins et 45 % pour un groupe test qui n'a pas suivi le protocole.
 -   Hôpital B : un taux de guérison de 60 % avec le protocole de soins et 66,7 % pour un groupe test qui n'a pas suivi le protocole.
 
-| Hôpital A  | Guéris | Non guéris | Taux de guérison |
-|------------|--------|------------|------------------|
-| Protocole  |  30    |      45    |        40,0 %    |
-| Groupe test|  27    |      33    |        45,0 %    |
+Chargeons les données et les packages qui seront utilisés pour l'analyse:
+```{r}
+#| label: packages_donnees
 
-: Taux de guérison de l'hôpital A {#tbl-hopitalA}
+library('dplyr')
+library('tidyr')
+library('gt')
 
-| Hôpital B  | Guéris | Non guéris | Taux de guérison |
-|------------|--------|------------|------------------|
-| Protocole  |  66    |      44    |        60,0 %    |
-| Groupe test|  12    |      6     |        66,7 %    |
+simpson <- read.csv2('posts/paradoxe-simpson/simpson.csv')
+```
 
-: Taux de guérison de l'hôpital B {#tbl-hopitalB}
+Pour la suite, nous allons analyser le taux de guérison selon l'hôpital qui a administré le protocole de soin.
 
-Si l'on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l'hôpital qui traite les patients. Mais en combinant les données (voir @tbl-global), le protocole a un meilleur taux global de succès !
+```{r}
+#| label: tbl-hopital
 
-| Ensemble   | Guéris | Non guéris | Taux de guérison |
-|------------|--------|------------|------------------|
-| Protocole  |  96    |     89     |        51,9 %    |
-| Groupe test|  39    |     39     |        50,0 %    |
+# traitement des données
+donnees <- simpson %>% 
+  group_by(Hopital, Traitement) %>% 
+  summarise(across(where(is.integer), sum)) %>% 
+  bind_rows(simpson %>% 
+              group_by(Traitement) %>% 
+              summarise(across(where(is.integer), sum)) %>% 
+              mutate(Hopital = "Ensemble")) %>% 
+  mutate(Taux_gueris = Gueris/(Gueris+NonGueris)) 
 
-: Taux de guérison global {#tbl-global}
+# tableau guérison selon l'hopital
+tab_hopital <- donnees %>% 
+  gt(rowname_col = 'Traitement', groupname_col = 'Hopital') %>% 
+  cols_label(
+    Gueris = "Guéris",
+    NonGueris = "Non guéris",
+    Taux_gueris = "Taux de guérison"
+  ) %>% 
+  fmt_percent(columns = 'Taux_gueris', locale = "fr", decimals = 1 ) %>% 
+  text_transform(
+    locations = cells_row_groups(),
+    fn = function(x) {if_else(x != "Ensemble", paste("Hôpital", x), as.character(x))}
+  ) 
 
-Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu'un "double effet Simpson" apparaisse, lorsque l'on croise les résultats avec une deuxième caractéristique (voir @Delahaye)
+tab_hopital %>% 
+  tab_header("Comparaison du taux de guérison dans chaque hôpital et ensemble") %>% 
+  tab_source_note("Source: données fictives")
+```
+
+Si l'on examine chaque groupe séparément, le protocole a de moins bon résultat quelque soit l'hôpital qui traite les patients. Mais en combinant les données, le protocole a un meilleur taux global de succès !
+
+Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois possible qu'un "double effet Simpson" apparaisse, lorsque l'on croise les résultats avec une deuxième caractéristique (voir @Delahaye).
+
+Dans notre exemple, nous pouvons distinguer les résultats selon le sexe (Homme ou Femme). Visualisons les taux de guérison par sexe pour chaque hôpital:
+
+```{r}
+#| label: tbl_hopital_sexe
+#| layout-ncol: 2
+
+simpson %>% filter(Sexe == "Homme") %>% 
+  group_by(Hopital, Traitement) %>% 
+  summarise(across(where(is.integer), sum)) %>% 
+  bind_rows(simpson %>% 
+              filter(Sexe == "Homme") %>% 
+              group_by(Traitement) %>% 
+              summarise(across(where(is.integer), sum)) %>% 
+              mutate(Hopital = "Ensemble")) %>% 
+  mutate(Taux_gueris = Gueris/(Gueris+NonGueris)) %>% 
+  gt(rowname_col = 'Traitement', groupname_col = 'Hopital') %>% 
+  cols_label(
+    Gueris = "Guéris",
+    NonGueris = "Non guéris",
+    Taux_gueris = "Taux de guérison"
+  ) %>% 
+  fmt_percent(columns = 'Taux_gueris', locale = "fr", decimals = 1 ) %>% 
+  text_transform(
+    locations = cells_row_groups(),
+    fn = function(x) {if_else(x != "Ensemble", paste("Hôpital", x), as.character(x))}
+  ) %>% 
+  tab_header("Comparaison du taux de guérison des hommes dans chaque hôpital et ensemble") %>% 
+  tab_source_note("Source: données fictives")
+
+simpson %>% filter(Sexe == "Femme") %>% 
+  group_by(Hopital, Traitement) %>% 
+  summarise(across(where(is.integer), sum)) %>% 
+  bind_rows(simpson %>% 
+              filter(Sexe == "Femme") %>%
+              group_by(Traitement) %>% 
+              summarise(across(where(is.integer), sum)) %>% 
+              mutate(Hopital = "Ensemble")) %>% 
+  mutate(Taux_gueris = Gueris/(Gueris+NonGueris)) %>% 
+  gt(rowname_col = 'Traitement', groupname_col = 'Hopital') %>% 
+  cols_label(
+    Gueris = "Guéris",
+    NonGueris = "Non guéris",
+    Taux_gueris = "Taux de guérison"
+  ) %>% 
+  fmt_percent(columns = 'Taux_gueris', locale = "fr", decimals = 1 ) %>% 
+  text_transform(
+    locations = cells_row_groups(),
+    fn = function(x) {if_else(x != "Ensemble", paste("Hôpital", x), as.character(x))}
+  ) %>% 
+  tab_header("Comparaison du taux de guérison des femmes dans chaque hôpital et ensemble") %>% 
+  tab_source_note("Source: données fictives")
+```
+
+Dans les tableaux produits (voir @tbl_hopital_sexe), on observe des résultats contradictoires: le protocole donne de meilleurs résultats pour les femmes et le contraire pour les hommes. Cependant, lorsqu'on évalue la guérison dans les deux hôpitaux, ces résultats sont différents, c'est le protocole qui guérit davantage chez les hommes que chez les femmes.
 
 ## Définition
 
@@ -86,11 +165,36 @@ Le paradoxe de Simpson a des implications profondes :
 
 ## Autres exemples étudiés
 
-- Statistiques de mortalité parmi les vaccinés du COVID (ref @caravenna_paradoxe_2021)
+### Statistiques de mortalité parmi les vaccinés du COVID 
+(ref @caravenna_paradoxe_2021)
+
+### Lien entre tabagisme et maladie de la thyroïde 
+
+Entre 1972 et 1974, une enquête menée dans le district de Whickham, au Royaume-Uni, a permis de recueillir des données sur les maladies de la thyroïde et du cœur auprès d'un échantillon représentatif. Vingt ans plus tard, une étude de suivi a été réalisée pour évaluer notamment l'impact de certains comportements, comme le tabagisme, sur la survie des participants. Parmi les 1 314 femmes étudiées, le taux de mortalité des fumeuses était de 28%. Les fumeuses avaient, quand à elle, un taux de mortalité de 24% .Cependant, la comparaison par tranche d'âge montre que les fumeuses ont des taux de mortalité supérieurs, à chaque âge. Ainsi, l'interprétation des données soulève une problématique courante en statistique : la corrélation apparente entre certaines variables, comme le tabagisme et la survie, peut en réalité être influencée par une variable cachée, comme l'état de santé général. Cet exemple met en lumière les défis que pose l'analyse des données lorsqu'une relation causale est obscurcie par des facteurs non mesurés (voir @amstat).
+
+### Étude des résultats scolaires par groupes d'élèves
+
+Entre 1980 et 2000 aux États-Unis, la moyenne des scores obtenus par les élèves à un test linguistique est restée remarquablement stable, avoisinant constamment les 504 points. Cependant, sur cette même période, chaque groupe ethnique a enregistré une augmentation de sa moyenne d'au moins huit points.
+
+Cette apparente contradiction s'explique par une évolution démographique : la proportion d'élèves issus de minorités ethniques (qui obtiennent en général des scores inférieurs à la moyenne globale) a augmenté au fil des années. Cela a entraîné une stagnation des résultats globaux, malgré une amélioration notable des performances au sein de chaque groupe. 
 
 En conclusion, le paradoxe de Simpson nous rappelle que les données ne parlent pas d'elles-mêmes : leur interprétation exige une vigilance et une compréhension contextuelle approfondie.
 
-## Source
+### Comparaison des taux de mortalité entre deux populations
+
+En 1986, Joel Cohen, chercheur à l'Université Rockefeller à New York, a étudié les différences de mortalité entre le Costa Rica et la Suède, cette dernière étant réputée pour sa longévité exceptionnelle.
+
+Comme on pouvait s'y attendre, il a constaté qu'en 1960, les taux de mortalité féminine étaient systématiquement plus élevés au Costa Rica pour chaque tranche d'âge, par rapport à la Suède. Cependant, de manière surprenante, le taux de mortalité global des femmes au Costa Rica était inférieur à celui de la Suède.
+
+Cette contradiction s'explique par la structure démographique des deux pays. En effet, la population costaricienne est, en moyenne, beaucoup plus jeune que celle de la Suède.
+
+### Impact de la vitesse sur les accidents
+
+En 2004, Gary Davis, chercheur à l'Université du Minnesota, a étudié la relation entre la vitesse moyenne des véhicules et le nombre d'accidents impliquant des piétons et des véhicules dans différentes zones urbaines. De manière surprenante, son modèle prédisait qu'abaisser la limite de vitesse de 30 miles par heure à 25 entraînerait une augmentation des accidents. Toutefois, cette conclusion erronée résultait d'une mauvaise agrégation des données. Un facteur crucial avait été négligé : le nombre d'accidents était significativement plus faible dans les zones résidentielles.
+
+## Données
+
+Données fictives <https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/paradoxe-simpson/simpson.csv>
 
 ## References
 
