@@ -11,8 +11,8 @@ jobs:
     permissions:
       contents: write
     steps:
-      - names: Updates
-        run:sudo apt update
+      - name: Updates
+        run: sudo apt update
         
       - name: Install ubuntu deps
         run: sudo apt-get install libcurl4-openssl-dev
