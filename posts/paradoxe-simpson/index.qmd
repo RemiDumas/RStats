@@ -53,7 +53,7 @@ library('dplyr')
 library('tidyr')
 library('gt')
 
-simpson <- read.csv2('posts/paradoxe-simpson/simpson.csv')
+simpson <- read.csv2('simpson.csv')
 ```
 
 Pour la suite, nous allons analyser le taux de guérison selon l'hôpital qui a administré le protocole de soin.
