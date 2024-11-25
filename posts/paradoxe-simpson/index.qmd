@@ -18,6 +18,7 @@ format:
     include-before-body: ../../html/margin_image.html
     include-after-body: ../../html/blog_footer.html
     comments: false
+    toc-title: Sommaire
 execute: 
   warning: false
 editor: 
@@ -100,7 +101,7 @@ Cette inversion inattendue est typique du paradoxe de Simpson. Il est parfois po
 Dans notre exemple, nous pouvons distinguer les résultats selon le sexe (Homme ou Femme). Visualisons les taux de guérison par sexe pour chaque hôpital:
 
 ```{r}
-#| label: tbl_hopital_sexe
+#| label: tbl-hopital_sexe
 #| tbl-cap: "Selon le sexe du patient"
 #| tbl-subcap:
 #|   - "Hommes"
