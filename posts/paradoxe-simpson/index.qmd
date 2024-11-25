@@ -101,6 +101,10 @@ Dans notre exemple, nous pouvons distinguer les résultats selon le sexe (Homme 
 
 ```{r}
 #| label: tbl_hopital_sexe
+#| tbl-cap: "Selon le sexe du patient"
+#| tbl-subcap:
+#|   - "Hommes"
+#|   - "Femmes"
 #| layout-ncol: 2
 
 simpson %>% filter(Sexe == "Homme") %>% 
