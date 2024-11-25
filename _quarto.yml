@@ -48,6 +48,7 @@ format:
         mainfont: Voltaire, sans-serif
         monofont: Fira Code, consolas, courier, monospace
         highlight-style: github
+        toc-location: right
         toc-title: Sommaire
         html-math-method:
             method: mathjax

@@ -11,7 +11,7 @@ title-block-banner: "../img/bg_trees_dark_banner.png"
 
 # Default for table of contents
 toc: true
-toc-title: Contents
+toc-title: Sommaire
 toc-location: left
 
 # Default knitr options

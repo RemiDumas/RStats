@@ -18,7 +18,6 @@ format:
     include-before-body: ../../html/margin_image.html
     include-after-body: ../../html/blog_footer.html
     comments: false
-    toc-title: Sommaire
 execute: 
   warning: false
 editor: 
@@ -155,7 +154,7 @@ simpson %>% filter(Sexe == "Femme") %>%
   tab_source_note("Source: données fictives")
 ```
 
-Dans les tableaux produits (voir @tbl_hopital_sexe), on observe des résultats contradictoires: le protocole donne de meilleurs résultats pour les femmes et le contraire pour les hommes. Cependant, lorsqu'on évalue la guérison dans les deux hôpitaux, ces résultats sont différents, c'est le protocole qui guérit davantage chez les hommes que chez les femmes.
+Dans les tableaux produits (voir @tbl-hopital_sexe), on observe des résultats contradictoires: le protocole donne de meilleurs résultats pour les femmes et le contraire pour les hommes. Cependant, lorsqu'on évalue la guérison dans les deux hôpitaux, ces résultats sont différents, c'est le protocole qui guérit davantage chez les hommes que chez les femmes.
 
 ## Définition
 
