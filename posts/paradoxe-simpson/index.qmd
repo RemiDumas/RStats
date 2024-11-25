@@ -18,8 +18,6 @@ format:
     include-before-body: ../../html/margin_image.html
     include-after-body: ../../html/blog_footer.html
     comments: false
-execute: 
-  warning: false
 editor: 
   markdown: 
     wrap: sentence

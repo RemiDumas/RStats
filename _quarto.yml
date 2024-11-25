@@ -48,8 +48,6 @@ format:
         mainfont: Voltaire, sans-serif
         monofont: Fira Code, consolas, courier, monospace
         highlight-style: github
-        toc-location: right
-        toc-title: Sommaire
         html-math-method:
             method: mathjax
             url: "https://cdn.jsdelivr.net/npm/mathjax@4.0.0-beta.4/tex-mml-chtml.js"
