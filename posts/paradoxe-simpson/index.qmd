@@ -18,6 +18,8 @@ format:
     include-before-body: ../../html/margin_image.html
     include-after-body: ../../html/blog_footer.html
     comments: false
+execute: 
+  warning: false
 editor: 
   markdown: 
     wrap: sentence
@@ -49,17 +51,12 @@ Chargeons les données et les packages qui seront utilisés pour l'analyse:
 ```{r}
 #| label: packages_donnees
 
+
 library('dplyr')
 library('tidyr')
 library('gt')
 
 simpson <- read.csv2('simpson.csv')
-```
-
-Pour la suite, nous allons analyser le taux de guérison selon l'hôpital qui a administré le protocole de soin.
-
-```{r}
-#| label: tbl-hopital
 
 # traitement des données
 donnees <- simpson %>% 
@@ -70,8 +67,14 @@ donnees <- simpson %>%
               summarise(across(where(is.integer), sum)) %>% 
               mutate(Hopital = "Ensemble")) %>% 
   mutate(Taux_gueris = Gueris/(Gueris+NonGueris)) 
+```
 
-# tableau guérison selon l'hopital
+Pour la suite, nous allons analyser le taux de guérison selon l'hôpital qui a administré le protocole de soin.
+
+```{r}
+#| label: tbl-hopital
+#| tbl-cap: "Guérison selon l'hôpital"
+
 tab_hopital <- donnees %>% 
   gt(rowname_col = 'Traitement', groupname_col = 'Hopital') %>% 
   cols_label(

@@ -1,6 +1,6 @@
 {
   "R": {
-    "Version": "4.3.2",
+    "Version": "4.3.1",
     "Repositories": [
       {
         "Name": "CRAN",
@@ -56,7 +56,7 @@
       "Package": "R.cache",
       "Version": "0.16.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R.methodsS3",
@@ -71,7 +71,7 @@
       "Package": "R.methodsS3",
       "Version": "1.8.2",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "utils"
@@ -95,7 +95,7 @@
       "Package": "R.utils",
       "Version": "2.12.3",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R.methodsS3",
@@ -174,7 +174,7 @@
       "Package": "bit",
       "Version": "4.5.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R"
       ],
@@ -184,7 +184,7 @@
       "Package": "bit64",
       "Version": "4.5.2",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "bit",
@@ -227,7 +227,7 @@
       "Package": "cachem",
       "Version": "1.1.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "fastmap",
         "rlang"
@@ -251,7 +251,7 @@
       "Package": "classInt",
       "Version": "0.4-10",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "KernSmooth",
         "R",
@@ -309,7 +309,7 @@
       "Package": "cpp11",
       "Version": "0.5.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R"
       ],
@@ -375,7 +375,7 @@
       "Package": "e1071",
       "Version": "1.7-16",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "class",
         "grDevices",
@@ -420,7 +420,7 @@
       "Package": "fastmap",
       "Version": "1.2.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Hash": "aa5e1cd11c2d15497494c5292d7ffcc8"
     },
     "fontawesome": {
@@ -596,7 +596,7 @@
       "Package": "haven",
       "Version": "2.5.4",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "cli",
@@ -673,7 +673,7 @@
       "Package": "httpuv",
       "Version": "1.6.15",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R6",
@@ -766,7 +766,7 @@
       "Package": "labelled",
       "Version": "2.13.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "dplyr",
@@ -784,7 +784,7 @@
       "Package": "later",
       "Version": "1.3.2",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "Rcpp",
         "rlang"
@@ -884,7 +884,7 @@
       "Package": "miniUI",
       "Version": "0.1.1.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "htmltools",
         "shiny",
@@ -958,7 +958,7 @@
       "Package": "prettyunits",
       "Version": "1.2.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R"
       ],
@@ -968,7 +968,7 @@
       "Package": "progress",
       "Version": "1.2.3",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R6",
@@ -982,7 +982,7 @@
       "Package": "promises",
       "Version": "1.3.0",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R6",
         "Rcpp",
@@ -998,7 +998,7 @@
       "Package": "proxy",
       "Version": "0.4-27",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "stats",
@@ -1025,7 +1025,7 @@
       "Package": "questionr",
       "Version": "0.7.8",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "classInt",
@@ -1082,7 +1082,7 @@
       "Package": "readr",
       "Version": "2.1.5",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R6",
@@ -1200,7 +1200,7 @@
       "Package": "shiny",
       "Version": "1.9.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R6",
@@ -1273,7 +1273,7 @@
       "Package": "styler",
       "Version": "1.10.3",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "R.cache",
@@ -1311,7 +1311,7 @@
       "Package": "tidyr",
       "Version": "1.3.1",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "cli",
@@ -1405,7 +1405,7 @@
       "Package": "vroom",
       "Version": "1.6.5",
       "Source": "Repository",
-      "Repository": "CRAN",
+      "Repository": "https://packagemanager.posit.co/cran/2024-09-30",
       "Requirements": [
         "R",
         "bit64",
