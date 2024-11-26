@@ -95,8 +95,8 @@ div.csl-indent {
 <link href="../../site_libs/quarto-html/quarto-syntax-highlighting-dark-3fe3df12cb322cd60d4f50ab5ce79ec8.css" rel="prefetch" class="quarto-color-scheme quarto-color-alternate" id="quarto-text-highlighting-styles">
 <script src="../../site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="../../site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="../../site_libs/bootstrap/bootstrap-195a37493d7c8b75f509ac2e27cd665d.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
-<link href="../../site_libs/bootstrap/bootstrap-dark-e0ce59617dcd47d3a5329d19a47c7757.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
+<link href="../../site_libs/bootstrap/bootstrap-2adc023aec7106f68f0c8315911962b5.min.css" rel="stylesheet" append-hash="true" class="quarto-color-scheme" id="quarto-bootstrap" data-mode="light">
+<link href="../../site_libs/bootstrap/bootstrap-dark-a2faf1283cdfe02219f15637f7ac46e0.min.css" rel="prefetch" append-hash="true" class="quarto-color-scheme quarto-color-alternate" id="quarto-bootstrap" data-mode="dark">
 <script id="quarto-search-options" type="application/json">{
   "location": "navbar",
   "copy-button": false,
@@ -231,7 +231,7 @@ MathJax = {
         </div>
       </div>
                           <div class="quarto-categories">
-                <div class="quarto-category">IA</div>
+                <div class="quarto-category">IA generatives</div>
                 <div class="quarto-category">donnees</div>
                 <div class="quarto-category">modeles</div>
                 <div class="quarto-category">dataengine</div>
@@ -288,7 +288,7 @@ MathJax = {
 <main class="content quarto-banner-title-block page-columns page-full" id="quarto-document-content">
 <div class="no-row-height column-margin column-container">
   <div class="">
-    <img src="Claude.jpg" style="width:100%">
+    <img src="claude.jpg" style="width:100%">
   </div>
 </div>
 
@@ -298,7 +298,7 @@ MathJax = {
 
 <section id="anthropic-lance-son-protocole-de-connexion-aux-données" class="level2">
 <h2 class="anchored" data-anchor-id="anthropic-lance-son-protocole-de-connexion-aux-données">Anthropic lance son protocole de connexion aux données</h2>
-<p>Anthropic lance le Model Context Protocol (MCP voir <span class="citation" data-cites="modelcontextprotocolIntroductionModel"><span>«&nbsp;<span>I</span>ntroduction - <span>M</span>odel <span>C</span>ontext <span>P</span>rotocol — modelcontextprotocol.io&nbsp;»</span></span>), une nouvelle technologie qui permet aux IA comme Claude d’accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l’adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d’accès pour garantir la confidentialité des données.</p>
+<p>Anthropic lance le Model Context Protocol (MCP voir <span class="citation" data-cites="modelcontextprotocol"><span>«&nbsp;<span>I</span>ntroduction - <span>M</span>odel <span>C</span>ontext <span>P</span>rotocol — modelcontextprotocol.io&nbsp;»</span></span>), une nouvelle technologie qui permet aux IA comme Claude d’accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l’adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d’accès pour garantir la confidentialité des données.</p>
 <p>Le MCP ouvre la voie à des assistants IA capables de naviguer entre différents systèmes et de maintenir le contexte à travers les interactions. Anthropic se concentre sur l’utilité des IA en leur donnant accès aux bonnes données, une approche pragmatique qui pourrait lever les doutes sur l’utilité de l’IA dans le décisionnel d’entreprise et les craintes quand à l’utilisation de modèles de données opaques.</p>
 </section>
 <section id="comprendre-claude-ai-lia-danthropic" class="level2">
@@ -326,7 +326,13 @@ MathJax = {
 <section id="anthropic-lentreprise-qui-vise-lutilité-des-ia-avec-claude-et-le-mcp" class="level3">
 <h3 class="anchored" data-anchor-id="anthropic-lentreprise-qui-vise-lutilité-des-ia-avec-claude-et-le-mcp">Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP</h3>
 <p>Anthropic est une entreprise qui se distingue dans le domaine de l’IA en misant sur l’utilité pratique de ses technologies. Plutôt que de se focaliser uniquement sur l’amélioration brute des capacités de ses modèles, comme le fait OpenAI, Anthropic cherche à rendre ses IA plus utiles en leur permettant d’accéder à un contexte riche et pertinent grâce à des données externes. Cette approche pragmatique se concrétise notamment à travers Claude, un assistant IA conversationnel, et le Model Context Protocol (MCP), un protocole ouvert qui facilite l’intégration de données et d’outils externes aux applications LLM.</p>
-<p>Claude, comme d’autres chatbots actuels, était initialement limité par sa base de connaissances figée. Le MCP vient briser ces barrières en permettant à Claude d’accéder directement aux données des systèmes d’entreprise, tels que : - Bases de données - Dépôts de code - Documents sur Google Drive - Conversations Slack</p>
+<p>Claude, comme d’autres chatbots actuels, était initialement limité par sa base de connaissances figée. Le MCP vient briser ces barrières en permettant à Claude d’accéder directement aux données des systèmes d’entreprise, tels que :</p>
+<ul>
+<li>Bases de données</li>
+<li>Dépôts de code</li>
+<li>Documents sur Google Drive</li>
+<li>Conversations Slack</li>
+</ul>
 <p>L’accès à ce contexte élargi rend Claude beaucoup plus performant et capable de résoudre des problèmes concrets pour les utilisateurs. Le MCP est un élément clé de la stratégie d’Anthropic. En le rendant open source, l’entreprise encourage l’ouverture et la collaboration, attirant ainsi des acteurs majeurs du secteur comme Block et Apollo. Des sociétés d’outils de développement comme Zed, Replit, Codeium et Sourcegraph intègrent également le MCP à leurs plateformes. Cette adoption croissante du MCP témoigne de sa pertinence et de son potentiel à transformer l’interaction entre les IA et les données.</p>
 <p>Bien que le MCP soit encore en développement, Anthropic semble avoir anticipé les défis potentiels en termes de confidentialité et de performance. L’impact potentiel de ce protocole est considérable, car il ouvre la voie à des assistants IA capables de : - Naviguer de manière transparente entre différents systèmes - Agréger des informations de sources multiples - Maintenir le contexte à travers les interactions</p>
 </section>
@@ -341,7 +347,7 @@ MathJax = {
 <div id="ref-anthropicHome" class="csl-entry" role="listitem">
 <span>«&nbsp;<span>H</span>ome — anthropic.com&nbsp;»</span>. <a href="https://www.anthropic.com/" class="uri">https://www.anthropic.com/</a>.
 </div>
-<div id="ref-modelcontextprotocolIntroductionModel" class="csl-entry" role="listitem">
+<div id="ref-modelcontextprotocol" class="csl-entry" role="listitem">
 <span>«&nbsp;<span>I</span>ntroduction - <span>M</span>odel <span>C</span>ontext <span>P</span>rotocol — modelcontextprotocol.io&nbsp;»</span>. <a href="https://modelcontextprotocol.io" class="uri">https://modelcontextprotocol.io</a>.
 </div>
 <div id="ref-anthropicMeetClaude" class="csl-entry" role="listitem">
@@ -982,13 +988,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="an">date-format:</span><span class="co"> "DD, MMMM YYYY"</span></span>
 <span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a><span class="an">lang:</span><span class="co"> fr</span></span>
 <span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="an">categories:</span><span class="co"> </span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA </span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co">  - IA generatives</span></span>
 <span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="co">  - donnees</span></span>
 <span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a><span class="co">  - modeles</span></span>
 <span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a><span class="co">  - dataengine</span></span>
 <span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a><span class="an">draft:</span><span class="co"> false</span></span>
 <span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="an">number-sections:</span><span class="co"> false</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> Claude.jpg</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="an">image:</span><span class="co"> claude.jpg</span></span>
 <span id="cb1-15"><a href="#cb1-15" aria-hidden="true" tabindex="-1"></a><span class="an">bibliography:</span><span class="co"> references.bib</span></span>
 <span id="cb1-16"><a href="#cb1-16" aria-hidden="true" tabindex="-1"></a><span class="an">format:</span></span>
 <span id="cb1-17"><a href="#cb1-17" aria-hidden="true" tabindex="-1"></a><span class="co">  html:</span></span>
@@ -1003,7 +1009,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-26"><a href="#cb1-26" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-27"><a href="#cb1-27" aria-hidden="true" tabindex="-1"></a><span class="fu">## Anthropic lance son protocole de connexion aux données</span></span>
 <span id="cb1-28"><a href="#cb1-28" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Anthropic lance le Model Context Protocol (MCP voir @modelcontextprotocolIntroductionModel), une nouvelle technologie qui permet aux IA comme Claude d'accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l'adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d'accès pour garantir la confidentialité des données.</span>
+<span id="cb1-29"><a href="#cb1-29" aria-hidden="true" tabindex="-1"></a>Anthropic lance le Model Context Protocol (MCP voir @modelcontextprotocol), une nouvelle technologie qui permet aux IA comme Claude d'accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l'adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d'accès pour garantir la confidentialité des données.</span>
 <span id="cb1-30"><a href="#cb1-30" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-31"><a href="#cb1-31" aria-hidden="true" tabindex="-1"></a>Le MCP ouvre la voie à des assistants IA capables de naviguer entre différents systèmes et de maintenir le contexte à travers les interactions. Anthropic se concentre sur l'utilité des IA en leur donnant accès aux bonnes données, une approche pragmatique qui pourrait lever les doutes sur l'utilité de l'IA dans le décisionnel d'entreprise et les craintes quand à l'utilisation de modèles de données opaques.</span>
 <span id="cb1-32"><a href="#cb1-32" aria-hidden="true" tabindex="-1"></a></span>
@@ -1033,28 +1039,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <span id="cb1-56"><a href="#cb1-56" aria-hidden="true" tabindex="-1"></a>Anthropic est une entreprise qui se distingue dans le domaine de l'IA en misant sur l'utilité pratique de ses technologies. Plutôt que de se focaliser uniquement sur l'amélioration brute des capacités de ses modèles, comme le fait OpenAI, Anthropic cherche à rendre ses IA plus utiles en leur permettant d'accéder à un contexte riche et pertinent grâce à des données externes. Cette approche pragmatique se concrétise notamment à travers Claude, un assistant IA conversationnel, et le Model Context Protocol (MCP), un protocole ouvert qui facilite l'intégration de données et d'outils externes aux applications LLM.</span>
 <span id="cb1-57"><a href="#cb1-57" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb1-58"><a href="#cb1-58" aria-hidden="true" tabindex="-1"></a>Claude, comme d'autres chatbots actuels, était initialement limité par sa base de connaissances figée. Le MCP vient briser ces barrières en permettant à Claude d'accéder directement aux données des systèmes d'entreprise, tels que :</span>
-<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bases de données</span>
-<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dépôts de code</span>
-<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documents sur Google Drive</span>
-<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conversations Slack</span>
-<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a>L'accès à ce contexte élargi rend Claude beaucoup plus performant et capable de résoudre des problèmes concrets pour les utilisateurs.</span>
-<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>Le MCP est un élément clé de la stratégie d'Anthropic. En le rendant open source, l'entreprise encourage l'ouverture et la collaboration, attirant ainsi des acteurs majeurs du secteur comme Block et Apollo. Des sociétés d'outils de développement comme Zed, Replit, Codeium et Sourcegraph intègrent également le MCP à leurs plateformes. Cette adoption croissante du MCP témoigne de sa pertinence et de son potentiel à transformer l'interaction entre les IA et les données. </span>
-<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a>Bien que le MCP soit encore en développement, Anthropic semble avoir anticipé les défis potentiels en termes de confidentialité et de performance. L'impact potentiel de ce protocole est considérable, car il ouvre la voie à des assistants IA capables de :</span>
-<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Naviguer de manière transparente entre différents systèmes</span>
-<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Agréger des informations de sources multiples</span>
-<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maintenir le contexte à travers les interactions</span>
-<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
-<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a>Le Model Context Protocol (MCP) d'Anthropic représente une avancée significative dans l'intégration des IA aux données externes. Le MCP, combiné à l'assistant virtuel Claude AI, offre une alternative prometteuse à ChatGPT en mettant l'accent sur l'exactitude, l'analyse de documents complexes et la sécurité de l'IA. L'approche open source du MCP favorise l'adoption et la collaboration, ouvrant la voie à des applications LLM plus puissantes et utiles.</span>
-<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-59"><a href="#cb1-59" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-60"><a href="#cb1-60" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Bases de données</span>
+<span id="cb1-61"><a href="#cb1-61" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Dépôts de code</span>
+<span id="cb1-62"><a href="#cb1-62" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Documents sur Google Drive</span>
+<span id="cb1-63"><a href="#cb1-63" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Conversations Slack</span>
+<span id="cb1-64"><a href="#cb1-64" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-65"><a href="#cb1-65" aria-hidden="true" tabindex="-1"></a>L'accès à ce contexte élargi rend Claude beaucoup plus performant et capable de résoudre des problèmes concrets pour les utilisateurs.</span>
+<span id="cb1-66"><a href="#cb1-66" aria-hidden="true" tabindex="-1"></a>Le MCP est un élément clé de la stratégie d'Anthropic. En le rendant open source, l'entreprise encourage l'ouverture et la collaboration, attirant ainsi des acteurs majeurs du secteur comme Block et Apollo. Des sociétés d'outils de développement comme Zed, Replit, Codeium et Sourcegraph intègrent également le MCP à leurs plateformes. Cette adoption croissante du MCP témoigne de sa pertinence et de son potentiel à transformer l'interaction entre les IA et les données. </span>
+<span id="cb1-67"><a href="#cb1-67" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-68"><a href="#cb1-68" aria-hidden="true" tabindex="-1"></a>Bien que le MCP soit encore en développement, Anthropic semble avoir anticipé les défis potentiels en termes de confidentialité et de performance. L'impact potentiel de ce protocole est considérable, car il ouvre la voie à des assistants IA capables de :</span>
+<span id="cb1-69"><a href="#cb1-69" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Naviguer de manière transparente entre différents systèmes</span>
+<span id="cb1-70"><a href="#cb1-70" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Agréger des informations de sources multiples</span>
+<span id="cb1-71"><a href="#cb1-71" aria-hidden="true" tabindex="-1"></a><span class="ss">- </span>Maintenir le contexte à travers les interactions</span>
+<span id="cb1-72"><a href="#cb1-72" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-73"><a href="#cb1-73" aria-hidden="true" tabindex="-1"></a><span class="fu">## Conclusion</span></span>
+<span id="cb1-74"><a href="#cb1-74" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-75"><a href="#cb1-75" aria-hidden="true" tabindex="-1"></a>Le Model Context Protocol (MCP) d'Anthropic représente une avancée significative dans l'intégration des IA aux données externes. Le MCP, combiné à l'assistant virtuel Claude AI, offre une alternative prometteuse à ChatGPT en mettant l'accent sur l'exactitude, l'analyse de documents complexes et la sécurité de l'IA. L'approche open source du MCP favorise l'adoption et la collaboration, ouvrant la voie à des applications LLM plus puissantes et utiles.</span>
 <span id="cb1-76"><a href="#cb1-76" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
-<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
-<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
+<span id="cb1-77"><a href="#cb1-77" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-78"><a href="#cb1-78" aria-hidden="true" tabindex="-1"></a><span class="fu">## References</span></span>
+<span id="cb1-79"><a href="#cb1-79" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-80"><a href="#cb1-80" aria-hidden="true" tabindex="-1"></a>::: {#refs}</span>
+<span id="cb1-81"><a href="#cb1-81" aria-hidden="true" tabindex="-1"></a>:::</span></code><button title="Copier vers le presse-papier" class="code-copy-button" data-in-quarto-modal=""><i class="bi"></i></button></pre></div>
 </div></div></div></div></div>
 </div> <!-- /content -->
 
