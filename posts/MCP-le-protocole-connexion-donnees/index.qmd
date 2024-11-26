@@ -1,0 +1,80 @@
+---
+title: "Anthropic : L'entreprise qui vise l'utilité des IA avec Claude et le MCP."
+description: "Le Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l'intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents."
+date: 2024-11-26
+date-format: "DD, MMMM YYYY"
+lang: fr
+categories: 
+  - IA 
+  - donnees
+  - modeles
+  - dataengine
+draft: false
+number-sections: false
+image: Claude.jpg
+bibliography: references.bib
+format:
+  html:
+    fig-cap-location: bottom
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+    comments: false
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+## Anthropic lance son protocole de connexion aux données
+
+Anthropic lance le Model Context Protocol (MCP voir @modelcontextprotocolIntroductionModel), une nouvelle technologie qui permet aux IA comme Claude d'accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l'adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d'accès pour garantir la confidentialité des données.
+
+Le MCP ouvre la voie à des assistants IA capables de naviguer entre différents systèmes et de maintenir le contexte à travers les interactions. Anthropic se concentre sur l'utilité des IA en leur donnant accès aux bonnes données, une approche pragmatique qui pourrait lever les doutes sur l'utilité de l'IA dans le décisionnel d'entreprise et les craintes quand à l'utilisation de modèles de données opaques.
+
+## Comprendre Claude AI, l'IA d'Anthropic
+
+Claude AI (voir @anthropicMeetClaude) est un assistant virtuel développé par Anthropic, un concurrent sérieux de ChatGPT. Il peut lire de longs documents, fournir des résumés rapides, répondre à des questions complexes, automatiser des tâches et aider à la prise de décision.
+
+L'entreprise derrière Claude : Anthropic (voir @anthropicHome), co-fondée par d'anciens membres d'OpenAI, se concentre sur l'éthique de l'IA. Anthropic utilise l'approche "IA constitutionnelle" pour guider les actions de Claude selon des principes éthiques. Claude et ChatGPT ont des offres similaires, mais Claude se concentre sur l'analyse de longs documents et l'exactitude factuelle. Claude surpasse ChatGPT gratuit dans certains benchmarks, mais ChatGPT payant est plus puissant. Claude n'a pas accès à Internet contrairement à ChatGPT. Claude est une alternative solide à ChatGPT, particulièrement performant pour l'analyse de longs documents et les réponses précises.
+
+## Model Context Protocol
+
+### Un protocole qui relie données au LLM
+
+Le Model Context Protocol (MCP) est un protocole ouvert qui permet d'intégrer les applications LLM aux sources de données et aux outils externes. Ce protocole dispose de tutoriels de démarrage rapide, de construction de serveurs MCP en Python et TypeScript et d'outils de développement comme un guide de débogage et un outil d'inspection MCP pour tester les serveurs.
+
+### Architecture de base : Comment le MCP connecte les clients, les serveurs et les LLM ?
+
+- Ressources : Exposer les données des serveurs aux LLM.
+- Invites (Prompts) : Créer des modèles d'invites et des flux de travail réutilisables.
+- Outils : Permettre aux LLM d'effectuer des actions via le serveur.
+- Échantillonnage (Sampling) : Permettre aux serveurs de demander des complétions aux LLM.
+- Transports : Mécanisme de communication du MCP.
+- Contribution : Encourager la participation à la communauté MCP sur GitHub.
+
+### Anthropic : L'entreprise qui vise l'utilité des IA avec Claude et le MCP
+
+Anthropic est une entreprise qui se distingue dans le domaine de l'IA en misant sur l'utilité pratique de ses technologies. Plutôt que de se focaliser uniquement sur l'amélioration brute des capacités de ses modèles, comme le fait OpenAI, Anthropic cherche à rendre ses IA plus utiles en leur permettant d'accéder à un contexte riche et pertinent grâce à des données externes. Cette approche pragmatique se concrétise notamment à travers Claude, un assistant IA conversationnel, et le Model Context Protocol (MCP), un protocole ouvert qui facilite l'intégration de données et d'outils externes aux applications LLM.
+
+Claude, comme d'autres chatbots actuels, était initialement limité par sa base de connaissances figée. Le MCP vient briser ces barrières en permettant à Claude d'accéder directement aux données des systèmes d'entreprise, tels que :
+- Bases de données
+- Dépôts de code
+- Documents sur Google Drive
+- Conversations Slack
+
+L'accès à ce contexte élargi rend Claude beaucoup plus performant et capable de résoudre des problèmes concrets pour les utilisateurs.
+Le MCP est un élément clé de la stratégie d'Anthropic. En le rendant open source, l'entreprise encourage l'ouverture et la collaboration, attirant ainsi des acteurs majeurs du secteur comme Block et Apollo. Des sociétés d'outils de développement comme Zed, Replit, Codeium et Sourcegraph intègrent également le MCP à leurs plateformes. Cette adoption croissante du MCP témoigne de sa pertinence et de son potentiel à transformer l'interaction entre les IA et les données. 
+
+Bien que le MCP soit encore en développement, Anthropic semble avoir anticipé les défis potentiels en termes de confidentialité et de performance. L'impact potentiel de ce protocole est considérable, car il ouvre la voie à des assistants IA capables de :
+- Naviguer de manière transparente entre différents systèmes
+- Agréger des informations de sources multiples
+- Maintenir le contexte à travers les interactions
+
+## Conclusion
+
+Le Model Context Protocol (MCP) d'Anthropic représente une avancée significative dans l'intégration des IA aux données externes. Le MCP, combiné à l'assistant virtuel Claude AI, offre une alternative prometteuse à ChatGPT en mettant l'accent sur l'exactitude, l'analyse de documents complexes et la sécurité de l'IA. L'approche open source du MCP favorise l'adoption et la collaboration, ouvrant la voie à des applications LLM plus puissantes et utiles.
+
+
+## References
+
+::: {#refs}
+:::
