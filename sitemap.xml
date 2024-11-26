@@ -2,30 +2,34 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/biais-de-genre-IA/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.957Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/posts/paradoxe-simpson/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.977Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/projects/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.981Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/cv/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.945Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/about.html</loc>
-    <lastmod>2024-11-25T17:32:22.945Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.953Z</lastmod>
+    <lastmod>2024-11-26T12:40:13.544Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/hello-world/index.html</loc>
-    <lastmod>2024-11-25T17:32:22.977Z</lastmod>
+    <lastmod>2024-11-26T12:40:13.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/index.html</loc>
+    <lastmod>2024-11-26T12:40:13.540Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/about.html</loc>
+    <lastmod>2024-11-26T12:40:13.532Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/cv/index.html</loc>
+    <lastmod>2024-11-26T12:40:13.532Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/projects/index.html</loc>
+    <lastmod>2024-11-26T12:40:13.568Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/posts/paradoxe-simpson/index.html</loc>
+    <lastmod>2024-11-26T12:40:13.564Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/posts/MCP-le-protocole-connexion-donnees/index.html</loc>
+    <lastmod>2024-11-26T12:40:13.540Z</lastmod>
   </url>
 </urlset>

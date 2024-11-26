@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/MCP-le-protocole-connexion-donnees/index.html",
       "/posts/paradoxe-simpson/index.html",
       "/posts/biais-de-genre-IA/index.html",
       "/posts/hello-world/index.html"

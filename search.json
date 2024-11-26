@@ -35,6 +35,55 @@
     "text": "Liens\n\nDonnées\nRéalisées par  https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv\n\n\nSource\nhttps://techxplore.com/news/2024-04-large-language-generate-biased-content.html\n\n\nReferences\n\n\nBarnier, Julien, François Briatte, et Joseph Larmarange. 2023. questionr: Functions to Make Surveys Processing Easier. https://juba.github.io/questionr/.\n\n\nUNESCO, et Centre international de recherche sur l’intelligence artificielle. 2024. « Challenging systematic prejudices: an investigation into bias against women and girls in large language models ». https://unesdoc.unesco.org/ark:/48223/pf0000388971.\n\n\nWikipédia. 2024. « Biais de genre sur Wikipédia — Wikipédia, l’encyclopédie libre ». \\url{http://fr.wikipedia.org/w/index.php?title=Biais_de_genre_sur_Wikip%C3%A9dia&oldid=218632729}."
   },
   {
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello World !",
+    "section": "",
+    "text": "Au cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\nÀ propos, la bannière supérieure et la photo ci-dessous sont générées par IA https://ideogram.ai/. Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants.\n\n\n\nimage"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "section": "",
+    "text": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.\n\n\n\n\n\n\nIA\n\n\ndonnees\n\n\nmodeles\n\n\ndataengine\n\n\n\nLe Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l’intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents.\n\n\n\n\n\n26 Nov 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLe paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "projects/index.html#the-languages-of-middle-earth",
+    "href": "projects/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "projects/index.html#the-history-of-the-war-of-the-ring",
+    "href": "projects/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+  },
+  {
     "objectID": "posts/paradoxe-simpson/index.html#historique",
     "href": "posts/paradoxe-simpson/index.html#historique",
     "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
@@ -84,52 +133,38 @@
     "text": "References\n\n\nAppleton, David, Joyce French, et Mark Vanderpump. 1996. « Ignoring a Covariate: An Example of Simpson’s Paradox ». American Statistician - AMER STATIST 50 (novembre): 340‑41. https://doi.org/10.1080/00031305.1996.10473563.\n\n\nCaravenna, Francesco, et Quentin Berger. 2021. « Le paradoxe de Simpson illustré par des données de vaccination contre le Covid-19 ». The Conversation. http://theconversation.com/le-paradoxe-de-simpson-illustre-par-des-donnees-de-vaccination-contre-le-covid-19-170159.\n\n\nDelahaye, Jean-Paul. s. d. Au pays des paradoxes. Belin."
   },
   {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+    "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#anthropic-lance-son-protocole-de-connexion-aux-données",
+    "href": "posts/MCP-le-protocole-connexion-donnees/index.html#anthropic-lance-son-protocole-de-connexion-aux-données",
+    "title": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.",
+    "section": "Anthropic lance son protocole de connexion aux données",
+    "text": "Anthropic lance son protocole de connexion aux données\nAnthropic lance le Model Context Protocol (MCP voir « Introduction - Model Context Protocol — modelcontextprotocol.io »), une nouvelle technologie qui permet aux IA comme Claude d’accéder à des données externes et de briser les limitations des chatbots actuels. Le MCP utilise des serveurs MCP pour exposer les données de manière standardisée et des clients MCP (comme Claude) pour y accéder. Anthropic a rendu le MCP open source pour encourager la collaboration et l’adoption par des entreprises comme Block et Apollo. Des serveurs MCP pré-construits sont disponibles pour les systèmes courants et les abonnés à Claude Enterprise peuvent connecter le chatbot à leurs systèmes internes. Le MCP intègre des mécanismes de sécurité et de contrôle d’accès pour garantir la confidentialité des données.\nLe MCP ouvre la voie à des assistants IA capables de naviguer entre différents systèmes et de maintenir le contexte à travers les interactions. Anthropic se concentre sur l’utilité des IA en leur donnant accès aux bonnes données, une approche pragmatique qui pourrait lever les doutes sur l’utilité de l’IA dans le décisionnel d’entreprise et les craintes quand à l’utilisation de modèles de données opaques."
   },
   {
-    "objectID": "projects/index.html#the-languages-of-middle-earth",
-    "href": "projects/index.html#the-languages-of-middle-earth",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+    "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#comprendre-claude-ai-lia-danthropic",
+    "href": "posts/MCP-le-protocole-connexion-donnees/index.html#comprendre-claude-ai-lia-danthropic",
+    "title": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.",
+    "section": "Comprendre Claude AI, l’IA d’Anthropic",
+    "text": "Comprendre Claude AI, l’IA d’Anthropic\nClaude AI (voir « Meet Claude — anthropic.com ») est un assistant virtuel développé par Anthropic, un concurrent sérieux de ChatGPT. Il peut lire de longs documents, fournir des résumés rapides, répondre à des questions complexes, automatiser des tâches et aider à la prise de décision.\nL’entreprise derrière Claude : Anthropic (voir « Home — anthropic.com »), co-fondée par d’anciens membres d’OpenAI, se concentre sur l’éthique de l’IA. Anthropic utilise l’approche “IA constitutionnelle” pour guider les actions de Claude selon des principes éthiques. Claude et ChatGPT ont des offres similaires, mais Claude se concentre sur l’analyse de longs documents et l’exactitude factuelle. Claude surpasse ChatGPT gratuit dans certains benchmarks, mais ChatGPT payant est plus puissant. Claude n’a pas accès à Internet contrairement à ChatGPT. Claude est une alternative solide à ChatGPT, particulièrement performant pour l’analyse de longs documents et les réponses précises."
   },
   {
-    "objectID": "projects/index.html#the-history-of-the-war-of-the-ring",
-    "href": "projects/index.html#the-history-of-the-war-of-the-ring",
-    "title": "Projects",
-    "section": "The History of the War of the Ring",
-    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+    "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#model-context-protocol",
+    "href": "posts/MCP-le-protocole-connexion-donnees/index.html#model-context-protocol",
+    "title": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.",
+    "section": "Model Context Protocol",
+    "text": "Model Context Protocol\n\nUn protocole qui relie données au LLM\nLe Model Context Protocol (MCP) est un protocole ouvert qui permet d’intégrer les applications LLM aux sources de données et aux outils externes. Ce protocole dispose de tutoriels de démarrage rapide, de construction de serveurs MCP en Python et TypeScript et d’outils de développement comme un guide de débogage et un outil d’inspection MCP pour tester les serveurs.\n\n\nArchitecture de base : Comment le MCP connecte les clients, les serveurs et les LLM ?\n\nRessources : Exposer les données des serveurs aux LLM.\nInvites (Prompts) : Créer des modèles d’invites et des flux de travail réutilisables.\nOutils : Permettre aux LLM d’effectuer des actions via le serveur.\nÉchantillonnage (Sampling) : Permettre aux serveurs de demander des complétions aux LLM.\nTransports : Mécanisme de communication du MCP.\nContribution : Encourager la participation à la communauté MCP sur GitHub.\n\n\n\nAnthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP\nAnthropic est une entreprise qui se distingue dans le domaine de l’IA en misant sur l’utilité pratique de ses technologies. Plutôt que de se focaliser uniquement sur l’amélioration brute des capacités de ses modèles, comme le fait OpenAI, Anthropic cherche à rendre ses IA plus utiles en leur permettant d’accéder à un contexte riche et pertinent grâce à des données externes. Cette approche pragmatique se concrétise notamment à travers Claude, un assistant IA conversationnel, et le Model Context Protocol (MCP), un protocole ouvert qui facilite l’intégration de données et d’outils externes aux applications LLM.\nClaude, comme d’autres chatbots actuels, était initialement limité par sa base de connaissances figée. Le MCP vient briser ces barrières en permettant à Claude d’accéder directement aux données des systèmes d’entreprise, tels que : - Bases de données - Dépôts de code - Documents sur Google Drive - Conversations Slack\nL’accès à ce contexte élargi rend Claude beaucoup plus performant et capable de résoudre des problèmes concrets pour les utilisateurs. Le MCP est un élément clé de la stratégie d’Anthropic. En le rendant open source, l’entreprise encourage l’ouverture et la collaboration, attirant ainsi des acteurs majeurs du secteur comme Block et Apollo. Des sociétés d’outils de développement comme Zed, Replit, Codeium et Sourcegraph intègrent également le MCP à leurs plateformes. Cette adoption croissante du MCP témoigne de sa pertinence et de son potentiel à transformer l’interaction entre les IA et les données.\nBien que le MCP soit encore en développement, Anthropic semble avoir anticipé les défis potentiels en termes de confidentialité et de performance. L’impact potentiel de ce protocole est considérable, car il ouvre la voie à des assistants IA capables de : - Naviguer de manière transparente entre différents systèmes - Agréger des informations de sources multiples - Maintenir le contexte à travers les interactions"
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
+    "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#conclusion",
+    "href": "posts/MCP-le-protocole-connexion-donnees/index.html#conclusion",
+    "title": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.",
+    "section": "Conclusion",
+    "text": "Conclusion\nLe Model Context Protocol (MCP) d’Anthropic représente une avancée significative dans l’intégration des IA aux données externes. Le MCP, combiné à l’assistant virtuel Claude AI, offre une alternative prometteuse à ChatGPT en mettant l’accent sur l’exactitude, l’analyse de documents complexes et la sécurité de l’IA. L’approche open source du MCP favorise l’adoption et la collaboration, ouvrant la voie à des applications LLM plus puissantes et utiles."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
-  },
-  {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RStats - le blog sur la ‘data’ avec R et Python",
-    "section": "",
-    "text": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
-  },
-  {
-    "objectID": "posts/hello-world/index.html",
-    "href": "posts/hello-world/index.html",
-    "title": "Hello World !",
-    "section": "",
-    "text": "Au cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\nÀ propos, la bannière supérieure et la photo ci-dessous sont générées par IA https://ideogram.ai/. Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants.\n\n\n\nimage"
+    "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#references",
+    "href": "posts/MCP-le-protocole-connexion-donnees/index.html#references",
+    "title": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.",
+    "section": "References",
+    "text": "References\n\n\n« Home — anthropic.com ». https://www.anthropic.com/.\n\n\n« Introduction - Model Context Protocol — modelcontextprotocol.io ». https://modelcontextprotocol.io.\n\n\n« Meet Claude — anthropic.com ». https://www.anthropic.com/claude."
   }
 ]
