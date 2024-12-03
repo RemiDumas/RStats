@@ -1,0 +1,76 @@
+---
+title: "SQL Police Department : Le SQL dont vous êtes le héros."
+description: "Agents, à vos postes ! Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web. Votre mission : maîtriser l'art des requêtes SQL tout en résolvant des enquêtes cybercriminelles."
+date: 2024-12-03
+date-format: "DD, MMMM YYYY"
+lang: fr
+categories: 
+  - SQL
+  - serious game
+  - formation
+  - apprentissage
+  - langage
+  - data
+draft: false
+number-sections: false
+image: sql_police.jpeg
+bibliography: references.bib
+format:
+  html:
+    fig-cap-location: bottom
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+    comments: false
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+Agents, à vos postes !
+Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web.
+Votre mission : maîtriser l'art des requêtes SQL tout en résolvant des enquêtes cybercriminelles.
+
+## Le langage SQL, kessessé ?
+
+**SQL** (Structured Query Language) est un langage standard utilisé pour interagir avec les bases de données relationnelles.
+Il permet de gérer les structure de la base et de manipuler les données.
+**SQL** est utilisé dans presque tous les systèmes informatiques pour stocker et gérer les données, qu'il s'agisse d'applications web, mobiles ou d'analyses de données.
+
+## SQL Police Department - Apprendre le SQL en menant une enquête policière
+
+**SQL Police Department** (voir [@sqlpdLearnWhile]), un serious game développé par Doron Linder (créateur de *Vim Adventures*), réinvente l'apprentissage du SQL en le transformant en un jeu captivant à l'ambiance digne d'une série policière.
+Fini les exercices monotones sur des tables de commandes et de produits !
+Ici, vous manipulez des preuves numériques pour coffrer des cybercriminels.
+
+![](sql_adv1.jpg){fig-align="center"}
+
+Le scénario est simple : vous débarquez dans votre commissariat virtuel par un matin de décembre, tasse de café à la main.
+Sur votre bureau, un dossier urgent vous attend : les serveurs d'un site illégal ont été saisis, et c'est à vous d'analyser les données pour identifier les suspects.
+Votre première affaire ?
+Une simple requête la résoudra:
+
+``` sql
+SELECT * FROM USERS;  
+```
+
+Rapidement, les cas se compliquent : analyse de listes de diffusion suspectes, découverte de mots de passe compromis, extraction d'emails douteux... Chaque enquête introduit progressivement des concepts SQL plus avancés :\
+- **ORDER BY** pour trier les résultats,\
+- **DISTINCT** pour éliminer les doublons,\
+- **GROUP BY** pour regrouper les données,\
+- **LIMIT** pour se concentrer sur les suspects clés.
+
+Bien sûr, *SQL Police Department* n'aborde pas les aspects les plus complexes du SQL, comme les jointures avancées ou les sous-requêtes corrélées.
+Cependant, il excelle dans sa mission : rendre l'apprentissage accessible, engageant et amusant.
+
+Prêt à enfiler votre badge et à vous plonger dans l'univers fascinant des enquêtes SQL ?
+
+<https://sqlpd.com/>
+
+Bon jeu
+
+**Source:** Korben.info [@korbenPoliceDepartment]
+
+## References
+
+::: {#refs}
+:::
