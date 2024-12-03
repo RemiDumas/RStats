@@ -11,7 +11,7 @@ categories:
   - dataengine
 draft: false
 number-sections: false
-image: claude.jpg
+image: Claude.jpg
 bibliography: references.bib
 format:
   html:
