@@ -35,53 +35,32 @@
     "text": "Liens\n\nDonnées\nRéalisées par  https://raw.githubusercontent.com/RemiDumas/RStats/refs/heads/main/posts/biais-de-genre-IA/personnages.csv\n\n\nSource\nhttps://techxplore.com/news/2024-04-large-language-generate-biased-content.html\n\n\nReferences\n\n\nBarnier, Julien, François Briatte, et Joseph Larmarange. 2023. questionr: Functions to Make Surveys Processing Easier. https://juba.github.io/questionr/.\n\n\nUNESCO, et Centre international de recherche sur l’intelligence artificielle. 2024. « Challenging systematic prejudices: an investigation into bias against women and girls in large language models ». https://unesdoc.unesco.org/ark:/48223/pf0000388971.\n\n\nWikipédia. 2024. « Biais de genre sur Wikipédia — Wikipédia, l’encyclopédie libre ». \\url{http://fr.wikipedia.org/w/index.php?title=Biais_de_genre_sur_Wikip%C3%A9dia&oldid=218632729}."
   },
   {
-    "objectID": "posts/hello-world/index.html",
-    "href": "posts/hello-world/index.html",
-    "title": "Hello World !",
+    "objectID": "posts/SQL_adventures/index.html",
+    "href": "posts/SQL_adventures/index.html",
+    "title": "SQL Police Department : Le SQL dont vous êtes le héros.",
     "section": "",
-    "text": "Au cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\nÀ propos, la bannière supérieure et la photo ci-dessous sont générées par IA https://ideogram.ai/. Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants.\n\n\n\nimage"
+    "text": "Agents, à vos postes ! Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web. Votre mission : maîtriser l’art des requêtes SQL tout en résolvant des enquêtes cybercriminelles."
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RStats - le blog sur la ‘data’ avec R et Python",
-    "section": "",
-    "text": "Anthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.\n\n\n\n\n\n\nIA generatives\n\n\ndonnees\n\n\nmodeles\n\n\ndataengine\n\n\n\nLe Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l’intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents.\n\n\n\n\n\n26 Nov 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLe paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
+    "objectID": "posts/SQL_adventures/index.html#le-langage-sql-kessessé",
+    "href": "posts/SQL_adventures/index.html#le-langage-sql-kessessé",
+    "title": "SQL Police Department : Le SQL dont vous êtes le héros.",
+    "section": "Le langage SQL, kessessé ?",
+    "text": "Le langage SQL, kessessé ?\nSQL (Structured Query Language) est un langage standard utilisé pour interagir avec les bases de données relationnelles. Il permet de gérer les structure de la base et de manipuler les données. SQL est utilisé dans presque tous les systèmes informatiques pour stocker et gérer les données, qu’il s’agisse d’applications web, mobiles ou d’analyses de données."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
+    "objectID": "posts/SQL_adventures/index.html#sql-police-department---apprendre-le-sql-en-menant-une-enquête-policière",
+    "href": "posts/SQL_adventures/index.html#sql-police-department---apprendre-le-sql-en-menant-une-enquête-policière",
+    "title": "SQL Police Department : Le SQL dont vous êtes le héros.",
+    "section": "SQL Police Department - Apprendre le SQL en menant une enquête policière",
+    "text": "SQL Police Department - Apprendre le SQL en menant une enquête policière\nSQL Police Department (voir (« Learn SQL while solving crimes! SQL Police Department — sqlpd.com »)), un serious game développé par Doron Linder (créateur de Vim Adventures), réinvente l’apprentissage du SQL en le transformant en un jeu captivant à l’ambiance digne d’une série policière. Fini les exercices monotones sur des tables de commandes et de produits ! Ici, vous manipulez des preuves numériques pour coffrer des cybercriminels.\n\n\n\n\n\nLe scénario est simple : vous débarquez dans votre commissariat virtuel par un matin de décembre, tasse de café à la main. Sur votre bureau, un dossier urgent vous attend : les serveurs d’un site illégal ont été saisis, et c’est à vous d’analyser les données pour identifier les suspects. Votre première affaire ? Une simple requête la résoudra:\nSELECT * FROM USERS;  \nRapidement, les cas se compliquent : analyse de listes de diffusion suspectes, découverte de mots de passe compromis, extraction d’emails douteux… Chaque enquête introduit progressivement des concepts SQL plus avancés :\n- ORDER BY pour trier les résultats,\n- DISTINCT pour éliminer les doublons,\n- GROUP BY pour regrouper les données,\n- LIMIT pour se concentrer sur les suspects clés.\nBien sûr, SQL Police Department n’aborde pas les aspects les plus complexes du SQL, comme les jointures avancées ou les sous-requêtes corrélées. Cependant, il excelle dans sa mission : rendre l’apprentissage accessible, engageant et amusant.\nPrêt à enfiler votre badge et à vous plonger dans l’univers fascinant des enquêtes SQL ?\nhttps://sqlpd.com/\nBon jeu\nSource: Korben.info (Korben)"
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
-  },
-  {
-    "objectID": "projects/index.html",
-    "href": "projects/index.html",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
-  },
-  {
-    "objectID": "projects/index.html#the-languages-of-middle-earth",
-    "href": "projects/index.html#the-languages-of-middle-earth",
-    "title": "Projects",
-    "section": "",
-    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
-  },
-  {
-    "objectID": "projects/index.html#the-history-of-the-war-of-the-ring",
-    "href": "projects/index.html#the-history-of-the-war-of-the-ring",
-    "title": "Projects",
-    "section": "The History of the War of the Ring",
-    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+    "objectID": "posts/SQL_adventures/index.html#references",
+    "href": "posts/SQL_adventures/index.html#references",
+    "title": "SQL Police Department : Le SQL dont vous êtes le héros.",
+    "section": "References",
+    "text": "References\n\n\nKorben. « SQL Police Department - Apprenez le SQL en résolvant des crimes — korben.info ». https://korben.info/sql-police-department-apprendre-sql-enquetes-policieres.html.\n\n\n« Learn SQL while solving crimes! SQL Police Department — sqlpd.com ». https://sqlpd.com/."
   },
   {
     "objectID": "posts/paradoxe-simpson/index.html#historique",
@@ -131,6 +110,55 @@
     "title": "Le paradoxe de Simpson : comprendre une illusion statistique intrigante.",
     "section": "References",
     "text": "References\n\n\nAppleton, David, Joyce French, et Mark Vanderpump. 1996. « Ignoring a Covariate: An Example of Simpson’s Paradox ». American Statistician - AMER STATIST 50 (novembre): 340‑41. https://doi.org/10.1080/00031305.1996.10473563.\n\n\nCaravenna, Francesco, et Quentin Berger. 2021. « Le paradoxe de Simpson illustré par des données de vaccination contre le Covid-19 ». The Conversation. http://theconversation.com/le-paradoxe-de-simpson-illustre-par-des-donnees-de-vaccination-contre-le-covid-19-170159.\n\n\nDelahaye, Jean-Paul. s. d. Au pays des paradoxes. Belin."
+  },
+  {
+    "objectID": "projects/index.html",
+    "href": "projects/index.html",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "projects/index.html#the-languages-of-middle-earth",
+    "href": "projects/index.html#the-languages-of-middle-earth",
+    "title": "Projects",
+    "section": "",
+    "text": "arXiv Preprint | Code\nOver the centuries, I have devoted countless hours to deciphering and translating the ancient scripts and dialects of the various peoples of Middle-earth. My goal is to gain a deeper understanding of the cultures and histories of these peoples by studying their languages. Currently, I am working on a monograph that explores the linguistic roots of the Elvish languages. Through extensive research and analysis, I hope to shed light on the connections between the different dialects of Elvish and their origins. This project has been particularly challenging, as Elvish is a complex and nuanced language, but I am determined to see it through to completion."
+  },
+  {
+    "objectID": "projects/index.html#the-history-of-the-war-of-the-ring",
+    "href": "projects/index.html#the-history-of-the-war-of-the-ring",
+    "title": "Projects",
+    "section": "The History of the War of the Ring",
+    "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "section": "",
+    "text": "SQL Police Department : Le SQL dont vous êtes le héros.\n\n\n\n\n\n\nSQL\n\n\nserious game\n\n\nformation\n\n\napprentissage\n\n\nlangage\n\n\ndata\n\n\n\nAgents, à vos postes ! Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web. Votre mission : maîtriser l’art des requêtes SQL tout en résolvant des enquêtes cybercriminelles.\n\n\n\n\n\n3 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nAnthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.\n\n\n\n\n\n\nIA generatives\n\n\ndonnees\n\n\nmodeles\n\n\ndataengine\n\n\n\nLe Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l’intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents.\n\n\n\n\n\n26 Nov 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLe paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
+  },
+  {
+    "objectID": "posts/hello-world/index.html",
+    "href": "posts/hello-world/index.html",
+    "title": "Hello World !",
+    "section": "",
+    "text": "Au cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\nÀ propos, la bannière supérieure et la photo ci-dessous sont générées par IA https://ideogram.ai/. Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants.\n\n\n\nimage"
   },
   {
     "objectID": "posts/MCP-le-protocole-connexion-donnees/index.html#anthropic-lance-son-protocole-de-connexion-aux-données",
