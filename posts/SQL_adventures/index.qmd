@@ -38,7 +38,7 @@ Il permet de gérer les structure de la base et de manipuler les données.
 
 ## SQL Police Department - Apprendre le SQL en menant une enquête policière
 
-**SQL Police Department** (voir [@sqlpdLearnWhile]), un serious game développé par Doron Linder (créateur de *Vim Adventures*), réinvente l'apprentissage du SQL en le transformant en un jeu captivant à l'ambiance digne d'une série policière.
+**SQL Police Department** [@sqlpdLearnWhile], un serious game développé par Doron Linder (créateur de *Vim Adventures*), réinvente l'apprentissage du SQL en le transformant en un jeu captivant à l'ambiance digne d'une série policière.
 Fini les exercices monotones sur des tables de commandes et de produits !
 Ici, vous manipulez des preuves numériques pour coffrer des cybercriminels.
 
