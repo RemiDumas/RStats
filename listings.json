@@ -2,6 +2,7 @@
   {
     "listing": "/index.html",
     "items": [
+      "/posts/Quarto_publipostage/index.html",
       "/posts/SQL_adventures/index.html",
       "/posts/MCP-le-protocole-connexion-donnees/index.html",
       "/posts/paradoxe-simpson/index.html",
