@@ -5,12 +5,10 @@ date: 2024-12-11
 date-format: "DD, MMMM YYYY"
 lang: fr
 categories: 
-  - SQL
-  - serious game
-  - formation
-  - apprentissage
-  - langage
-  - data
+  - Quarto
+  - publipostage
+  - documents 
+  - R
 draft: false
 number-sections: false
 image: quarto.jpeg
