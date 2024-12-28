@@ -77,25 +77,32 @@
     "text": "Au cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\nÀ propos, la bannière supérieure et la photo ci-dessous sont générées par IA https://ideogram.ai/. Comme à peu près tous les rédacteurs de blog, je prévois évidemment de publier régulièrement des articles de grande valeur, perspicaces et stimulants.\n\n\n\nimage"
   },
   {
-    "objectID": "index.html",
-    "href": "index.html",
-    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "objectID": "posts/Le facteur sonne toujours deux fois/index.html",
+    "href": "posts/Le facteur sonne toujours deux fois/index.html",
+    "title": "Le facteur sonne toujours deux fois",
     "section": "",
-    "text": "Publipostage avec Quarto\n\n\n\n\n\n\nQuarto\n\n\npublipostage\n\n\ndocuments\n\n\nR\n\n\n\nLe publipostage avec Quarto permet de générer automatiquement des documents personnalisés en combinant un modèle (template) et des données provenant de fichiers structurés (comme des tables CSV).\n\n\n\n\n\n11 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nSQL Police Department : Le SQL dont vous êtes le héros.\n\n\n\n\n\n\nSQL\n\n\nserious game\n\n\nformation\n\n\napprentissage\n\n\nlangage\n\n\ndata\n\n\n\nAgents, à vos postes ! Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web. Votre mission : maîtriser l’art des requêtes SQL tout en résolvant des enquêtes cybercriminelles.\n\n\n\n\n\n3 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nAnthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.\n\n\n\n\n\n\nIA generatives\n\n\ndonnees\n\n\nmodeles\n\n\ndataengine\n\n\n\nLe Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l’intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents.\n\n\n\n\n\n26 Nov 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLe paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
+    "text": "Les facteurs (voir « 4 Les facteurs | Exploration de données avec R — bookdown.org ») sont utilisés pour représenter des variables catégorielles. C’est un type particulier de données dans R. On s’en sert pour décrire des données statistiques dans des tableaux de comptage, des modèles et des graphiques. Recemment, on m’a demandé de l’aide sur le code suivant:\nlibrary('questionr')\nlibrary('dplyr')\n\ndata(hdv2003)\n\nhdv2003 &lt;- hdv2003 %&gt;% \n  mutate(trage = case_when(\n    age &lt; 15 ~ \"1. moins de 15 ans\",\n    age &lt; 30 ~ \"2. entre 15 et 29 ans\",\n    age &lt; 60 ~ \"3. entre 30 et 59 ans\",\n    age &gt;= 60 ~ \"4. 60 ans ou plus\",\n    TRUE ~ \"Indeterminé\"\n  ))\n\nfreq(hdv2003$trage)\n\n                         n    % val%\n2. entre 15 et 29 ans  302 15.1 15.1\n3. entre 30 et 59 ans 1182 59.1 59.1\n4. 60 ans ou plus      516 25.8 25.8\nL’auteur souhaitait que la modalité \"1. moins de 15 ans\" apparaisse dans le tri à plat de trage. Il a donc eu l’idée d’utiliser une factorisation. La méthode qu’il a employé était la suivante:\nhdv2003 &lt;- hdv2003 %&gt;% \n  mutate(trage_fac = as.factor(trage))\n\nfreq(hdv2003$trage_fac)\n\n                         n    % val%\n2. entre 15 et 29 ans  302 15.1 15.1\n3. entre 30 et 59 ans 1182 59.1 59.1\n4. 60 ans ou plus      516 25.8 25.8\nSurprise, la modalité \"1. moins de 15 ans\" n’apparait toujours pas. Il a donc essayé de refactoriser en précisant les niveaux, avec la fonction levels().\nlevels(hdv2003$trage_fac) &lt;- c(\"1. moins de 15 ans\", \"2. entre 15 et 29 ans\", \"3. entre 30 et 59 ans\", \"4. 60 ans ou plus\")\nfreq(hdv2003$trage_fac)\n\n                         n    % val%\n1. moins de 15 ans     302 15.1 15.1\n2. entre 15 et 29 ans 1182 59.1 59.1\n3. entre 30 et 59 ans  516 25.8 25.8\n4. 60 ans ou plus        0  0.0  0.0\nPatatra … les niveaux ne correspondent plus."
   },
   {
-    "objectID": "about.html",
-    "href": "about.html",
-    "title": "About",
-    "section": "",
-    "text": "About this blog"
+    "objectID": "posts/Le facteur sonne toujours deux fois/index.html#que-sest-il-passé",
+    "href": "posts/Le facteur sonne toujours deux fois/index.html#que-sest-il-passé",
+    "title": "Le facteur sonne toujours deux fois",
+    "section": "Que s’est-il passé ?",
+    "text": "Que s’est-il passé ?\nLa discrétisation ne garde pas trace des modalités souhaitées. Ainsi, lorsqu’on a appliqué as.factor(), on convertit une variable en facteur, R stocke la variable sous forme de vecteur de valeurs entières avec un ensemble correspondant de valeurs de caractères à utiliser lorsque le facteur est affiché. Ces valeurs de caractères sont les niveaux (levels) du facteur."
   },
   {
-    "objectID": "cv/index.html",
-    "href": "cv/index.html",
-    "title": "Curriculum vitae",
-    "section": "",
-    "text": "Download current CV"
+    "objectID": "posts/Le facteur sonne toujours deux fois/index.html#solution",
+    "href": "posts/Le facteur sonne toujours deux fois/index.html#solution",
+    "title": "Le facteur sonne toujours deux fois",
+    "section": "Solution",
+    "text": "Solution\nOn reprend la variable catégorielle et on la factorise à l’aide de la fonction factor() en précisant l’argument levels = selon un vecteur composé des catégories souhaitées.\n\nhdv2003 &lt;- hdv2003 %&gt;%\n  mutate(trage_fac = factor(\n    trage,\n    levels = c(\n      \"1. moins de 15 ans\",\n      \"2. entre 15 et 29 ans\",\n      \"3. entre 30 et 59 ans\",\n      \"4. 60 ans ou plus\"\n    )\n  ))\nfreq(hdv2003$trage_fac)  \n\n                         n    % val%\n1. moins de 15 ans       0  0.0  0.0\n2. entre 15 et 29 ans  302 15.1 15.1\n3. entre 30 et 59 ans 1182 59.1 59.1\n4. 60 ans ou plus      516 25.8 25.8"
+  },
+  {
+    "objectID": "posts/Le facteur sonne toujours deux fois/index.html#références",
+    "href": "posts/Le facteur sonne toujours deux fois/index.html#références",
+    "title": "Le facteur sonne toujours deux fois",
+    "section": "Références",
+    "text": "Références\n\n\n« 4 Les facteurs | Exploration de données avec R — bookdown.org ». https://bookdown.org/ael/rexplor/chap3.html."
   },
   {
     "objectID": "projects/index.html",
@@ -117,6 +124,27 @@
     "title": "Projects",
     "section": "The History of the War of the Ring",
     "text": "The History of the War of the Ring\n\narXiv Preprint | Code\nI am creating a comprehensive and detailed history of the conflict that goes beyond the surface-level events. By gathering information from a variety of sources, including my own memories, written accounts, and oral histories, I hope to shed new light on this important period in Middle-earth’s history and provide valuable insights into the motivations and actions of the various players involved."
+  },
+  {
+    "objectID": "cv/index.html",
+    "href": "cv/index.html",
+    "title": "Curriculum vitae",
+    "section": "",
+    "text": "Download current CV"
+  },
+  {
+    "objectID": "about.html",
+    "href": "about.html",
+    "title": "About",
+    "section": "",
+    "text": "About this blog"
+  },
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "RStats - le blog sur la ‘data’ avec R et Python",
+    "section": "",
+    "text": "Le facteur sonne toujours deux fois\n\n\n\n\n\n\nstats\n\n\nanalyse de données\n\n\nfacteurs\n\n\nR\n\n\n\nLes facteurs sont utilisés pour représenter des variables catégorielles. C’est un type particulier de données dans R. On les utilise pour décrire des données statistiques dans des tableaux de comptage, des modèles et des graphiques.\n\n\n\n\n\n23 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nPublipostage avec Quarto\n\n\n\n\n\n\nQuarto\n\n\npublipostage\n\n\ndocuments\n\n\nR\n\n\n\nLe publipostage avec Quarto permet de générer automatiquement des documents personnalisés en combinant un modèle (template) et des données provenant de fichiers structurés (comme des tables CSV).\n\n\n\n\n\n11 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nSQL Police Department : Le SQL dont vous êtes le héros.\n\n\n\n\n\n\nSQL\n\n\nserious game\n\n\nformation\n\n\napprentissage\n\n\nlangage\n\n\ndata\n\n\n\nAgents, à vos postes ! Le département de police SQL est en pleine campagne de recrutement pour débusquer les criminels du web. Votre mission : maîtriser l’art des requêtes SQL tout en résolvant des enquêtes cybercriminelles.\n\n\n\n\n\n3 Dec 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nAnthropic : L’entreprise qui vise l’utilité des IA avec Claude et le MCP.\n\n\n\n\n\n\nIA generatives\n\n\ndonnees\n\n\nmodeles\n\n\ndataengine\n\n\n\nLe Protocole de Contexte de Modèle (MCP) est un protocole ouvert facilitant l’intégration entre les applications de grands modèles linguistiques (LLM) et des sources de données externes et des outils. Il fournit des outils permettant aux développeurs de connecter facilement leurs LLM à des contextes pertinents.\n\n\n\n\n\n26 Nov 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLe paradoxe de Simpson : comprendre une illusion statistique intrigante.\n\n\n\n\n\n\nstats\n\n\nR\n\n\nmathématiques\n\n\n\nLe paradoxe de Simpson, également connu sous le nom d’effet Yule-Simpson, est un phénomène statistique identifié pour la première fois par Udny Yule en 1903 et formalisé par Edward H. Simpson en 1951. Ce paradoxe illustre comment une tendance apparente dans plusieurs groupes de données peut disparaître ou s’inverser lorsqu’on combine ces groupes. Bien qu’il s’agisse d’un concept mathématique, il soulève des questions importantes sur l’interprétation des données en sciences, en économie et en santé publique.\n\n\n\n\n\n4 Oct 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nLes biais de genres systémiques dans les IA génératives.\n\n\n\n\n\n\nstats\n\n\nIA generatives\n\n\nsociologie\n\n\ngenre\n\n\nR\n\n\n\nUne récente étude de l’University College London (UCL) révèle que les outils d’intelligence artificielle (IA) les plus populaires font preuve de discrimination à l’égard des femmes et des personnes issues de différentes cultures et sexualités.\n\n\n\n\n\n4 Sep 2024\n\n\nRémi Dumas\n\n\n\n\n\n\n\n\n\n\n\n\nHello World !\n\n\n\n\n\n\nnews\n\n\n\nAu cours des dernières années, j’ai souhaité un conteneur pour mes réflexions, tests, conseils et réalisations. Grâce au projet incroyable Quarto et à l’utilisation des Github pages, il n’a fallu que quelques heures pour tout mettre en place.\n\n\n\n\n\n20 Aug 2024\n\n\nRémi Dumas\n\n\n\n\n\n\nNo matching items"
   },
   {
     "objectID": "posts/paradoxe-simpson/index.html#historique",

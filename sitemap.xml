@@ -2,42 +2,46 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/biais-de-genre-IA/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.554Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.626Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/MCP-le-protocole-connexion-donnees/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.546Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.618Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/hello-world/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.578Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.646Z</lastmod>
   </url>
   <url>
-    <loc>https://RemiDumas.github.io/RStats/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.546Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/about.html</loc>
-    <lastmod>2024-12-13T09:23:08.534Z</lastmod>
-  </url>
-  <url>
-    <loc>https://RemiDumas.github.io/RStats/cv/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.534Z</lastmod>
+    <loc>https://RemiDumas.github.io/RStats/posts/Le facteur sonne toujours deux fois/index.html</loc>
+    <lastmod>2024-12-28T20:25:20.614Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/projects/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.578Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.650Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/cv/index.html</loc>
+    <lastmod>2024-12-28T20:25:20.602Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/about.html</loc>
+    <lastmod>2024-12-28T20:25:20.602Z</lastmod>
+  </url>
+  <url>
+    <loc>https://RemiDumas.github.io/RStats/index.html</loc>
+    <lastmod>2024-12-28T20:25:20.614Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/paradoxe-simpson/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.578Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.646Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/SQL_adventures/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.550Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.618Z</lastmod>
   </url>
   <url>
     <loc>https://RemiDumas.github.io/RStats/posts/Quarto_publipostage/index.html</loc>
-    <lastmod>2024-12-13T09:23:08.550Z</lastmod>
+    <lastmod>2024-12-28T20:25:20.618Z</lastmod>
   </url>
 </urlset>
