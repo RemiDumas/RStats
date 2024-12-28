@@ -65,3 +65,5 @@ _freeze/
 .quarto/
 
 /.quarto/
+
+Thumbs.db

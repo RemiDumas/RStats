@@ -1,0 +1,92 @@
+---
+title: "Le facteur sonne toujours deux fois"
+description: "Les facteurs sont utilisés pour représenter des variables catégorielles. C'est un type particulier de données dans R. On les utilise pour décrire des données statistiques dans des tableaux de comptage, des modèles et des graphiques."
+date: 2024-12-23
+date-format: "DD, MMMM YYYY"
+lang: fr
+categories: 
+  - stats
+  - analyse de données
+  - facteurs 
+  - R
+draft: false
+number-sections: false
+image: facteur.jpeg
+bibliography: references.bib
+format:
+  html:
+    fig-cap-location: bottom
+    include-before-body: ../../html/margin_image.html
+    include-after-body: ../../html/blog_footer.html
+    comments: false
+    code-block-bg: true
+    code-block-border-left: "#31BAE9"
+editor: 
+  markdown: 
+    wrap: sentence
+---
+
+Les facteurs (voir @bookdownFacteursExploration) sont utilisés pour représenter des variables catégorielles. C'est un type particulier de données dans R. On s'en sert pour décrire des données statistiques dans des tableaux de comptage, des modèles et des graphiques. Recemment, on m'a demandé de l'aide sur le code suivant:
+
+```{r}
+library('questionr')
+library('dplyr')
+
+data(hdv2003)
+
+hdv2003 <- hdv2003 %>% 
+  mutate(trage = case_when(
+    age < 15 ~ "1. moins de 15 ans",
+    age < 30 ~ "2. entre 15 et 29 ans",
+    age < 60 ~ "3. entre 30 et 59 ans",
+    age >= 60 ~ "4. 60 ans ou plus",
+    TRUE ~ "Indeterminé"
+  ))
+
+freq(hdv2003$trage)
+```
+
+L'auteur souhaitait que la modalité `"1. moins de 15 ans"` apparaisse dans le tri à plat de `trage`. Il a donc eu l'idée d'utiliser une factorisation. La méthode qu'il a employé était la suivante:
+
+```{r}
+hdv2003 <- hdv2003 %>% 
+  mutate(trage_fac = as.factor(trage))
+
+freq(hdv2003$trage_fac)
+```
+
+Surprise, la modalité `"1. moins de 15 ans"` n'apparait toujours pas. Il a donc essayé de refactoriser en précisant les niveaux, avec la fonction levels(). 
+
+
+```{r}
+levels(hdv2003$trage_fac) <- c("1. moins de 15 ans", "2. entre 15 et 29 ans", "3. entre 30 et 59 ans", "4. 60 ans ou plus")
+freq(hdv2003$trage_fac)
+```
+
+Patatra ... les niveaux ne correspondent plus.
+
+## Que s'est-il passé ?
+La discrétisation ne garde pas trace des modalités souhaitées. Ainsi, lorsqu'on a appliqué `as.factor()`, on convertit une variable en facteur, R stocke la variable sous forme de vecteur de valeurs entières avec un ensemble correspondant de valeurs de caractères à utiliser lorsque le facteur est affiché. Ces valeurs de caractères sont les niveaux (levels) du facteur.
+
+## Solution
+On reprend la variable catégorielle et on la factorise à l'aide de la fonction `factor()` en précisant l'argument `levels =` selon un vecteur composé des catégories souhaitées.
+
+```{r}
+hdv2003 <- hdv2003 %>%
+  mutate(trage_fac = factor(
+    trage,
+    levels = c(
+      "1. moins de 15 ans",
+      "2. entre 15 et 29 ans",
+      "3. entre 30 et 59 ans",
+      "4. 60 ans ou plus"
+    )
+  ))
+freq(hdv2003$trage_fac)  
+```
+
+
+## Références
+
+::: {#refs}
+:::
